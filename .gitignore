@@ -4,6 +4,8 @@
 /build/
 /dist/
 /Interface.egg-info/
+build/Modelo_Planilha.xlsx
+.idea/
 
 
 # Byte-compiled / optimized / DLL files
