@@ -1,0 +1,8 @@
+<RCC>
+  <qresource prefix="icons">
+    <file>alerta.png</file>
+    <file>drop-down-esq.png</file>
+    <file>drop-down.png</file>
+    <file>icon_busca.png</file>
+  </qresource>
+</RCC>
