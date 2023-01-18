@@ -92,8 +92,11 @@ class DashboardView(Ui_Form, QWidget):
                 self.paginacao_ativa])
             self.click_botoes_pag(5)
         self.preencher_scroll(self.dados_pag, self.paginacao_ativa)
+        self.verificar_check()
 
-
+    def verificar_check(self):
+        if self.checkBox.isChecked() is True:
+            self.checkBox.setChecked(False)
 
     def proximo_anterior(self, tipo: bool):
         if tipo is True and self.paginacao_ativa<5and self.paginacao_ativa<self.pagi:
@@ -119,6 +122,7 @@ class DashboardView(Ui_Form, QWidget):
             self.paginacao_ativa -= 1
             self.click_botoes_pag(self.paginacao_ativa)
         self.preencher_scroll(self.dados_pag, self.paginacao_ativa)
+        self.verificar_check()
 
     def atualizar_texto_botoes(self, dados:[str]):
         self.pag_1.setText(str(dados[0]))
@@ -168,21 +172,21 @@ class DashboardView(Ui_Form, QWidget):
         except:
             pass
 
-    def preencher_scroll(self, dados, id:int):
+    def preencher_scroll(self, dados, id:int , tipo:bool=True):
         self.limpar()
         self.widget = QWidget()
         self.vbox.deleteLater()
         self.vbox = QVBoxLayout()
-        items = pd.DataFrame(columns={'ID', 'OBJETO'})
+        items = []
+        self._items = []
 
-        dados = dados[id-1]
+        if tipo is True:
+            dados = dados[id-1]
 
         for j, i in enumerate(dados.index):
             try:
                 object = ItemTabelaView(self.ui, dados.iloc[j])
-                self._items.append(object)
-                d = pd.DataFrame(data={"ID": j+1, 'OBJETO': [object]}, index=[j+1])
-                items = pd.concat([items, d])
+                items.append(object)
                 self.vbox.addWidget(object)
             except IndexError:
                 pass
@@ -194,6 +198,7 @@ class DashboardView(Ui_Form, QWidget):
         self.scrollArea.setAlignment(Qt.AlignTop)
         self.scrollArea.setWidget(self.widget)
 
+        self._items = items
         return items
 
     def filtro_scroll(self, dados):

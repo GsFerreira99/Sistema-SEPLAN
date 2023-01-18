@@ -68,8 +68,11 @@ class DashBoardController:
             try:
                 if arquivo == "":
                      return
-                dados = self._db.select_todos
-                dados = dados[dados.id.isin(self.relatorio)]
+                if self.view.checkBox.isChecked() is True:
+                    dados = self.view.dados_total
+                else:
+                    dados = self._db.select_todos
+                    dados = dados[dados.id.isin(self.relatorio)]
                 Relatorio(arquivo, dados, self.filtro_atual)
                 Erro("Relatório gerado com sucesso.", QMessageBox.Information)
             except ValueError:
@@ -172,6 +175,7 @@ class DashBoardController:
         pag = self.view.paginacao(dados)
         pag = round(pag)
 
+        self.view.dados_total = dados
         self.view.dados_pag  = []
 
         inicio = 0
@@ -182,17 +186,20 @@ class DashBoardController:
             inicio+=int(self.view.comboBox.currentText())
 
     def filtro_busca(self, dados):
-        self._items = self.view.preencher_scroll(dados)
+
+        #self._items = self.view.preencher_scroll(self.view.dados_total, 1)
+        #self.filtro_atual = 'INSERIDO SISTEMA'
+        #self._items = self.view.preencher_scroll(dados)
         if self.filtro_atual == 'EMAIL ENVIADO':
             self._items = self.view.preencher_scroll(
                 dados.sort_values(by=['DATA_CONTATO_3_ORIGEM', 'DATA_CONTATO_3_DESTINO',
                                                       'DATA_CONTATO_2_ORIGEM', 'DATA_CONTATO_2_DESTINO',
                                                       'DATA_CONTATO_1_ORIGEM', 'DATA_CONTATO_1_DESTINO',
-                                                      'DATA_EMAIL_INICIAL'], ascending=True))
+                                                      'DATA_EMAIL_INICIAL'], ascending=True), 1, False)
 
         else:
             self._items = self.view.preencher_scroll(
-                dados.sort_values(by=['DATA_ALTERACAO_ORCAMENTARIA'], ascending=True))
+                dados.sort_values(by=['DATA_ALTERACAO_ORCAMENTARIA'], ascending=True), 1, False)
         self.verificar_tela()
 
     def ocultar_items(self):
@@ -256,9 +263,7 @@ class DashBoardController:
             status = True
         else:
             status = False
-        for i in self._items.index:
-            obj = self._items['OBJETO'][i]
-            if obj.isHidden() == False:
+        for obj in self.view._items:
                 obj.check_relatorio.setChecked(status)
                 obj.marcar()
 
