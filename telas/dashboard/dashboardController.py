@@ -2,6 +2,7 @@ from calendar import calendar
 from datetime import datetime
 from telas.dashboard.dashboardView import DashboardView
 from funcoes.relatorio import Relatorio
+from funcoes.relatorio_excel import Relatorio_xls
 from PyQt5.QtWidgets import QFileDialog, QMessageBox
 
 from funcoes.importarDados import ImportarDados
@@ -41,6 +42,7 @@ class DashBoardController:
 
 
         self.view.btn_relatorio.clicked.connect(lambda: self.caminho_relatorio())
+        self.view.btn_relatorio_excel.clicked.connect(lambda: self.caminho_relatorio_excel())
         self.view.btn_planilha.clicked.connect(lambda: self.selecionar_plan())
 
         self.view.btn_busca.clicked.connect(lambda: self.busca())
@@ -74,6 +76,27 @@ class DashBoardController:
                     dados = self._db.select_todos
                     dados = dados[dados.id.isin(self.relatorio)]
                 Relatorio(arquivo, dados, self.filtro_atual)
+                Erro("Relatório gerado com sucesso.", QMessageBox.Information)
+            except ValueError:
+                return
+        else:
+            Erro("Nenhum decreto selecionado.", QMessageBox.Information)
+
+    def caminho_relatorio_excel(self):
+        if len(self.relatorio) > 0:
+            try:
+                arquivo = QFileDialog.getSaveFileName(caption="Exportar relatório Excel", directory="", filter="Planilha (*.xls)")[0]
+            except FileNotFoundError:
+                return
+            try:
+                if arquivo == "":
+                     return
+                if self.view.checkBox.isChecked() is True:
+                    dados = self.view.dados_total
+                else:
+                    dados = self._db.select_todos
+                    dados = dados[dados.id.isin(self.relatorio)]
+                Relatorio_xls(arquivo, dados)
                 Erro("Relatório gerado com sucesso.", QMessageBox.Information)
             except ValueError:
                 return

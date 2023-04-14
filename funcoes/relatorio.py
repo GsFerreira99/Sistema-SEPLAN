@@ -51,7 +51,7 @@ class Relatorio(Pdf):
         self.can.drawString(200, 574, f"{dados['ID_PROGRAMA_ANULADO'].values[0]} - {dados['PROGRAMA_ANULADO'].values[0]}")
         self.can.drawString(200, 550, f"{dados['ID_ACAO_ANULADO'].values[0]} - {dados['ACAO_ANULADO'].values[0]}")
         self.can.drawString(200, 528, f"{dados['NOME_PRODUTO_ANULADO'].values[0]}")
-        self.can.drawString(200, 505, f"{dados['NOVA_META_FISICA_ANULADO'].values[0]}")
+        self.can.drawString(200, 505, f"{dados['VALOR_FISICO_ATUAL_SUPLEMENTADO'].values[0]}")
 
     def preencher_destino(self, dados):
         self.font(9)
@@ -59,7 +59,7 @@ class Relatorio(Pdf):
         self.can.drawString(200, 425, f"{dados['ID_PROGRAMA_SUPLEMENTADO'].values[0]} - {dados['PROGRAMA_SUPLEMENTADO'].values[0]}")
         self.can.drawString(200, 403, f"{dados['ID_ACAO_SUPLEMENTADO'].values[0]} - {dados['ACAO_SUPLEMENTADO'].values[0]}")
         self.can.drawString(200, 380, f"{dados['NOME_PRODUTO_SUPLEMENTADO'].values[0]}")
-        self.can.drawString(200, 359, f"{dados['NOVA_META_FISICA_SUPLEMENTADO'].values[0]}")
+        self.can.drawString(200, 359, f"{dados['VALOR_FISICO_ATUAL_ANULADO'].values[0]}")
 
     def preencher_dataEmail(self, dados):
         self.font(12)

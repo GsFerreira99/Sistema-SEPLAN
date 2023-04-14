@@ -414,6 +414,7 @@ class Ui_Form(object):
         self.comboBox.addItem("")
         self.comboBox.addItem("")
         self.comboBox.addItem("")
+        self.comboBox.addItem("")
         self.comboBox.setObjectName(u"comboBox")
         self.comboBox.setMinimumSize(QSize(75, 0))
         self.comboBox.setMaximumSize(QSize(75, 16777215))
@@ -476,12 +477,148 @@ class Ui_Form(object):
         self.scrollArea.setAlignment(Qt.AlignLeading|Qt.AlignLeft|Qt.AlignTop)
         self.scrollAreaWidgetContents = QWidget()
         self.scrollAreaWidgetContents.setObjectName(u"scrollAreaWidgetContents")
-        self.scrollAreaWidgetContents.setGeometry(QRect(0, 0, 923, 493))
+        self.scrollAreaWidgetContents.setGeometry(QRect(0, 0, 923, 443))
         self.verticalLayout_9 = QVBoxLayout(self.scrollAreaWidgetContents)
         self.verticalLayout_9.setObjectName(u"verticalLayout_9")
         self.scrollArea.setWidget(self.scrollAreaWidgetContents)
 
         self.verticalLayout_10.addWidget(self.scrollArea)
+
+        self.frame_12 = QFrame(self.frame_scroll)
+        self.frame_12.setObjectName(u"frame_12")
+        self.frame_12.setMinimumSize(QSize(0, 50))
+        self.frame_12.setFrameShape(QFrame.StyledPanel)
+        self.frame_12.setFrameShadow(QFrame.Raised)
+        self.horizontalLayout_6 = QHBoxLayout(self.frame_12)
+        self.horizontalLayout_6.setObjectName(u"horizontalLayout_6")
+        self.horizontalLayout_6.setContentsMargins(20, 0, 17, 0)
+        self.horizontalSpacer = QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
+
+        self.horizontalLayout_6.addItem(self.horizontalSpacer)
+
+        self.frame_paginacao = QFrame(self.frame_12)
+        self.frame_paginacao.setObjectName(u"frame_paginacao")
+        self.frame_paginacao.setMinimumSize(QSize(0, 0))
+        self.frame_paginacao.setStyleSheet(u"QPushButton {\n"
+"border-radius: 5px;\n"
+"}\n"
+)
+        self.frame_paginacao.setFrameShape(QFrame.StyledPanel)
+        self.frame_paginacao.setFrameShadow(QFrame.Raised)
+        self.horizontalLayout_7 = QHBoxLayout(self.frame_paginacao)
+        self.horizontalLayout_7.setObjectName(u"horizontalLayout_7")
+        self.horizontalLayout_7.setContentsMargins(10, 0, 10, 0)
+        self.pag_inicio = QPushButton(self.frame_paginacao)
+        self.pag_inicio.setObjectName(u"pag_inicio")
+        self.pag_inicio.setMinimumSize(QSize(30, 30))
+        self.pag_inicio.setMaximumSize(QSize(30, 30))
+        font6 = QFont()
+        font6.setPointSize(11)
+        self.pag_inicio.setFont(font6)
+        self.pag_inicio.setStyleSheet(u"")
+
+        self.horizontalLayout_7.addWidget(self.pag_inicio)
+
+        self.pag_anterior = QPushButton(self.frame_paginacao)
+        self.pag_anterior.setObjectName(u"pag_anterior")
+        self.pag_anterior.setMinimumSize(QSize(30, 30))
+        self.pag_anterior.setMaximumSize(QSize(30, 30))
+        self.pag_anterior.setFont(font6)
+        self.pag_anterior.setStyleSheet(u"")
+
+        self.horizontalLayout_7.addWidget(self.pag_anterior)
+
+        self.frame_pagMeio = QFrame(self.frame_paginacao)
+        self.frame_pagMeio.setObjectName(u"frame_pagMeio")
+        sizePolicy4 = QSizePolicy(QSizePolicy.Minimum, QSizePolicy.Preferred)
+        sizePolicy4.setHorizontalStretch(0)
+        sizePolicy4.setVerticalStretch(0)
+        sizePolicy4.setHeightForWidth(self.frame_pagMeio.sizePolicy().hasHeightForWidth())
+        self.frame_pagMeio.setSizePolicy(sizePolicy4)
+        self.frame_pagMeio.setFrameShape(QFrame.StyledPanel)
+        self.frame_pagMeio.setFrameShadow(QFrame.Raised)
+        self.horizontalLayout_8 = QHBoxLayout(self.frame_pagMeio)
+        self.horizontalLayout_8.setSpacing(3)
+        self.horizontalLayout_8.setObjectName(u"horizontalLayout_8")
+        self.horizontalLayout_8.setContentsMargins(0, 0, 0, 0)
+        self.pag_1 = QPushButton(self.frame_pagMeio)
+        self.pag_1.setObjectName(u"pag_1")
+        self.pag_1.setMinimumSize(QSize(30, 30))
+        self.pag_1.setMaximumSize(QSize(30, 30))
+        self.pag_1.setFont(font6)
+        self.pag_1.setStyleSheet(u"QPushButton{\n"
+"	color: white;\n"
+"	background-color: rgb(76, 34, 112);\n"
+"}")
+
+        self.horizontalLayout_8.addWidget(self.pag_1)
+
+        self.pag_2 = QPushButton(self.frame_pagMeio)
+        self.pag_2.setObjectName(u"pag_2")
+        self.pag_2.setMinimumSize(QSize(30, 30))
+        self.pag_2.setMaximumSize(QSize(30, 30))
+        self.pag_2.setFont(font6)
+        self.pag_2.setStyleSheet(u"")
+
+        self.horizontalLayout_8.addWidget(self.pag_2)
+
+        self.pag_3 = QPushButton(self.frame_pagMeio)
+        self.pag_3.setObjectName(u"pag_3")
+        self.pag_3.setMinimumSize(QSize(30, 30))
+        self.pag_3.setMaximumSize(QSize(30, 30))
+        self.pag_3.setFont(font6)
+        self.pag_3.setStyleSheet(u"")
+
+        self.horizontalLayout_8.addWidget(self.pag_3)
+
+        self.pag_4 = QPushButton(self.frame_pagMeio)
+        self.pag_4.setObjectName(u"pag_4")
+        self.pag_4.setMinimumSize(QSize(30, 30))
+        self.pag_4.setMaximumSize(QSize(30, 30))
+        self.pag_4.setFont(font6)
+        self.pag_4.setStyleSheet(u"")
+
+        self.horizontalLayout_8.addWidget(self.pag_4)
+
+        self.pag_5 = QPushButton(self.frame_pagMeio)
+        self.pag_5.setObjectName(u"pag_5")
+        self.pag_5.setMinimumSize(QSize(30, 30))
+        self.pag_5.setMaximumSize(QSize(30, 30))
+        self.pag_5.setFont(font6)
+        self.pag_5.setStyleSheet(u"")
+
+        self.horizontalLayout_8.addWidget(self.pag_5)
+
+
+        self.horizontalLayout_7.addWidget(self.frame_pagMeio)
+
+        self.pag_proximo = QPushButton(self.frame_paginacao)
+        self.pag_proximo.setObjectName(u"pag_proximo")
+        self.pag_proximo.setMinimumSize(QSize(30, 30))
+        self.pag_proximo.setMaximumSize(QSize(30, 30))
+        self.pag_proximo.setFont(font6)
+        self.pag_proximo.setStyleSheet(u"")
+
+        self.horizontalLayout_7.addWidget(self.pag_proximo)
+
+        self.pag_fim = QPushButton(self.frame_paginacao)
+        self.pag_fim.setObjectName(u"pag_fim")
+        self.pag_fim.setMinimumSize(QSize(30, 30))
+        self.pag_fim.setMaximumSize(QSize(30, 30))
+        self.pag_fim.setFont(font6)
+        self.pag_fim.setStyleSheet(u"")
+
+        self.horizontalLayout_7.addWidget(self.pag_fim)
+
+
+        self.horizontalLayout_6.addWidget(self.frame_paginacao)
+
+        self.horizontalSpacer_2 = QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
+
+        self.horizontalLayout_6.addItem(self.horizontalSpacer_2)
+
+
+        self.verticalLayout_10.addWidget(self.frame_12)
 
 
         self.verticalLayout_5.addWidget(self.frame_scroll)
@@ -494,7 +631,6 @@ class Ui_Form(object):
 
 
         self.verticalLayout.addWidget(self.frame)
-
 
         self.retranslateUi(MainWindow)
 
@@ -527,8 +663,18 @@ class Ui_Form(object):
         self.comboBox.setItemText(0, QCoreApplication.translate("MainWindow", u"10", None))
         self.comboBox.setItemText(1, QCoreApplication.translate("MainWindow", u"25", None))
         self.comboBox.setItemText(2, QCoreApplication.translate("MainWindow", u"50", None))
+        self.comboBox.setItemText(3, QCoreApplication.translate("MainWindow", u"100", None))
 
         self.checkBox.setText(QCoreApplication.translate("MainWindow", u"Selecionar Todos", None))
         self.lb_filtro.setText("")
+        self.pag_inicio.setText(QCoreApplication.translate("MainWindow", u"<<", None))
+        self.pag_anterior.setText(QCoreApplication.translate("MainWindow", u"<", None))
+        self.pag_1.setText(QCoreApplication.translate("MainWindow", u"", None))
+        self.pag_2.setText(QCoreApplication.translate("MainWindow", u"", None))
+        self.pag_3.setText(QCoreApplication.translate("MainWindow", u"", None))
+        self.pag_4.setText(QCoreApplication.translate("MainWindow", u"", None))
+        self.pag_5.setText(QCoreApplication.translate("MainWindow", u"", None))
+        self.pag_proximo.setText(QCoreApplication.translate("MainWindow", u">", None))
+        self.pag_fim.setText(QCoreApplication.translate("MainWindow", u">>", None))
     # retranslateUi
 

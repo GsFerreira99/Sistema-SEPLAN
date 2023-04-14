@@ -1,40 +1,38 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'DashboardVebOCG.ui'
+## Form generated from reading UI file 'DashboardbSJHae.ui'
 ##
-## Created by: Qt User Interface Compiler version 6.4.0
+## Created by: Qt User Interface Compiler version 5.14.1
 ##
 ## WARNING! All changes made in this file will be lost when recompiling UI file!
 ################################################################################
 
-from PyQt5.QtCore import (QCoreApplication, QDate, QDateTime, QLocale,
-    QMetaObject, QObject, QPoint, QRect,
-    QSize, QTime, QUrl, Qt)
-from PyQt5.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
-    QFont, QFontDatabase, QGradient, QIcon,
-    QImage, QKeySequence, QLinearGradient, QPainter,
-    QPalette, QPixmap, QRadialGradient, QTransform)
-from PyQt5.QtWidgets import (QAbstractScrollArea, QApplication, QCheckBox, QComboBox,
-    QFrame, QHBoxLayout, QLabel, QLineEdit,
-    QMainWindow, QPushButton, QScrollArea, QSizePolicy,
-    QSpacerItem, QVBoxLayout, QWidget)
+from PyQt5.QtCore import (QCoreApplication, QMetaObject, QObject, QPoint,
+    QRect, QSize, QUrl, Qt)
+from PyQt5.QtGui import (QBrush, QColor, QConicalGradient, QCursor, QFont,
+    QFontDatabase, QIcon, QLinearGradient, QPalette, QPainter, QPixmap,
+    QRadialGradient)
+from PyQt5.QtWidgets import *
 
 import media.resource_rc
 
 class Ui_Form(object):
+
     def setupUi(self, MainWindow):
-        if not MainWindow.objectName():
+        if MainWindow.objectName():
             MainWindow.setObjectName(u"MainWindow")
         MainWindow.resize(1143, 739)
         MainWindow.setStyleSheet(u"background-color: rgb(255, 255, 255);\n"
 "border:none")
-
-        self.verticalLayout = QVBoxLayout(MainWindow)
+        #self.centralwidget = QWidget(MainWindow)
+        #self.centralwidget.setObjectName(u"centralwidget")
+        self.centralwidget = MainWindow
+        self.verticalLayout = QVBoxLayout(self.centralwidget)
         self.verticalLayout.setSpacing(0)
         self.verticalLayout.setObjectName(u"verticalLayout")
         self.verticalLayout.setContentsMargins(0, 0, 0, 0)
-        self.Titulo = QFrame(MainWindow)
+        self.Titulo = QFrame(self.centralwidget)
         self.Titulo.setObjectName(u"Titulo")
         sizePolicy = QSizePolicy(QSizePolicy.Preferred, QSizePolicy.Expanding)
         sizePolicy.setHorizontalStretch(0)
@@ -50,9 +48,10 @@ class Ui_Form(object):
         self.lb_tituloPrincipal = QLabel(self.Titulo)
         self.lb_tituloPrincipal.setObjectName(u"lb_tituloPrincipal")
         font = QFont()
-        font.setFamilies([u"Arial"])
+        font.setFamily(u"Arial")
         font.setPointSize(18)
         font.setBold(True)
+        font.setWeight(75)
         self.lb_tituloPrincipal.setFont(font)
         self.lb_tituloPrincipal.setStyleSheet(u"color: white;")
         self.lb_tituloPrincipal.setAlignment(Qt.AlignCenter)
@@ -62,7 +61,7 @@ class Ui_Form(object):
 
         self.verticalLayout.addWidget(self.Titulo)
 
-        self.frame = QFrame(MainWindow)
+        self.frame = QFrame(self.centralwidget)
         self.frame.setObjectName(u"frame")
         self.frame.setFrameShape(QFrame.StyledPanel)
         self.frame.setFrameShadow(QFrame.Raised)
@@ -90,9 +89,10 @@ class Ui_Form(object):
         self.lb_cont_todos = QLabel(self.frame_4)
         self.lb_cont_todos.setObjectName(u"lb_cont_todos")
         font1 = QFont()
-        font1.setFamilies([u"Calibri"])
+        font1.setFamily(u"Calibri")
         font1.setPointSize(30)
         font1.setBold(True)
+        font1.setWeight(75)
         self.lb_cont_todos.setFont(font1)
         self.lb_cont_todos.setAlignment(Qt.AlignCenter)
 
@@ -101,9 +101,10 @@ class Ui_Form(object):
         self.lb_titulo_todos = QLabel(self.frame_4)
         self.lb_titulo_todos.setObjectName(u"lb_titulo_todos")
         font2 = QFont()
-        font2.setFamilies([u"Calibri"])
+        font2.setFamily(u"Calibri")
         font2.setPointSize(10)
         font2.setBold(False)
+        font2.setWeight(50)
         self.lb_titulo_todos.setFont(font2)
         self.lb_titulo_todos.setAlignment(Qt.AlignCenter)
 
@@ -267,7 +268,7 @@ class Ui_Form(object):
         self.btn_todos.setSizePolicy(sizePolicy2)
         self.btn_todos.setMaximumSize(QSize(16777215, 40))
         font3 = QFont()
-        font3.setFamilies([u"Arial"])
+        font3.setFamily(u"Arial")
         font3.setPointSize(13)
         self.btn_todos.setFont(font3)
         self.btn_todos.setStyleSheet(u"")
@@ -318,6 +319,16 @@ class Ui_Form(object):
 
         self.verticalLayout_4.addItem(self.verticalSpacer)
 
+        self.btn_relatorio_excel = QPushButton(self.frame_5)
+        self.btn_relatorio_excel.setObjectName(u"btn_relatorio_excel")
+        sizePolicy2.setHeightForWidth(self.btn_relatorio_excel.sizePolicy().hasHeightForWidth())
+        self.btn_relatorio_excel.setSizePolicy(sizePolicy2)
+        self.btn_relatorio_excel.setMaximumSize(QSize(16777215, 40))
+        self.btn_relatorio_excel.setFont(font3)
+        self.btn_relatorio_excel.setStyleSheet(u"")
+
+        self.verticalLayout_4.addWidget(self.btn_relatorio_excel)
+
         self.btn_relatorio = QPushButton(self.frame_5)
         self.btn_relatorio.setObjectName(u"btn_relatorio")
         sizePolicy2.setHeightForWidth(self.btn_relatorio.sizePolicy().hasHeightForWidth())
@@ -360,7 +371,7 @@ class Ui_Form(object):
         self.lb_busca = QLabel(self.frame_10)
         self.lb_busca.setObjectName(u"lb_busca")
         font4 = QFont()
-        font4.setFamilies([u"Arial"])
+        font4.setFamily(u"Arial")
         font4.setPointSize(12)
         self.lb_busca.setFont(font4)
 
@@ -455,9 +466,10 @@ class Ui_Form(object):
         self.lb_filtro = QLabel(self.frame_2)
         self.lb_filtro.setObjectName(u"lb_filtro")
         font5 = QFont()
-        font5.setFamilies([u"Calibri"])
+        font5.setFamily(u"Calibri")
         font5.setPointSize(13)
         font5.setBold(False)
+        font5.setWeight(50)
         self.lb_filtro.setFont(font5)
         self.lb_filtro.setStyleSheet(u"margin-left: 15px")
         self.lb_filtro.setAlignment(Qt.AlignLeading|Qt.AlignLeft|Qt.AlignVCenter)
@@ -477,7 +489,7 @@ class Ui_Form(object):
         self.scrollArea.setAlignment(Qt.AlignLeading|Qt.AlignLeft|Qt.AlignTop)
         self.scrollAreaWidgetContents = QWidget()
         self.scrollAreaWidgetContents.setObjectName(u"scrollAreaWidgetContents")
-        self.scrollAreaWidgetContents.setGeometry(QRect(0, 0, 923, 443))
+        self.scrollAreaWidgetContents.setGeometry(QRect(0, 0, 920, 443))
         self.verticalLayout_9 = QVBoxLayout(self.scrollAreaWidgetContents)
         self.verticalLayout_9.setObjectName(u"verticalLayout_9")
         self.scrollArea.setWidget(self.scrollAreaWidgetContents)
@@ -500,9 +512,16 @@ class Ui_Form(object):
         self.frame_paginacao.setObjectName(u"frame_paginacao")
         self.frame_paginacao.setMinimumSize(QSize(0, 0))
         self.frame_paginacao.setStyleSheet(u"QPushButton {\n"
+"	color: black;\n"
 "border-radius: 5px;\n"
 "}\n"
-)
+"\n"
+"QPushButton:hover {\n"
+"	color: white;\n"
+"	font-weight: 700;\n"
+"	\n"
+"	background-color: rgb(169, 144, 190)\n"
+"}")
         self.frame_paginacao.setFrameShape(QFrame.StyledPanel)
         self.frame_paginacao.setFrameShadow(QFrame.Raised)
         self.horizontalLayout_7 = QHBoxLayout(self.frame_paginacao)
@@ -632,6 +651,8 @@ class Ui_Form(object):
 
         self.verticalLayout.addWidget(self.frame)
 
+        #MainWindow.setCentralWidget(self.centralwidget)
+
         self.retranslateUi(MainWindow)
 
         QMetaObject.connectSlotsByName(MainWindow)
@@ -655,7 +676,8 @@ class Ui_Form(object):
         self.btn_email.setText(QCoreApplication.translate("MainWindow", u"E-mail Enviado", None))
         self.btn_metas.setText(QCoreApplication.translate("MainWindow", u"Metas Inseridas", None))
         self.btn_inserido.setText(QCoreApplication.translate("MainWindow", u"Inserido no Sistema", None))
-        self.btn_relatorio.setText(QCoreApplication.translate("MainWindow", u"Gerar Relatorio", None))
+        self.btn_relatorio_excel.setText(QCoreApplication.translate("MainWindow", u"Gerar Excel", None))
+        self.btn_relatorio.setText(QCoreApplication.translate("MainWindow", u"Gerar PDF", None))
         self.btn_planilha.setText(QCoreApplication.translate("MainWindow", u"Selecionar Planilha", None))
         self.lb_busca.setText(QCoreApplication.translate("MainWindow", u"Busca", None))
         self.btn_busca.setText("")
@@ -669,11 +691,11 @@ class Ui_Form(object):
         self.lb_filtro.setText("")
         self.pag_inicio.setText(QCoreApplication.translate("MainWindow", u"<<", None))
         self.pag_anterior.setText(QCoreApplication.translate("MainWindow", u"<", None))
-        self.pag_1.setText(QCoreApplication.translate("MainWindow", u"", None))
-        self.pag_2.setText(QCoreApplication.translate("MainWindow", u"", None))
-        self.pag_3.setText(QCoreApplication.translate("MainWindow", u"", None))
-        self.pag_4.setText(QCoreApplication.translate("MainWindow", u"", None))
-        self.pag_5.setText(QCoreApplication.translate("MainWindow", u"", None))
+        self.pag_1.setText(QCoreApplication.translate("MainWindow", u"1", None))
+        self.pag_2.setText(QCoreApplication.translate("MainWindow", u"2", None))
+        self.pag_3.setText(QCoreApplication.translate("MainWindow", u"3", None))
+        self.pag_4.setText(QCoreApplication.translate("MainWindow", u"4", None))
+        self.pag_5.setText(QCoreApplication.translate("MainWindow", u"5", None))
         self.pag_proximo.setText(QCoreApplication.translate("MainWindow", u">", None))
         self.pag_fim.setText(QCoreApplication.translate("MainWindow", u">>", None))
     # retranslateUi

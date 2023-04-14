@@ -11,7 +11,7 @@ setup(
     version = "1.0",
     description = "Interface",
     options = {"build_exe": build_exe_options},
-    data_files = [ ('', ['icon.ico']), ('', ['base.pdf'])],
+    data_files = [ ('', ['icon.ico']), ('', ['base.pdf']), ('', ['Calibri.ttf'])],
     executables = [Executable(
     script="main.py",
     icon="icon.ico",
