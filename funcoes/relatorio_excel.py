@@ -31,14 +31,16 @@ class Relatorio_xls:
             "E2": ["AÇÃO ORIGEM", Color(rgb='a4c2f4'), 5],
             "F2": ["PRODUTO ORIGEM", Color(rgb='a4c2f4'), 6],
             "G2": ["META FÍSICA ORIGEM", Color(rgb='a4c2f4'), 7],
-            "H2": ["ORGÃO DESTINO", Color(rgb='a4c2f4'), 8],
-            "I2": ["PROGRAMA DESTINO", Color(rgb='a4c2f4'), 9],
-            "J2": ["AÇÃO DESTINO", Color(rgb='a4c2f4'), 10],
-            "K2": ["PRODUTO DESTINO", Color(rgb='a4c2f4'), 11],
-            "L2": ["META FÍSICA DESTINO", Color(rgb='a4c2f4'), 12],
-            "M2": ["DATA EMAIL INICIAL", Color(rgb='a4c2f4'), 13],
-            "N2": ["EMAIL", Color(rgb='a4c2f4'), 14],
-            "O2": ["VALOR REMANEJADO", Color(rgb='a4c2f4'), 15],
+            "H2": ["NOVA META FÍSICA ORIGEM", Color(rgb='a4c2f4'), 8],
+            "I2": ["ORGÃO DESTINO", Color(rgb='a4c2f4'), 9],
+            "J2": ["PROGRAMA DESTINO", Color(rgb='a4c2f4'), 10],
+            "K2": ["AÇÃO DESTINO", Color(rgb='a4c2f4'), 11],
+            "L2": ["PRODUTO DESTINO", Color(rgb='a4c2f4'), 12],
+            "M2": ["META FÍSICA DESTINO", Color(rgb='a4c2f4'), 13],
+            "N2": ["NOVA META FÍSICA DESTINO", Color(rgb='a4c2f4'), 14],
+            "O2": ["DATA EMAIL INICIAL", Color(rgb='a4c2f4'), 15],
+            "P2": ["EMAIL", Color(rgb='a4c2f4'), 16],
+            "Q2": ["VALOR REMANEJADO", Color(rgb='a4c2f4'), 17],
         }
 
         for cel, value in tabela.items():
@@ -60,21 +62,23 @@ class Relatorio_xls:
             4: [f"{dados['ID_PROGRAMA_ANULADO'].values[0]} - {dados['PROGRAMA_ANULADO'].values[0]}", f'D{line}'],
             5: [f"{dados['ID_ACAO_ANULADO'].values[0]} - {dados['ACAO_ANULADO'].values[0]}", f'E{line}'],
             6: [dados['NOME_PRODUTO_ANULADO'].values[0], f'F{line}'],
-            7: [dados['VALOR_FISICO_ATUAL_SUPLEMENTADO'].values[0], f'G{line}'],
-            8: [f"{dados['NOME_ORGAO_SUPLEMENTADO'].values[0]} - {dados['NOME_ORGAO_SUPLEMENTADO2'].values[0]}", f'H{line}'],
-            9: [f"{dados['ID_PROGRAMA_SUPLEMENTADO'].values[0]} - {dados['PROGRAMA_SUPLEMENTADO'].values[0]}", f'I{line}'],
-            10: [f"{dados['ID_ACAO_SUPLEMENTADO'].values[0]} - {dados['ACAO_SUPLEMENTADO'].values[0]}", f'J{line}'],
-            11: [dados['NOME_PRODUTO_SUPLEMENTADO'].values[0], f'K{line}'],
-            12: [dados['VALOR_FISICO_ATUAL_ANULADO'].values[0], f'L{line}'],
-            13: ["", f'M{line}'],
-            14: [dados['EMAIL_INICIAL'].values[0], f'N{line}'],
-            15: [dados['VALOR_FINANCEIRO'].values[0], f'O{line}'],
+            7: [dados['VALOR_FISICO_ATUAL_ANULADO'].values[0], f'G{line}'],
+            8: [dados['NOVA_META_FISICA_ANULADO'].values[0], f'H{line}'],
+            9: [f"{dados['NOME_ORGAO_SUPLEMENTADO'].values[0]} - {dados['NOME_ORGAO_SUPLEMENTADO2'].values[0]}", f'I{line}'],
+            10: [f"{dados['ID_PROGRAMA_SUPLEMENTADO'].values[0]} - {dados['PROGRAMA_SUPLEMENTADO'].values[0]}", f'J{line}'],
+            11: [f"{dados['ID_ACAO_SUPLEMENTADO'].values[0]} - {dados['ACAO_SUPLEMENTADO'].values[0]}", f'K{line}'],
+            12: [dados['NOME_PRODUTO_SUPLEMENTADO'].values[0], f'L{line}'],
+            13: [dados['VALOR_FISICO_ATUAL_SUPLEMENTADO'].values[0], f'M{line}'],
+            14: [dados['NOVA_META_FISICA_SUPLEMENTADO'].values[0], f'N{line}'],
+            15: ["", f'O{line}'],
+            16: [dados['EMAIL_INICIAL'].values[0], f'P{line}'],
+            17: [dados['VALOR_FINANCEIRO'].values[0], f'Q{line}'],
         }
 
         try:
-            self.dadosPlan[13][0] = dados['DATA_EMAIL_INICIAL'].values[0].strftime('%d/%m/%Y')
+            self.dadosPlan[15][0] = dados['DATA_EMAIL_INICIAL'].values[0].strftime('%d/%m/%Y')
         except AttributeError:
-            self.dadosPlan[13][0] = dados['DATA_EMAIL_INICIAL'].values[0]
+            self.dadosPlan[15][0] = dados['DATA_EMAIL_INICIAL'].values[0]
 
         return self.dadosPlan
 

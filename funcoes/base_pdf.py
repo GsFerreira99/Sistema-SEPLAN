@@ -29,7 +29,7 @@ class Pdf:
 
     def adiciona_dados_ao_modelo(self):
         for page in self.new_pdf.pages:
-            page.mergePage(self.page)
+            #page.mergePage(self.page)
             self.output.addPage(page)
 
     def salvar_pdf(self, caminho):
