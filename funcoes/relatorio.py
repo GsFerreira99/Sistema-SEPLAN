@@ -117,7 +117,6 @@ class Relatorio(Pdf):
                 except:
                     emails = [e]
                 y = 227
-                print(emails)
                 for email in emails: 
                     self.can.drawString(250, y, f"{email}")
                     y-=15

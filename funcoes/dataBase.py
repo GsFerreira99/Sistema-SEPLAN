@@ -338,21 +338,21 @@ class DataBase:
 
     @property
     def select_todos(self):
-        d = pd.read_sql("SELECT * FROM decretos", con=self._engine)
+        d = pd.read_sql("SELECT * FROM decretos ORDER BY DATA_ALTERACAO_ORCAMENTARIA DESC", con=self._engine)
         return d
     
     @property
     def select_analise(self):
-        return pd.read_sql("SELECT * FROM decretos WHERE INSERIDO_METAS != 'ok' AND ATUALIZADO_NO_SISTEMA != 'ok' AND EMAIL_ENVIADO != 'ok' AND COL_ALERTA != 'OK'", con=self._engine)
+        return pd.read_sql("SELECT * FROM decretos WHERE INSERIDO_METAS != 'ok' AND ATUALIZADO_NO_SISTEMA != 'ok' AND EMAIL_ENVIADO != 'ok' AND COL_ALERTA != 'OK' ORDER BY DATA_ALTERACAO_ORCAMENTARIA DESC", con=self._engine)
 
     @property
     def select_email(self):
-        return pd.read_sql("SELECT * FROM decretos WHERE INSERIDO_METAS != 'ok' AND ATUALIZADO_NO_SISTEMA != 'ok' AND EMAIL_ENVIADO = 'ok'", con=self._engine)
+        return pd.read_sql("SELECT * FROM decretos WHERE INSERIDO_METAS != 'ok' AND ATUALIZADO_NO_SISTEMA != 'ok' AND EMAIL_ENVIADO = 'ok' ORDER BY DATA_ALTERACAO_ORCAMENTARIA DESC", con=self._engine)
     
     @property
     def select_metas(self):
-        return pd.read_sql("SELECT * FROM decretos WHERE INSERIDO_METAS = 'ok' AND ATUALIZADO_NO_SISTEMA != 'ok'", con=self._engine)
+        return pd.read_sql("SELECT * FROM decretos WHERE INSERIDO_METAS = 'ok' AND ATUALIZADO_NO_SISTEMA != 'ok' ORDER BY DATA_ALTERACAO_ORCAMENTARIA DESC", con=self._engine)
 
     @property
     def select_inserido(self):
-        return pd.read_sql("SELECT * FROM decretos WHERE ATUALIZADO_NO_SISTEMA = 'ok'", con=self._engine)
+        return pd.read_sql("SELECT * FROM decretos WHERE ATUALIZADO_NO_SISTEMA = 'ok' ORDER BY DATA_ALTERACAO_ORCAMENTARIA DESC", con=self._engine)

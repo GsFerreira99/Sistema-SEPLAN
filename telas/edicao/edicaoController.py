@@ -160,4 +160,3 @@ NOVA Meta FÌSICA de Destino:
     def voltar(self):
         self.ui.view.stackedWidget.setCurrentIndex(0)
         self.ui.principalController.atualizar_contadores()
-        self.ui.principalController.filtrar(self.ui.principalController.filtro_atual)

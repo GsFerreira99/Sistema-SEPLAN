@@ -71,7 +71,8 @@ class DashBoardController:
                 if arquivo == "":
                      return
                 if self.view.checkBox.isChecked() is True:
-                    dados = self.view.dados_total
+                    dados = self._db.select_todos
+                    dados = dados[dados.id.isin(self.relatorio)]
                 else:
                     dados = self._db.select_todos
                     dados = dados[dados.id.isin(self.relatorio)]
@@ -149,17 +150,11 @@ class DashBoardController:
             self.filtro_atual = 'ANÁLISE'
         elif filtro == 'METAS INSERIDAS':
             self.modificar_dados(
-                self._db.select_todos.sort_values(by=['DATA_CONTATO_3_ORIGEM', 'DATA_CONTATO_3_DESTINO',
-                                                      'DATA_CONTATO_2_ORIGEM', 'DATA_CONTATO_2_DESTINO',
-                                                      'DATA_CONTATO_1_ORIGEM', 'DATA_CONTATO_1_DESTINO',
-                                                      'DATA_EMAIL_INICIAL'], ascending=False), self._db.select_metas)
+                self._db.select_todos.sort_values(by=['DATA_ALTERACAO_ORCAMENTARIA'], ascending=False), self._db.select_metas)
             self.filtro_atual = 'METAS INSERIDAS'
         elif filtro == 'EMAIL ENVIADO':
             self.modificar_dados(
-                self._db.select_todos.sort_values(by=['DATA_CONTATO_3_ORIGEM', 'DATA_CONTATO_3_DESTINO',
-                                                      'DATA_CONTATO_2_ORIGEM', 'DATA_CONTATO_2_DESTINO',
-                                                      'DATA_CONTATO_1_ORIGEM', 'DATA_CONTATO_1_DESTINO',
-                                                      'DATA_EMAIL_INICIAL'], ascending=True), self._db.select_email)
+                self._db.select_todos.sort_values(by=['DATA_ALTERACAO_ORCAMENTARIA'], ascending=True), self._db.select_email)
             self.filtro_atual = 'EMAIL ENVIADO'
         elif filtro == 'TODOS':
             self.modificar_dados(
@@ -215,10 +210,7 @@ class DashBoardController:
         #self._items = self.view.preencher_scroll(dados)
         if self.filtro_atual == 'EMAIL ENVIADO':
             self._items = self.view.preencher_scroll(
-                dados.sort_values(by=['DATA_CONTATO_3_ORIGEM', 'DATA_CONTATO_3_DESTINO',
-                                                      'DATA_CONTATO_2_ORIGEM', 'DATA_CONTATO_2_DESTINO',
-                                                      'DATA_CONTATO_1_ORIGEM', 'DATA_CONTATO_1_DESTINO',
-                                                      'DATA_EMAIL_INICIAL'], ascending=True), 1, False)
+                dados.sort_values(by=['DATA_ALTERACAO_ORCAMENTARIA'], ascending=True), 1, False)
 
         else:
             self._items = self.view.preencher_scroll(
@@ -241,9 +233,12 @@ class DashBoardController:
 
         campo = self.verificar_campo_data(campo)
 
-        self.filtro_busca(self._db.select_busca(campo, self.filtro_atual))
+        #self.filtro_busca()
+
+        self.definir_dados(self._db.select_busca(campo, self.filtro_atual))
+        self._items = self.view.preencher_scroll(self.view.dados_pag, 1)
         
-        self.view.lb_filtro.setText(f"Filtro: {filt}")
+        self.view.lb_filtro.setText(f"Filtro: {filt}            Decretos Encontratos: {len(self.view.dados_total)}")
 
     def verificar_campo_data(self, campo):
         data = campo

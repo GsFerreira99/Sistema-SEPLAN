@@ -97,6 +97,7 @@ class ItemTabelaView(Ui_Form, QWidget):
         self.ui.edicaoController.inserir_dados()
         self.ui.edicaoController.ativar_email()
 
+
     def marcar(self):
         try:
             if self.check_relatorio.isChecked() and not((self._dados['id']) in self.ui.principalController.relatorio):
