@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>MainWindow</class>
- <widget class="QMainWindow" name="MainWindow">
+ <class>Form</class>
+ <widget class="QMainWindow" name="Form">
   <property name="geometry">
    <rect>
     <x>0</x>
@@ -3007,6 +3007,43 @@ QPushButton:pressed {
                </property>
               </widget>
              </item>
+             <item>
+              <widget class="QPushButton" name="btn_salvar_espelhado">
+               <property name="minimumSize">
+                <size>
+                 <width>0</width>
+                 <height>40</height>
+                </size>
+               </property>
+               <property name="font">
+                <font>
+                 <family>Calibri</family>
+                 <pointsize>15</pointsize>
+                 <weight>75</weight>
+                 <bold>true</bold>
+                </font>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">QPushButton {
+border:none;
+background-color: rgb(136, 50, 101);
+color: white;
+border-radius: 5px;
+}
+
+QPushButton:hover {
+	background-color: rgb(156, 58, 117)
+}
+
+QPushButton:pressed {
+	background-color:rgb(143, 53, 107)
+}</string>
+               </property>
+               <property name="text">
+                <string>Salvar com Espelhamento</string>
+               </property>
+              </widget>
+             </item>
             </layout>
            </widget>
           </item>
@@ -3020,7 +3057,7 @@ QPushButton:pressed {
   </widget>
  </widget>
  <resources>
-  <include location="media/ui/resource.qrc"/>
+  <include location="resource.qrc"/>
  </resources>
  <connections/>
 </ui>

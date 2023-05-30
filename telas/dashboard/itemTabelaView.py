@@ -93,6 +93,7 @@ class ItemTabelaView(Ui_Form, QWidget):
 
     def exibirDetalhes(self):
         self.ui.view.stackedWidget.setCurrentIndex(1)
+        self._dados = self.ui.db.select_decreto(int(self._dados['id']))
         self.ui.dados = self._dados
         self.ui.edicaoController.inserir_dados()
         self.ui.edicaoController.ativar_email()
@@ -106,3 +107,10 @@ class ItemTabelaView(Ui_Form, QWidget):
                 self.ui.principalController.relatorio.remove((self._dados['id']))
         except ValueError:
             return
+
+    def get_id(self):
+        return self._dados['id']
+
+    def get_dados(self):
+        return self._dados
+

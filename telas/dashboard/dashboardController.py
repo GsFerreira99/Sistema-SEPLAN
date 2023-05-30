@@ -50,6 +50,7 @@ class DashBoardController:
     def credenciais_servidor(self):
         dados = carregar_credenciais("credenciais.json")
         self._db = DataBase(dados['host'], dados['user'], dados['password'], dados['porta'])
+        self.ui.db = self._db
 
     def selecionar_plan(self):
         arquivo = QFileDialog.getOpenFileName()[0]
@@ -194,7 +195,7 @@ class DashBoardController:
         pag = round(pag)
 
         self.view.dados_total = dados
-        self.view.dados_pag  = []
+        self.view.dados_pag = []
 
         inicio = 0
 

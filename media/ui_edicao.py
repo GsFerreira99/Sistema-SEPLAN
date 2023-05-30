@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'EdicaoRQljUn.ui'
+## Form generated from reading UI file 'EdicaolvzDmH.ui'
 ##
-## Created by: Qt User Interface Compiler version 5.15.2
+## Created by: Qt User Interface Compiler version 5.14.1
 ##
 ## WARNING! All changes made in this file will be lost when recompiling UI file!
 ################################################################################
@@ -16,7 +16,7 @@ import media.resource_rc
 
 class Ui_Form(object):
     def setupUi(self, Form):
-        if not Form.objectName():
+        if Form.objectName():
             Form.setObjectName(u"Form")
         Form.resize(1255, 809)
         Form.setStyleSheet(u"background-color: rgb(255, 255, 255);\n"
@@ -1321,6 +1321,27 @@ class Ui_Form(object):
 
         self.horizontalLayout_5.addWidget(self.btn_salvar)
 
+        self.btn_salvar_espelhado = QPushButton(self.frame_24)
+        self.btn_salvar_espelhado.setObjectName(u"btn_salvar_espelhado")
+        self.btn_salvar_espelhado.setMinimumSize(QSize(0, 40))
+        self.btn_salvar_espelhado.setFont(font5)
+        self.btn_salvar_espelhado.setStyleSheet(u"QPushButton {\n"
+"border:none;\n"
+"background-color: rgb(136, 50, 101);\n"
+"color: white;\n"
+"border-radius: 5px;\n"
+"}\n"
+"\n"
+"QPushButton:hover {\n"
+"	background-color: rgb(156, 58, 117)\n"
+"}\n"
+"\n"
+"QPushButton:pressed {\n"
+"	background-color:rgb(143, 53, 107)\n"
+"}")
+
+        self.horizontalLayout_5.addWidget(self.btn_salvar_espelhado)
+
 
         self.verticalLayout_12.addWidget(self.frame_24)
 
@@ -1346,7 +1367,7 @@ class Ui_Form(object):
     # setupUi
 
     def retranslateUi(self, Form):
-        Form.setWindowTitle(QCoreApplication.translate("Form", u"Form", None))
+        Form.setWindowTitle(QCoreApplication.translate("Form", u"MainWindow", None))
         self.btn_voltar.setText("")
         self.lb_tituloPrincipal.setText(QCoreApplication.translate("Form", u"Monitoramento", None))
         self.lb_decreto_titulo.setText(QCoreApplication.translate("Form", u"N\u00famero Decreto / Portaria:", None))
@@ -1409,5 +1430,6 @@ class Ui_Form(object):
         self.inputCheck_inseridoMetas.setText(QCoreApplication.translate("Form", u"Inserido Metas", None))
         self.inputCheck_atualizadoSistema.setText(QCoreApplication.translate("Form", u"Atualizado Sistema", None))
         self.btn_salvar.setText(QCoreApplication.translate("Form", u"Salvar", None))
+        self.btn_salvar_espelhado.setText(QCoreApplication.translate("Form", u"Salvar com Espelhamento", None))
     # retranslateUi
 

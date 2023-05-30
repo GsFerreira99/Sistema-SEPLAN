@@ -219,6 +219,107 @@ class DataBase:
 
         self._cursor.execute(sql, val)
         self._db.commit()
+    def atualizar_decreto_espelhado(self, val):
+        try:
+            if type(val['metaOrigem']) is list:
+                v = val['metaOrigem'] + val['id']
+                sql = """
+                UPDATE 
+                    decretos 
+                SET 
+                    VALOR_FISICO_ATUAL_ANULADO = %s,
+                    VALOR_FISICO_ATUAL_SUPLEMENTADO = %s
+                WHERE 
+                    id = %s"""
+                self._cursor.execute(sql, v)
+        except:
+            pass
+        try:
+            if type(val['dataEmail']) is list:
+                v = val['dataEmail'] + val['id']
+                sql = """
+                UPDATE 
+                    decretos 
+                SET 
+                    DATA_EMAIL_INICIAL = %s,
+                    EMAIL_INICIAL = %s
+                WHERE 
+                    id = %s"""
+                self._cursor.execute(sql, v)
+        except:
+            pass
+        try:
+            if type(val['emailOrigem']) is list:
+                v = val['emailOrigem'] + val['id']
+                sql = """
+                UPDATE 
+                    decretos 
+                SET 
+                    DATA_CONTATO_1_ORIGEM = %s,
+                    CONTATO_1_ORIGEM = %s,
+                    STATUS_1_ORIGEM = %s,
+                    DATA_CONTATO_2_ORIGEM = %s,
+                    CONTATO_2_ORIGEM = %s,
+                    STATUS_2_ORIGEM = %s,
+                    DATA_CONTATO_3_ORIGEM = %s,
+                    CONTATO_3_ORIGEM = %s,
+                    STATUS_3_ORIGEM = %s
+                WHERE 
+                    id = %s"""
+                self._cursor.execute(sql, v)
+        except:
+            pass
+        try:
+            if type(val['emailDestino']) is list:
+                v = val['emailDestino'] + val['id']
+                sql = """
+                UPDATE 
+                    decretos 
+                SET 
+                    DATA_CONTATO_1_DESTINO = %s,
+                    CONTATO_1_DESTINO = %s,
+                    STATUS_1_DESTINO = %s,
+                    DATA_CONTATO_2_DESTINO = %s,
+                    CONTATO_2_DESTINO = %s,
+                    STATUS_2_DESTINO = %s,
+                    DATA_CONTATO_3_DESTINO = %s,
+                    CONTATO_3_DESTINO = %s,
+                    STATUS_3_DESTINO = %s
+                WHERE 
+                    id = %s"""
+                self._cursor.execute(sql, v)
+        except:
+            pass
+        try:
+            if type(val['metaNova']) is list:
+                v = val['metaNova'] + val['id']
+                sql = """
+                UPDATE 
+                    decretos 
+                SET 
+                    NOVA_META_FISICA_ANULADO = %s,
+                    NOVA_META_FISICA_SUPLEMENTADO = %s
+                WHERE 
+                    id = %s"""
+                self._cursor.execute(sql, v)
+        except:
+            pass
+        try:
+            if type(val['status']) is list:
+                v = val['status'] + val['id']
+                sql = """
+                UPDATE 
+                    decretos 
+                SET 
+                    EMAIL_ENVIADO = %s,
+                    INSERIDO_METAS = %s,
+                    ATUALIZADO_NO_SISTEMA = %s
+                WHERE 
+                    id = %s"""
+                self._cursor.execute(sql, v)
+        except:
+            pass
+        self._db.commit()
 
     def select_busca(self, campo, tela):
         
@@ -330,6 +431,102 @@ class DataBase:
                     ID_ACAO_ANULADO LIKE %(campo)s OR \
                     ACAO_ANULADO LIKE %(campo)s )",params={'campo':campo}, con=self._engine)
 
+        return q
+
+    def busca_espelhamento(self, campo, tela, decreto):
+        sql = ''
+        if len(campo) == 2:
+            if tela == 'TODOS':
+                sql = "SELECT * FROM decretos WHERE N_DECRETO = %(decreto)s AND DATA_ALTERACAO_ORCAMENTARIA BETWEEN %(ini)s AND %(fim)s"
+            elif tela == 'ANÁLISE':
+                sql = "SELECT * FROM decretos WHERE N_DECRETO = %(decreto)s AND (INSERIDO_METAS != 'ok' AND ATUALIZADO_NO_SISTEMA != 'ok' AND EMAIL_ENVIADO != 'ok' AND COL_ALERTA != 'OK') AND DATA_ALTERACAO_ORCAMENTARIA BETWEEN %(ini)s AND %(fim)s"
+            elif tela == 'EMAIL ENVIADO':
+                sql = "SELECT * FROM decretos WHERE N_DECRETO = %(decreto)s AND (INSERIDO_METAS != 'ok' AND ATUALIZADO_NO_SISTEMA != 'ok' AND EMAIL_ENVIADO = 'ok') AND DATA_ALTERACAO_ORCAMENTARIA BETWEEN %(ini)s AND %(fim)s"
+            elif tela == 'METAS INSERIDAS':
+                sql = "SELECT * FROM decretos WHERE N_DECRETO = %(decreto)s AND (INSERIDO_METAS = 'ok' AND ATUALIZADO_NO_SISTEMA != 'ok') AND DATA_ALTERACAO_ORCAMENTARIA BETWEEN %(ini)s AND %(fim)s"
+            elif tela == 'INSERIDO SISTEMA':
+                sql = "SELECT * FROM decretos WHERE N_DECRETO = %(decreto)s AND ATUALIZADO_NO_SISTEMA = 'ok' AND DATA_ALTERACAO_ORCAMENTARIA BETWEEN %(ini)s AND %(fim)s"
+            q = pd.read_sql(
+                f"{sql}",
+                params={'ini': campo[0], 'fim': campo[1], 'decreto': decreto}, con=self._engine)
+        else:
+            try:
+                int(campo[0])
+                if len(campo[0]) == 2:
+                    campo = f"{campo[0]}"
+                else:
+                    campo = f"%{campo[0]}"
+            except:
+                campo = f"%{campo[0]}%"
+
+
+            if tela == 'ANÁLISE':
+                q = pd.read_sql(
+                    "SELECT * FROM decretos WHERE N_DECRETO = %(decreto)s AND (INSERIDO_METAS != 'ok' AND ATUALIZADO_NO_SISTEMA != 'ok' AND EMAIL_ENVIADO != 'ok' AND COL_ALERTA != 'OK') AND \
+                        (DATA_ALTERACAO_ORCAMENTARIA LIKE %(campo)s OR \
+                        NOME_ORGAO_SUPLEMENTADO LIKE %(campo)s OR \
+                        NOME_ORGAO_SUPLEMENTADO2 LIKE %(campo)s OR \
+                        ID_PROGRAMA_SUPLEMENTADO LIKE %(campo)s OR \
+                        PROGRAMA_SUPLEMENTADO LIKE %(campo)s OR \
+                        ID_ACAO_SUPLEMENTADO LIKE %(campo)s OR \
+                        ACAO_SUPLEMENTADO LIKE %(campo)s OR \
+                        ORGAO_ANULADO LIKE %(campo)s OR \
+                        NOME_ORGAO_ANULADO LIKE %(campo)s OR \
+                        ID_PROGRAMA_ANULADO LIKE %(campo)s OR \
+                        PROGRAMA_ANULADO LIKE %(campo)s OR \
+                        ID_ACAO_ANULADO LIKE %(campo)s OR \
+                        ACAO_ANULADO LIKE %(campo)s)", params={'campo': campo, 'decreto': int(decreto)}, con=self._engine)
+            elif tela == 'EMAIL ENVIADO':
+                q = pd.read_sql(
+                    "SELECT * FROM decretos WHERE N_DECRETO = %(decreto)s AND ((INSERIDO_METAS != 'ok' OR INSERIDO_METAS is null) AND (ATUALIZADO_NO_SISTEMA != 'ok' OR ATUALIZADO_NO_SISTEMA is null) AND EMAIL_ENVIADO = 'ok') AND \
+                        (DATA_ALTERACAO_ORCAMENTARIA LIKE %(campo)s OR \
+                        NOME_ORGAO_SUPLEMENTADO LIKE %(campo)s OR \
+                        NOME_ORGAO_SUPLEMENTADO2 LIKE %(campo)s OR \
+                        ID_PROGRAMA_SUPLEMENTADO LIKE %(campo)s OR \
+                        PROGRAMA_SUPLEMENTADO LIKE %(campo)s OR \
+                        ID_ACAO_SUPLEMENTADO LIKE %(campo)s OR \
+                        ACAO_SUPLEMENTADO LIKE %(campo)s OR \
+                        ORGAO_ANULADO LIKE %(campo)s OR \
+                        NOME_ORGAO_ANULADO LIKE %(campo)s OR \
+                        ID_PROGRAMA_ANULADO LIKE %(campo)s OR \
+                        PROGRAMA_ANULADO LIKE %(campo)s OR \
+                        ID_ACAO_ANULADO LIKE %(campo)s OR \
+                        ACAO_ANULADO LIKE %(campo)s)", params={'campo': campo, 'decreto': int(decreto)},
+                    con=self._engine)
+            elif tela == 'METAS INSERIDAS':
+                q = pd.read_sql(
+                    "SELECT * FROM decretos WHERE N_DECRETO = %(decreto)s AND INSERIDO_METAS = 'ok' AND (ATUALIZADO_NO_SISTEMA != 'ok' OR ATUALIZADO_NO_SISTEMA is null) AND \
+                        (DATA_ALTERACAO_ORCAMENTARIA LIKE %(campo)s OR \
+                        NOME_ORGAO_SUPLEMENTADO LIKE %(campo)s OR \
+                        NOME_ORGAO_SUPLEMENTADO2 LIKE %(campo)s OR \
+                        ID_PROGRAMA_SUPLEMENTADO LIKE %(campo)s OR \
+                        PROGRAMA_SUPLEMENTADO LIKE %(campo)s OR \
+                        ID_ACAO_SUPLEMENTADO LIKE %(campo)s OR \
+                        ACAO_SUPLEMENTADO LIKE %(campo)s OR \
+                        ORGAO_ANULADO LIKE %(campo)s OR \
+                        NOME_ORGAO_ANULADO LIKE %(campo)s OR \
+                        ID_PROGRAMA_ANULADO LIKE %(campo)s OR \
+                        PROGRAMA_ANULADO LIKE %(campo)s OR \
+                        ID_ACAO_ANULADO LIKE %(campo)s OR \
+                        ACAO_ANULADO LIKE %(campo)s)", params={'campo': campo, 'decreto': int(decreto)},
+                    con=self._engine)
+            elif tela == 'INSERIDO SISTEMA':
+                q = pd.read_sql(
+                    "SELECT * FROM decretos WHERE N_DECRETO = %(decreto)s AND  ATUALIZADO_NO_SISTEMA = 'ok' AND \
+                        (DATA_ALTERACAO_ORCAMENTARIA LIKE %(campo)s OR \
+                        NOME_ORGAO_SUPLEMENTADO LIKE %(campo)s OR \
+                        NOME_ORGAO_SUPLEMENTADO2 LIKE %(campo)s OR \
+                        ID_PROGRAMA_SUPLEMENTADO LIKE %(campo)s OR \
+                        PROGRAMA_SUPLEMENTADO LIKE %(campo)s OR \
+                        ID_ACAO_SUPLEMENTADO LIKE %(campo)s OR \
+                        ACAO_SUPLEMENTADO LIKE %(campo)s OR \
+                        ORGAO_ANULADO LIKE %(campo)s OR \
+                        NOME_ORGAO_ANULADO LIKE %(campo)s OR \
+                        ID_PROGRAMA_ANULADO LIKE %(campo)s OR \
+                        PROGRAMA_ANULADO LIKE %(campo)s OR \
+                        ID_ACAO_ANULADO LIKE %(campo)s OR \
+                        ACAO_ANULADO LIKE %(campo)s)", params={'campo': campo, 'decreto': int(decreto)},
+                    con=self._engine)
         return q
 
     def select_decreto(self, id):

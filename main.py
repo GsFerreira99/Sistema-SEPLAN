@@ -21,6 +21,7 @@ class App:
         self.view.show()
 
 
+
 if __name__ == "__main__":
     app = QApplication(sys.argv)
     w = App()

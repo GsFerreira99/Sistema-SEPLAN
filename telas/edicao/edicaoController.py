@@ -1,8 +1,11 @@
 from telas.edicao.edicaoView import EdicaoView
 from telas.edicao.emailView import EmailView
 
+from telas.edicao.espelhamentoController import EspelhamentoController
+
 from PyQt5.QtWidgets import QMessageBox
 from funcoes.poupUp import Erro
+
 
 import pandas as pd
 
@@ -17,15 +20,111 @@ class EdicaoController:
 
         self.view.btn_email.clicked.connect(lambda: self.exibirEmail())
 
-        self.view.btn_salvar.clicked.connect(lambda: self.salvar_dados())
+        self.view.btn_salvar.clicked.connect(lambda: self.salvar())
 
         self.view.btn_voltar.clicked.connect(lambda: self.voltar())
         self.view.input_metaOrigemAtual_2.editingFinished.connect(lambda: self.ativar_email())
         self.view.input_metaOrigemAtual.editingFinished.connect(lambda: self.ativar_email())
+
+        self.view.btn_salvar_espelhado.clicked.connect(lambda: self.exibir_espelhamento())
     
     def inserir_dados(self):
         self.view.preencher_campos(self.ui.dados)
         self.ativar_email()
+        self.espelhamentoController = EspelhamentoController(self.ui, self.ui.db)
+        if self.espelhamentoController.ativo is True:
+            self.view.btn_salvar_espelhado.setEnabled(True)
+        else:
+            self.view.btn_salvar_espelhado.setEnabled(False)
+
+    def exibir_espelhamento(self):
+        self.espelhamentoController.show()
+        self.espelhamentoController.definir_dados(self.dados_salvos())
+
+    def dados_salvos(self):
+        d = {
+            "metaOrigem": [],
+            "dataEmail": [],
+            "emailDestino": [],
+            "emailOrigem": [],
+            "metaNova": [],
+            "status": [],
+            "id": [],
+        }
+
+        d['metaOrigem'].append(self.view.input_metaOrigemAtual.text())
+        d['metaOrigem'].append(self.view.input_metaOrigemAtual_2.text())
+
+        d['dataEmail'].append(
+            pd.to_datetime(self.view.inputDate_emailInicial.date().toString('yyyy/MM/dd'), dayfirst=True))
+        d['dataEmail'].append(self.view.input_origem_contato1_2.text())
+
+        if self.view.input_origem_contato1.text() != '':
+            d['emailOrigem'].append(self.view.input_origem_contato1_2.text())
+        else:
+            d['emailOrigem'].append(None)
+
+        d['emailOrigem'].append(self.view.input_origem_contato1.text())
+        d['emailOrigem'].append(self.view.input_origem_status1.text())
+
+        if self.view.input_origem_contato2.text() != '':
+            d['emailOrigem'].append(pd.to_datetime(self.view.inputDate_origem2.date().toString('yyyy/MM/dd'),
+                                                   dayfirst=True))
+        else:
+            d['emailOrigem'].append(None)
+        d['emailOrigem'].append(self.view.input_origem_contato2.text())
+        d['emailOrigem'].append(self.view.input_origem_status2.text())
+
+        if self.view.input_origem_contato3.text() != '':
+            d['emailOrigem'].append(pd.to_datetime(self.view.inputDate_origem3.date().toString('yyyy/MM/dd'), dayfirst=True))
+        else:
+            d['emailOrigem'].append(None)
+        d['emailOrigem'].append(self.view.input_origem_contato3.text())
+        d['emailOrigem'].append(self.view.input_origem_status3.text())
+
+        # DESTINO
+        if self.view.input_destino_contato1.text() != '':
+            d['emailDestino'].append(pd.to_datetime(self.view.inputDate_destino1.date().toString('yyyy/MM/dd'), dayfirst=True))
+        else:
+            d['emailDestino'].append(None)
+        d['emailDestino'].append(self.view.input_destino_contato1.text())
+        d['emailDestino'].append(self.view.input_destino_status1.text())
+
+        if self.view.input_destino_contato2.text() != '':
+            d['emailDestino'].append(pd.to_datetime(self.view.inputDate_destino2.date().toString('yyyy/MM/dd'), dayfirst=True))
+        else:
+            d['emailDestino'].append(None)
+        d['emailDestino'].append(self.view.input_destino_contato2.text())
+        d['emailDestino'].append(self.view.input_destino_status2.text())
+
+        if self.view.input_destino_contato3.text() != '':
+            d['emailDestino'].append(pd.to_datetime(self.view.inputDate_destino3.date().toString('yyyy/MM/dd'), dayfirst=True))
+        else:
+            d['emailDestino'].append(None)
+        d['emailDestino'].append(self.view.input_destino_contato3.text())
+        d['emailDestino'].append(self.view.input_destino_status3.text())
+
+        #META
+        d['metaNova'].append(self.view.input_metaAnulado.text())
+        d['metaNova'].append(self.view.input_metaSuplementado.text())
+
+        #STATUS
+        if self.view.inputCheck_emailEnviado.isChecked():
+            d['status'].append('ok')
+        else:
+            d['status'].append('')
+        if self.view.inputCheck_inseridoMetas.isChecked():
+            d['status'].append('ok')
+        else:
+            d['status'].append('')
+        if self.view.inputCheck_atualizadoSistema.isChecked():
+            d['status'].append('ok')
+        else:
+            d['status'].append('')
+
+        d['id'].append(int(self.ui.dados['id']))
+
+        return d
 
     def exibirEmail(self):
         self.definir_email()
@@ -155,6 +254,8 @@ NOVA Meta FÌSICA de Destino:
         self.ui.dados = self.ui.principalController._db.select_decreto(int(self.ui.dados['id']))
         self.inserir_dados()
 
+    def salvar(self):
+        self.salvar_dados()
         Erro("Dados salvos com sucesso.", QMessageBox.Information)
 
     def voltar(self):
