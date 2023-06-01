@@ -20,11 +20,13 @@ class EspelhamentoController:
         self.view = EspelhamentoView(self.ui)
         self.viewSelect = SelectEspelhamentoView(self.ui)
         self._items = {
-            "ANÁLISE": [self.view.scrollArea_analise, []],
-            "EMAIL ENVIADO": [self.view.scrollArea_enviado, []],
-            "METAS INSERIDAS": [self.view.scrollArea_metas, []],
-            "INSERIDO SISTEMA": [self.view.scrollArea_sistema, []],
+            "TODOS": [],
+            "ANÁLISE": [],
+            "EMAIL ENVIADO": [],
+            "METAS INSERIDAS": [],
+            "INSERIDO SISTEMA": []
         }
+
         self.db = db
 
         self.ativo = False
@@ -32,24 +34,70 @@ class EspelhamentoController:
         self.dados_escolhidos = {}
 
         self.view.checkBox.clicked.connect(lambda: self.select_todos())
-        self.view.tabWidget.currentChanged.connect(lambda: self.campo_total())
 
         self.view.btn_busca.clicked.connect(lambda: self.busca())
         self.view.btn_salvar_espelhado.clicked.connect(lambda: self.salvar())
 
+        self.view.btn_todos.clicked.connect(lambda: self.inserir_dados_scroll('TODOS'))
+        self.view.btn_email.clicked.connect(lambda: self.inserir_dados_scroll('EMAIL ENVIADO'))
+        self.view.btn_inserido.clicked.connect(lambda: self.inserir_dados_scroll('INSERIDO SISTEMA'))
+        self.view.btn_metas.clicked.connect(lambda: self.inserir_dados_scroll('METAS INSERIDAS'))
+        self.view.btn_analise.clicked.connect(lambda: self.inserir_dados_scroll('ANÁLISE'))
+
         self.viewSelect.btn_proximo.clicked.connect(lambda: self.proximo())
-        self.campo_total()
-        self.inserir_dados()
+
+        self.inserir_dados_scroll('TODOS')
+
+    def inserir_dados_scroll(self, filtro):
+        if filtro == 'INSERIDO SISTEMA':
+            self.definir_dados_scroll(self.db.select_inserido)
+            self._items = self.view.preencher_scroll(self.view.dados_pag, 1)
+            self.filtro_atual = 'INSERIDO SISTEMA'
+        if filtro == 'ANÁLISE':
+            self.definir_dados_scroll(self.db.select_analise)
+            self._items = self.view.preencher_scroll(self.view.dados_pag, 1)
+            self.filtro_atual = 'ANÁLISE'
+        if filtro == 'METAS INSERIDAS':
+            self.definir_dados_scroll(self.db.select_metas)
+            self._items = self.view.preencher_scroll(self.view.dados_pag, 1)
+            self.filtro_atual = 'METAS INSERIDAS'
+        if filtro == 'EMAIL ENVIADO':
+            self.definir_dados_scroll(self.db.select_email)
+            self._items = self.view.preencher_scroll(self.view.dados_pag, 1)
+            self.filtro_atual = 'EMAIL ENVIADO'
+        if filtro == 'TODOS':
+            self.definir_dados_scroll(self.db.select_todos)
+            self._items = self.view.preencher_scroll(self.view.dados_pag, 1)
+            self.filtro_atual = 'TODOS'
+        self.contagem_decretos()
+        self.view.verificar_tela(self.filtro_atual)
+
+    def contagem_decretos(self):
+        self.view.lb_totalDecretos.setText(
+            f"Decretos Encontratos: {len(self.view.dados_total)}")
+
+    def definir_dados_scroll(self, dados):
+        pag = self.view.paginacao(dados)
+        pag = round(pag)
+
+        self.view.dados_total = dados
+        self.view.dados_pag = []
+
+        inicio = 0
+
+        for i in range(pag):
+            fim = inicio + 10
+            self.view.dados_pag.append(dados.iloc[inicio:fim])
+            inicio += 10
+
 
     def definir_dados(self, dados):
         self.dados_salvos = dados
         self.preencher_campos_select(dados)
 
     def preencher_campos_select(self, dados):
-
         self.viewSelect.input_metaOrigemAtual.setText(dados['metaOrigem'][0])
         self.viewSelect.input_metaOrigemAtual_2.setText(dados['metaOrigem'][1])
-
 
         self.viewSelect.inputDate_emailInicial.setDate(self.montar_data(dados['dataEmail'][0]))
         self.viewSelect.input_origem_contato1_2.setText(dados['dataEmail'][1])
@@ -152,37 +200,22 @@ class EspelhamentoController:
         self.viewSelect.inputDate_destino2.setDate(data)
         self.viewSelect.inputDate_destino3.setDate(data)
 
-
-
-    def busca(self):
+    def busca(self, value=None):
         campo = self.view.input_busca.text()
         filt = campo
 
         if campo == '':
-            self.inserir_dados()
+            self.filtrar('TODOS')
             return
 
         campo = self.verificar_campo_data(campo)
 
-        self.view.limpar(self._items)
-        for filtro, item in self._items.items():
-            dec = self.db.busca_espelhamento(campo, filtro, self.ui.dados['N_DECRETO'])
-            if not dec.empty:
-                fil = dec['id'] != self.ui.dados['id']
-                dec = dec[fil]
-            i = self.view.preencher_scroll(
-                dec,
-                item[0]
-            )
+        # self.filtro_busca()
 
-            if i != None:
-                self._items[filtro][1] = i
-                self.ativo = True
-            else:
-                self._items[filtro][1] = []
+        self.definir_dados_scroll(self.db.select_busca(campo, self.filtro_atual))
+        self._items = self.view.preencher_scroll(self.view.dados_pag, 1)
 
-        self.view.tabWidget.setCurrentIndex(0)
-        self.campo_total()
+        self.view.lb_totalDecretos.setText(f"Filtro: {filt}            Decretos Encontratos: {len(self.view.dados_total)}")
 
     def verificar_campo_data(self, campo):
         data = campo
@@ -256,7 +289,7 @@ class EspelhamentoController:
         elif self.view.tabWidget.currentIndex() == 3:
             self.view.lb_totalDecretos.setText(text+str(len(self._items['INSERIDO SISTEMA'][1])))
 
-    def inserir_dados(self):
+    def inserir_dadosgf(self):
         self.view.limpar(self._items)
         for filtro, item in self._items.items():
             dec = self.db.select_busca([self.ui.dados['N_DECRETO']], filtro)
@@ -283,13 +316,14 @@ class EspelhamentoController:
         else:
             status = False
 
-        for lista in self._items.values():
+        for obj in self._items:
             try:
-                for obj in lista[1]:
                     obj.check_relatorio.setChecked(status)
             except IndexError:
                 pass
             except TypeError:
+                pass
+            except RuntimeError:
                 pass
 
     def show(self):
@@ -306,8 +340,14 @@ class EspelhamentoController:
             "status": self.viewSelect.radio_status.isChecked(),
         }
 
-        self.view.show()
-        self.viewSelect.close()
+        for i in self.dados_escolhidos.values():
+            if i is True:
+                self.view.show()
+                self.viewSelect.close()
+                return
+
+
+        Erro("Selecione 1 dos campos para serem espelhados!", QMessageBox.Information)
 
     def lista_dados(self):
         dados = {}
@@ -335,11 +375,10 @@ class EspelhamentoController:
         dados = self.lista_dados()
 
         self.ui.edicaoController.salvar_dados()
-        for filtro, item in self._items.items():
-            for i in item[1]:
-                if i.check_relatorio.isChecked():
-                    dados['id'] = [int(i.get_id())]
-                    self.ui.principalController._db.atualizar_decreto_espelhado(dados)
+        for item in self._items:
+            if item.check_relatorio.isChecked():
+                dados['id'] = [int(item.get_id())]
+                self.ui.principalController._db.atualizar_decreto_espelhado(dados)
 
 
         Erro("Dados salvos com sucesso.", QMessageBox.Information)

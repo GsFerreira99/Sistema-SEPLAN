@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'EspelhamentoCLToZS.ui'
+## Form generated from reading UI file 'EspelhamentosiQABl.ui'
 ##
 ## Created by: Qt User Interface Compiler version 5.14.1
 ##
@@ -21,7 +21,7 @@ class Ui_Form(object):
     def setupUi(self, Form):
         if Form.objectName():
             Form.setObjectName(u"Form")
-        Form.resize(724, 684)
+        Form.resize(724, 805)
         Form.setMinimumSize(QSize(724, 300))
         Form.setMaximumSize(QSize(724, 16777215))
         Form.setStyleSheet(u"background-color: rgb(255, 255, 255);")
@@ -145,125 +145,172 @@ class Ui_Form(object):
 
         self.verticalLayout.addWidget(self.frame_2)
 
-        self.tabWidget = QTabWidget(Form)
-        self.tabWidget.setObjectName(u"tabWidget")
+        self.frame_4 = QFrame(Form)
+        self.frame_4.setObjectName(u"frame_4")
+        self.frame_4.setMaximumSize(QSize(16777215, 60))
+        self.frame_4.setFrameShape(QFrame.StyledPanel)
+        self.frame_4.setFrameShadow(QFrame.Raised)
+        self.horizontalLayout_4 = QHBoxLayout(self.frame_4)
+        self.horizontalLayout_4.setSpacing(0)
+        self.horizontalLayout_4.setObjectName(u"horizontalLayout_4")
+        self.horizontalLayout_4.setContentsMargins(0, -1, 0, -1)
+        self.btn_todos = QPushButton(self.frame_4)
+        self.btn_todos.setObjectName(u"btn_todos")
+        sizePolicy2 = QSizePolicy(QSizePolicy.Minimum, QSizePolicy.Expanding)
+        sizePolicy2.setHorizontalStretch(0)
+        sizePolicy2.setVerticalStretch(0)
+        sizePolicy2.setHeightForWidth(self.btn_todos.sizePolicy().hasHeightForWidth())
+        self.btn_todos.setSizePolicy(sizePolicy2)
+        self.btn_todos.setMinimumSize(QSize(0, 45))
+        self.btn_todos.setMaximumSize(QSize(16777215, 45))
         font4 = QFont()
+        font4.setFamily(u"Arial")
+        font4.setPointSize(8)
         font4.setBold(True)
         font4.setWeight(75)
-        self.tabWidget.setFont(font4)
-        self.tabWidget.setStyleSheet(u"QTabWidget::pane {\n"
-"  border: 1px solid lightgray;\n"
-"  top:-1px; \n"
-"  background: rgb(245, 245, 245);; \n"
-"} \n"
-"\n"
-"QTabBar::tab {\n"
-"  background: rgb(230, 230, 230); \n"
-"  border: 1px solid lightgray; \n"
-"  padding: 15px 46px;\n"
-"} \n"
-"\n"
-"QTabBar::tab:hover { \n"
-"  background:rgb(136, 50, 101); \n"
-"	color: white;\n"
+        self.btn_todos.setFont(font4)
+        self.btn_todos.setStyleSheet(u"QPushButton {\n"
+"	background: rgb(230, 230, 230); \n"
+" 	 border: 1px solid lightgray; \n"
+"	  padding: 15px 46px;\n"
 "}\n"
 "\n"
-"QTabBar::tab:selected { \n"
-"  background:rgb(136, 50, 101); \n"
+"QPushButton:hover {\n"
+"	 background:rgb(136, 50, 101); \n"
+"	color: white\n"
+"}\n"
+"\n"
+"QPushButton:selected {\n"
+" background:rgb(136, 50, 101); \n"
 "color: white;\n"
 "  margin-bottom: -1px; \n"
 "}")
-        self.tab_analise = QWidget()
-        self.tab_analise.setObjectName(u"tab_analise")
-        self.verticalLayout_4 = QVBoxLayout(self.tab_analise)
-        self.verticalLayout_4.setObjectName(u"verticalLayout_4")
-        self.scrollArea_analise = QScrollArea(self.tab_analise)
-        self.scrollArea_analise.setObjectName(u"scrollArea_analise")
-        self.scrollArea_analise.setEnabled(True)
-        self.scrollArea_analise.setStyleSheet(u"border:none")
-        self.scrollArea_analise.setVerticalScrollBarPolicy(Qt.ScrollBarAlwaysOn)
-        self.scrollArea_analise.setSizeAdjustPolicy(QAbstractScrollArea.AdjustToContents)
-        self.scrollArea_analise.setWidgetResizable(True)
-        self.scrollArea_analise.setAlignment(Qt.AlignLeading|Qt.AlignLeft|Qt.AlignTop)
+
+        self.horizontalLayout_4.addWidget(self.btn_todos)
+
+        self.btn_analise = QPushButton(self.frame_4)
+        self.btn_analise.setObjectName(u"btn_analise")
+        sizePolicy2.setHeightForWidth(self.btn_analise.sizePolicy().hasHeightForWidth())
+        self.btn_analise.setSizePolicy(sizePolicy2)
+        self.btn_analise.setMinimumSize(QSize(0, 45))
+        self.btn_analise.setMaximumSize(QSize(16777215, 45))
+        self.btn_analise.setFont(font4)
+        self.btn_analise.setStyleSheet(u"QPushButton {\n"
+"	background: rgb(230, 230, 230); \n"
+" 	 border: 1px solid lightgray; \n"
+"	  padding: 15px 35px;\n"
+"}\n"
+"\n"
+"QPushButton:hover {\n"
+"	 background:rgb(136, 50, 101); \n"
+"	color: white\n"
+"}\n"
+"\n"
+"QPushButton:selected {\n"
+" background:rgb(136, 50, 101); \n"
+"color: white;\n"
+"  margin-bottom: -1px; \n"
+"}")
+
+        self.horizontalLayout_4.addWidget(self.btn_analise)
+
+        self.btn_email = QPushButton(self.frame_4)
+        self.btn_email.setObjectName(u"btn_email")
+        sizePolicy2.setHeightForWidth(self.btn_email.sizePolicy().hasHeightForWidth())
+        self.btn_email.setSizePolicy(sizePolicy2)
+        self.btn_email.setMinimumSize(QSize(0, 45))
+        self.btn_email.setMaximumSize(QSize(16777215, 45))
+        self.btn_email.setFont(font4)
+        self.btn_email.setStyleSheet(u"QPushButton {\n"
+"	background: rgb(230, 230, 230); \n"
+" 	 border: 1px solid lightgray; \n"
+"	  padding: 15px 35px;\n"
+"}\n"
+"\n"
+"QPushButton:hover {\n"
+"	 background:rgb(136, 50, 101); \n"
+"	color: white\n"
+"}\n"
+"\n"
+"QPushButton:selected {\n"
+" background:rgb(136, 50, 101); \n"
+"color: white;\n"
+"  margin-bottom: -1px; \n"
+"}")
+
+        self.horizontalLayout_4.addWidget(self.btn_email)
+
+        self.btn_metas = QPushButton(self.frame_4)
+        self.btn_metas.setObjectName(u"btn_metas")
+        sizePolicy2.setHeightForWidth(self.btn_metas.sizePolicy().hasHeightForWidth())
+        self.btn_metas.setSizePolicy(sizePolicy2)
+        self.btn_metas.setMinimumSize(QSize(0, 45))
+        self.btn_metas.setMaximumSize(QSize(16777215, 45))
+        self.btn_metas.setFont(font4)
+        self.btn_metas.setStyleSheet(u"QPushButton {\n"
+"	background: rgb(230, 230, 230); \n"
+" 	 border: 1px solid lightgray; \n"
+"	  padding: 15px 30px;\n"
+"}\n"
+"\n"
+"QPushButton:hover {\n"
+"	 background:rgb(136, 50, 101); \n"
+"	color: white\n"
+"}\n"
+"\n"
+"QPushButton:selected {\n"
+" background:rgb(136, 50, 101); \n"
+"color: white;\n"
+"  margin-bottom: -1px; \n"
+"}")
+
+        self.horizontalLayout_4.addWidget(self.btn_metas)
+
+        self.btn_inserido = QPushButton(self.frame_4)
+        self.btn_inserido.setObjectName(u"btn_inserido")
+        sizePolicy2.setHeightForWidth(self.btn_inserido.sizePolicy().hasHeightForWidth())
+        self.btn_inserido.setSizePolicy(sizePolicy2)
+        self.btn_inserido.setMinimumSize(QSize(0, 45))
+        self.btn_inserido.setMaximumSize(QSize(16777215, 45))
+        self.btn_inserido.setFont(font4)
+        self.btn_inserido.setStyleSheet(u"QPushButton {\n"
+"	background: rgb(230, 230, 230); \n"
+" 	 border: 1px solid lightgray; \n"
+"	  padding: 15px 20px;\n"
+"}\n"
+"\n"
+"QPushButton:hover {\n"
+"	 background:rgb(136, 50, 101); \n"
+"	color: white\n"
+"}\n"
+"\n"
+"QPushButton:selected {\n"
+" background:rgb(136, 50, 101); \n"
+"color: white;\n"
+"  margin-bottom: -1px; \n"
+"}")
+
+        self.horizontalLayout_4.addWidget(self.btn_inserido)
+
+
+        self.verticalLayout.addWidget(self.frame_4)
+
+        self.scrollArea = QScrollArea(Form)
+        self.scrollArea.setObjectName(u"scrollArea")
+        self.scrollArea.setEnabled(True)
+        self.scrollArea.setStyleSheet(u"border:none")
+        self.scrollArea.setVerticalScrollBarPolicy(Qt.ScrollBarAlwaysOn)
+        self.scrollArea.setSizeAdjustPolicy(QAbstractScrollArea.AdjustToContents)
+        self.scrollArea.setWidgetResizable(True)
+        self.scrollArea.setAlignment(Qt.AlignLeading|Qt.AlignLeft|Qt.AlignTop)
         self.scrollAreaWidgetContents_2 = QWidget()
         self.scrollAreaWidgetContents_2.setObjectName(u"scrollAreaWidgetContents_2")
-        self.scrollAreaWidgetContents_2.setGeometry(QRect(0, 0, 687, 369))
+        self.scrollAreaWidgetContents_2.setGeometry(QRect(0, 0, 707, 432))
         self.verticalLayout_10 = QVBoxLayout(self.scrollAreaWidgetContents_2)
         self.verticalLayout_10.setObjectName(u"verticalLayout_10")
-        self.scrollArea_analise.setWidget(self.scrollAreaWidgetContents_2)
+        self.scrollArea.setWidget(self.scrollAreaWidgetContents_2)
 
-        self.verticalLayout_4.addWidget(self.scrollArea_analise)
-
-        self.tabWidget.addTab(self.tab_analise, "")
-        self.tab_enviado = QWidget()
-        self.tab_enviado.setObjectName(u"tab_enviado")
-        self.verticalLayout_5 = QVBoxLayout(self.tab_enviado)
-        self.verticalLayout_5.setObjectName(u"verticalLayout_5")
-        self.scrollArea_enviado = QScrollArea(self.tab_enviado)
-        self.scrollArea_enviado.setObjectName(u"scrollArea_enviado")
-        self.scrollArea_enviado.setEnabled(True)
-        self.scrollArea_enviado.setMinimumSize(QSize(700, 300))
-        self.scrollArea_enviado.setStyleSheet(u"border:none")
-        self.scrollArea_enviado.setVerticalScrollBarPolicy(Qt.ScrollBarAlwaysOn)
-        self.scrollArea_enviado.setSizeAdjustPolicy(QAbstractScrollArea.AdjustToContents)
-        self.scrollArea_enviado.setWidgetResizable(True)
-        self.scrollArea_enviado.setAlignment(Qt.AlignLeading|Qt.AlignLeft|Qt.AlignTop)
-        self.scrollAreaWidgetContents_3 = QWidget()
-        self.scrollAreaWidgetContents_3.setObjectName(u"scrollAreaWidgetContents_3")
-        self.scrollAreaWidgetContents_3.setGeometry(QRect(0, 0, 687, 369))
-        self.verticalLayout_11 = QVBoxLayout(self.scrollAreaWidgetContents_3)
-        self.verticalLayout_11.setObjectName(u"verticalLayout_11")
-        self.scrollArea_enviado.setWidget(self.scrollAreaWidgetContents_3)
-
-        self.verticalLayout_5.addWidget(self.scrollArea_enviado)
-
-        self.tabWidget.addTab(self.tab_enviado, "")
-        self.tab_metas = QWidget()
-        self.tab_metas.setObjectName(u"tab_metas")
-        self.verticalLayout_6 = QVBoxLayout(self.tab_metas)
-        self.verticalLayout_6.setObjectName(u"verticalLayout_6")
-        self.scrollArea_metas = QScrollArea(self.tab_metas)
-        self.scrollArea_metas.setObjectName(u"scrollArea_metas")
-        self.scrollArea_metas.setEnabled(True)
-        self.scrollArea_metas.setStyleSheet(u"border:none")
-        self.scrollArea_metas.setVerticalScrollBarPolicy(Qt.ScrollBarAlwaysOn)
-        self.scrollArea_metas.setSizeAdjustPolicy(QAbstractScrollArea.AdjustToContents)
-        self.scrollArea_metas.setWidgetResizable(True)
-        self.scrollArea_metas.setAlignment(Qt.AlignLeading|Qt.AlignLeft|Qt.AlignTop)
-        self.scrollAreaWidgetContents_4 = QWidget()
-        self.scrollAreaWidgetContents_4.setObjectName(u"scrollAreaWidgetContents_4")
-        self.scrollAreaWidgetContents_4.setGeometry(QRect(0, 0, 687, 369))
-        self.verticalLayout_12 = QVBoxLayout(self.scrollAreaWidgetContents_4)
-        self.verticalLayout_12.setObjectName(u"verticalLayout_12")
-        self.scrollArea_metas.setWidget(self.scrollAreaWidgetContents_4)
-
-        self.verticalLayout_6.addWidget(self.scrollArea_metas)
-
-        self.tabWidget.addTab(self.tab_metas, "")
-        self.tab_sistema = QWidget()
-        self.tab_sistema.setObjectName(u"tab_sistema")
-        self.verticalLayout_7 = QVBoxLayout(self.tab_sistema)
-        self.verticalLayout_7.setObjectName(u"verticalLayout_7")
-        self.scrollArea_sistema = QScrollArea(self.tab_sistema)
-        self.scrollArea_sistema.setObjectName(u"scrollArea_sistema")
-        self.scrollArea_sistema.setEnabled(True)
-        self.scrollArea_sistema.setStyleSheet(u"border:none")
-        self.scrollArea_sistema.setVerticalScrollBarPolicy(Qt.ScrollBarAlwaysOn)
-        self.scrollArea_sistema.setSizeAdjustPolicy(QAbstractScrollArea.AdjustToContents)
-        self.scrollArea_sistema.setWidgetResizable(True)
-        self.scrollArea_sistema.setAlignment(Qt.AlignLeading|Qt.AlignLeft|Qt.AlignTop)
-        self.scrollAreaWidgetContents_5 = QWidget()
-        self.scrollAreaWidgetContents_5.setObjectName(u"scrollAreaWidgetContents_5")
-        self.scrollAreaWidgetContents_5.setGeometry(QRect(0, 0, 687, 369))
-        self.verticalLayout_13 = QVBoxLayout(self.scrollAreaWidgetContents_5)
-        self.verticalLayout_13.setObjectName(u"verticalLayout_13")
-        self.scrollArea_sistema.setWidget(self.scrollAreaWidgetContents_5)
-
-        self.verticalLayout_7.addWidget(self.scrollArea_sistema)
-
-        self.tabWidget.addTab(self.tab_sistema, "")
-
-        self.verticalLayout.addWidget(self.tabWidget)
+        self.verticalLayout.addWidget(self.scrollArea)
 
         self.frame = QFrame(Form)
         self.frame.setObjectName(u"frame")
@@ -271,15 +318,158 @@ class Ui_Form(object):
         self.frame.setFrameShadow(QFrame.Raised)
         self.verticalLayout_2 = QVBoxLayout(self.frame)
         self.verticalLayout_2.setObjectName(u"verticalLayout_2")
+        self.frame_12 = QFrame(self.frame)
+        self.frame_12.setObjectName(u"frame_12")
+        self.frame_12.setMinimumSize(QSize(0, 50))
+        self.frame_12.setFrameShape(QFrame.StyledPanel)
+        self.frame_12.setFrameShadow(QFrame.Raised)
+        self.horizontalLayout_6 = QHBoxLayout(self.frame_12)
+        self.horizontalLayout_6.setObjectName(u"horizontalLayout_6")
+        self.horizontalLayout_6.setContentsMargins(20, 0, 17, 0)
+        self.horizontalSpacer = QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
+
+        self.horizontalLayout_6.addItem(self.horizontalSpacer)
+
+        self.frame_paginacao = QFrame(self.frame_12)
+        self.frame_paginacao.setObjectName(u"frame_paginacao")
+        self.frame_paginacao.setMinimumSize(QSize(0, 0))
+        self.frame_paginacao.setStyleSheet(u"QPushButton {\n"
+"	color: black;\n"
+"border-radius: 5px;\n"
+"}\n"
+"\n"
+"QPushButton:hover {\n"
+"	color: white;\n"
+"	font-weight: 700;\n"
+"	\n"
+"	background-color: rgb(169, 144, 190)\n"
+"}")
+        self.frame_paginacao.setFrameShape(QFrame.StyledPanel)
+        self.frame_paginacao.setFrameShadow(QFrame.Raised)
+        self.horizontalLayout_7 = QHBoxLayout(self.frame_paginacao)
+        self.horizontalLayout_7.setObjectName(u"horizontalLayout_7")
+        self.horizontalLayout_7.setContentsMargins(10, 0, 10, 0)
+        self.pag_inicio = QPushButton(self.frame_paginacao)
+        self.pag_inicio.setObjectName(u"pag_inicio")
+        self.pag_inicio.setMinimumSize(QSize(30, 30))
+        self.pag_inicio.setMaximumSize(QSize(30, 30))
+        font5 = QFont()
+        font5.setPointSize(11)
+        self.pag_inicio.setFont(font5)
+        self.pag_inicio.setStyleSheet(u"")
+
+        self.horizontalLayout_7.addWidget(self.pag_inicio)
+
+        self.pag_anterior = QPushButton(self.frame_paginacao)
+        self.pag_anterior.setObjectName(u"pag_anterior")
+        self.pag_anterior.setMinimumSize(QSize(30, 30))
+        self.pag_anterior.setMaximumSize(QSize(30, 30))
+        self.pag_anterior.setFont(font5)
+        self.pag_anterior.setStyleSheet(u"")
+
+        self.horizontalLayout_7.addWidget(self.pag_anterior)
+
+        self.frame_pagMeio = QFrame(self.frame_paginacao)
+        self.frame_pagMeio.setObjectName(u"frame_pagMeio")
+        sizePolicy3 = QSizePolicy(QSizePolicy.Minimum, QSizePolicy.Preferred)
+        sizePolicy3.setHorizontalStretch(0)
+        sizePolicy3.setVerticalStretch(0)
+        sizePolicy3.setHeightForWidth(self.frame_pagMeio.sizePolicy().hasHeightForWidth())
+        self.frame_pagMeio.setSizePolicy(sizePolicy3)
+        self.frame_pagMeio.setFrameShape(QFrame.StyledPanel)
+        self.frame_pagMeio.setFrameShadow(QFrame.Raised)
+        self.horizontalLayout_8 = QHBoxLayout(self.frame_pagMeio)
+        self.horizontalLayout_8.setSpacing(3)
+        self.horizontalLayout_8.setObjectName(u"horizontalLayout_8")
+        self.horizontalLayout_8.setContentsMargins(0, 0, 0, 0)
+        self.pag_1 = QPushButton(self.frame_pagMeio)
+        self.pag_1.setObjectName(u"pag_1")
+        self.pag_1.setMinimumSize(QSize(30, 30))
+        self.pag_1.setMaximumSize(QSize(30, 30))
+        self.pag_1.setFont(font5)
+        self.pag_1.setStyleSheet(u"QPushButton{\n"
+"	color: white;\n"
+"	background-color: rgb(76, 34, 112);\n"
+"}")
+
+        self.horizontalLayout_8.addWidget(self.pag_1)
+
+        self.pag_2 = QPushButton(self.frame_pagMeio)
+        self.pag_2.setObjectName(u"pag_2")
+        self.pag_2.setMinimumSize(QSize(30, 30))
+        self.pag_2.setMaximumSize(QSize(30, 30))
+        self.pag_2.setFont(font5)
+        self.pag_2.setStyleSheet(u"")
+
+        self.horizontalLayout_8.addWidget(self.pag_2)
+
+        self.pag_3 = QPushButton(self.frame_pagMeio)
+        self.pag_3.setObjectName(u"pag_3")
+        self.pag_3.setMinimumSize(QSize(30, 30))
+        self.pag_3.setMaximumSize(QSize(30, 30))
+        self.pag_3.setFont(font5)
+        self.pag_3.setStyleSheet(u"")
+
+        self.horizontalLayout_8.addWidget(self.pag_3)
+
+        self.pag_4 = QPushButton(self.frame_pagMeio)
+        self.pag_4.setObjectName(u"pag_4")
+        self.pag_4.setMinimumSize(QSize(30, 30))
+        self.pag_4.setMaximumSize(QSize(30, 30))
+        self.pag_4.setFont(font5)
+        self.pag_4.setStyleSheet(u"")
+
+        self.horizontalLayout_8.addWidget(self.pag_4)
+
+        self.pag_5 = QPushButton(self.frame_pagMeio)
+        self.pag_5.setObjectName(u"pag_5")
+        self.pag_5.setMinimumSize(QSize(30, 30))
+        self.pag_5.setMaximumSize(QSize(30, 30))
+        self.pag_5.setFont(font5)
+        self.pag_5.setStyleSheet(u"")
+
+        self.horizontalLayout_8.addWidget(self.pag_5)
+
+
+        self.horizontalLayout_7.addWidget(self.frame_pagMeio)
+
+        self.pag_proximo = QPushButton(self.frame_paginacao)
+        self.pag_proximo.setObjectName(u"pag_proximo")
+        self.pag_proximo.setMinimumSize(QSize(30, 30))
+        self.pag_proximo.setMaximumSize(QSize(30, 30))
+        self.pag_proximo.setFont(font5)
+        self.pag_proximo.setStyleSheet(u"")
+
+        self.horizontalLayout_7.addWidget(self.pag_proximo)
+
+        self.pag_fim = QPushButton(self.frame_paginacao)
+        self.pag_fim.setObjectName(u"pag_fim")
+        self.pag_fim.setMinimumSize(QSize(30, 30))
+        self.pag_fim.setMaximumSize(QSize(30, 30))
+        self.pag_fim.setFont(font5)
+        self.pag_fim.setStyleSheet(u"")
+
+        self.horizontalLayout_7.addWidget(self.pag_fim)
+
+
+        self.horizontalLayout_6.addWidget(self.frame_paginacao)
+
+        self.horizontalSpacer_2 = QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
+
+        self.horizontalLayout_6.addItem(self.horizontalSpacer_2)
+
+
+        self.verticalLayout_2.addWidget(self.frame_12)
+
         self.btn_salvar_espelhado = QPushButton(self.frame)
         self.btn_salvar_espelhado.setObjectName(u"btn_salvar_espelhado")
         self.btn_salvar_espelhado.setMinimumSize(QSize(0, 40))
-        font5 = QFont()
-        font5.setFamily(u"Calibri")
-        font5.setPointSize(15)
-        font5.setBold(True)
-        font5.setWeight(75)
-        self.btn_salvar_espelhado.setFont(font5)
+        font6 = QFont()
+        font6.setFamily(u"Calibri")
+        font6.setPointSize(15)
+        font6.setBold(True)
+        font6.setWeight(75)
+        self.btn_salvar_espelhado.setFont(font6)
         self.btn_salvar_espelhado.setStyleSheet(u"QPushButton {\n"
 "border:none;\n"
 "background-color: rgb(136, 50, 101);\n"
@@ -304,9 +494,6 @@ class Ui_Form(object):
 
         self.retranslateUi(Form)
 
-        self.tabWidget.setCurrentIndex(3)
-
-
         QMetaObject.connectSlotsByName(Form)
     # setupUi
 
@@ -317,10 +504,20 @@ class Ui_Form(object):
         self.btn_busca.setText("")
         self.checkBox.setText(QCoreApplication.translate("Form", u"Selecionar Todos", None))
         self.lb_totalDecretos.setText("")
-        self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_analise), QCoreApplication.translate("Form", u"Em An\u00e1lise", None))
-        self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_enviado), QCoreApplication.translate("Form", u"E-mail Enviado", None))
-        self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_metas), QCoreApplication.translate("Form", u"Metas Inseridas", None))
-        self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_sistema), QCoreApplication.translate("Form", u"Inserido no Sistema", None))
+        self.btn_todos.setText(QCoreApplication.translate("Form", u"Todos", None))
+        self.btn_analise.setText(QCoreApplication.translate("Form", u"Em An\u00e1lise", None))
+        self.btn_email.setText(QCoreApplication.translate("Form", u"E-mail Enviado", None))
+        self.btn_metas.setText(QCoreApplication.translate("Form", u"Metas Inseridas", None))
+        self.btn_inserido.setText(QCoreApplication.translate("Form", u"Inserido no Sistema", None))
+        self.pag_inicio.setText(QCoreApplication.translate("Form", u"<<", None))
+        self.pag_anterior.setText(QCoreApplication.translate("Form", u"<", None))
+        self.pag_1.setText(QCoreApplication.translate("Form", u"1", None))
+        self.pag_2.setText(QCoreApplication.translate("Form", u"2", None))
+        self.pag_3.setText(QCoreApplication.translate("Form", u"3", None))
+        self.pag_4.setText(QCoreApplication.translate("Form", u"4", None))
+        self.pag_5.setText(QCoreApplication.translate("Form", u"5", None))
+        self.pag_proximo.setText(QCoreApplication.translate("Form", u">", None))
+        self.pag_fim.setText(QCoreApplication.translate("Form", u">>", None))
         self.btn_salvar_espelhado.setText(QCoreApplication.translate("Form", u"Salvar", None))
     # retranslateUi
 

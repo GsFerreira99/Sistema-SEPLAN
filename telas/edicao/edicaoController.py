@@ -32,10 +32,6 @@ class EdicaoController:
         self.view.preencher_campos(self.ui.dados)
         self.ativar_email()
         self.espelhamentoController = EspelhamentoController(self.ui, self.ui.db)
-        if self.espelhamentoController.ativo is True:
-            self.view.btn_salvar_espelhado.setEnabled(True)
-        else:
-            self.view.btn_salvar_espelhado.setEnabled(False)
 
     def exibir_espelhamento(self):
         self.espelhamentoController.show()

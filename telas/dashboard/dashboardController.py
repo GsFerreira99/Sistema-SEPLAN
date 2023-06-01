@@ -205,10 +205,6 @@ class DashBoardController:
             inicio+=int(self.view.comboBox.currentText())
 
     def filtro_busca(self, dados):
-
-        #self._items = self.view.preencher_scroll(self.view.dados_total, 1)
-        #self.filtro_atual = 'INSERIDO SISTEMA'
-        #self._items = self.view.preencher_scroll(dados)
         if self.filtro_atual == 'EMAIL ENVIADO':
             self._items = self.view.preencher_scroll(
                 dados.sort_values(by=['DATA_ALTERACAO_ORCAMENTARIA'], ascending=True), 1, False)

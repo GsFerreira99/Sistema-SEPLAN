@@ -17,7 +17,7 @@ class EdicaoView(Ui_Form, QWidget):
         self.ui = ui
         self.atualizar_data()
 
-        self.btn_salvar_espelhado.setEnabled(False)
+        self.btn_salvar_espelhado.setEnabled(True)
 
     def atualizar_data(self):
         dateNow = datetime.now()
