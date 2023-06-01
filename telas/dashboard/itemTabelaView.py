@@ -113,3 +113,6 @@ class ItemTabelaView(Ui_Form, QWidget):
     def get_dados(self):
         return self._dados
 
+    def ocultar_seta(self):
+        self.btn_detalhes.setVisible(False)
+

@@ -27,7 +27,7 @@ class EspelhamentoView(Ui_Form, QDialog):
         self._items = []
 
 
-    def preencher_scroll(self, dados, id: int, tipo: bool = True):
+    def preencher_scroll(self, dados, id: int, tipo: bool = True, esp:bool=True):
         self.limpar()
         self.widget = QWidget()
         try:
@@ -46,6 +46,9 @@ class EspelhamentoView(Ui_Form, QDialog):
                 object = ItemTabelaView(self.ui, dados.iloc[j])
                 items.append(object)
                 self.vbox.addWidget(object)
+                if esp is True:
+                    object.ocultar_seta()
+
             except IndexError:
                 pass
 

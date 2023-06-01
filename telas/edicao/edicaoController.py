@@ -39,17 +39,19 @@ class EdicaoController:
 
     def dados_salvos(self):
         d = {
-            "metaOrigem": [],
+            "metaOrigemAtual": [],
+            "metaDestinoAtual": [],
+            "metaOrigemSuplementado": [],
+            "metaDestinoSuplementado": [],
             "dataEmail": [],
             "emailDestino": [],
             "emailOrigem": [],
-            "metaNova": [],
             "status": [],
             "id": [],
         }
 
-        d['metaOrigem'].append(self.view.input_metaOrigemAtual.text())
-        d['metaOrigem'].append(self.view.input_metaOrigemAtual_2.text())
+        d['metaOrigemAtual'].append(self.view.input_metaOrigemAtual.text())
+        d['metaDestinoAtual'].append(self.view.input_metaOrigemAtual_2.text())
 
         d['dataEmail'].append(
             pd.to_datetime(self.view.inputDate_emailInicial.date().toString('yyyy/MM/dd'), dayfirst=True))
@@ -101,8 +103,8 @@ class EdicaoController:
         d['emailDestino'].append(self.view.input_destino_status3.text())
 
         #META
-        d['metaNova'].append(self.view.input_metaAnulado.text())
-        d['metaNova'].append(self.view.input_metaSuplementado.text())
+        d['metaOrigemSuplementado'].append(self.view.input_metaAnulado.text())
+        d['metaDestinoSuplementado'].append(self.view.input_metaSuplementado.text())
 
         #STATUS
         if self.view.inputCheck_emailEnviado.isChecked():

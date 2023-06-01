@@ -51,23 +51,23 @@ class EspelhamentoController:
     def inserir_dados_scroll(self, filtro):
         if filtro == 'INSERIDO SISTEMA':
             self.definir_dados_scroll(self.db.select_inserido)
-            self._items = self.view.preencher_scroll(self.view.dados_pag, 1)
+            self._items = self.view.preencher_scroll(self.view.dados_pag, 1, True)
             self.filtro_atual = 'INSERIDO SISTEMA'
         if filtro == 'ANÁLISE':
             self.definir_dados_scroll(self.db.select_analise)
-            self._items = self.view.preencher_scroll(self.view.dados_pag, 1)
+            self._items = self.view.preencher_scroll(self.view.dados_pag, 1, True)
             self.filtro_atual = 'ANÁLISE'
         if filtro == 'METAS INSERIDAS':
             self.definir_dados_scroll(self.db.select_metas)
-            self._items = self.view.preencher_scroll(self.view.dados_pag, 1)
+            self._items = self.view.preencher_scroll(self.view.dados_pag, 1, True)
             self.filtro_atual = 'METAS INSERIDAS'
         if filtro == 'EMAIL ENVIADO':
             self.definir_dados_scroll(self.db.select_email)
-            self._items = self.view.preencher_scroll(self.view.dados_pag, 1)
+            self._items = self.view.preencher_scroll(self.view.dados_pag, 1, True)
             self.filtro_atual = 'EMAIL ENVIADO'
         if filtro == 'TODOS':
             self.definir_dados_scroll(self.db.select_todos)
-            self._items = self.view.preencher_scroll(self.view.dados_pag, 1)
+            self._items = self.view.preencher_scroll(self.view.dados_pag, 1, True)
             self.filtro_atual = 'TODOS'
         self.contagem_decretos()
         self.view.verificar_tela(self.filtro_atual)
@@ -96,14 +96,14 @@ class EspelhamentoController:
         self.preencher_campos_select(dados)
 
     def preencher_campos_select(self, dados):
-        self.viewSelect.input_metaOrigemAtual.setText(dados['metaOrigem'][0])
-        self.viewSelect.input_metaOrigemAtual_2.setText(dados['metaOrigem'][1])
+        self.viewSelect.input_metaOrigemAtual.setText(dados['metaOrigemAtual'][0])
+        self.viewSelect.input_metaOrigemAtual_2.setText(dados['metaDestinoAtual'][0])
 
         self.viewSelect.inputDate_emailInicial.setDate(self.montar_data(dados['dataEmail'][0]))
         self.viewSelect.input_origem_contato1_2.setText(dados['dataEmail'][1])
 
-        self.viewSelect.input_metaAnulado.setText(dados['metaNova'][0])
-        self.viewSelect.input_metaSuplementado.setText(dados['metaNova'][1])
+        self.viewSelect.input_metaAnulado.setText(dados['metaOrigemSuplementado'][0])
+        self.viewSelect.input_metaSuplementado.setText(dados['metaDestinoSuplementado'][0])
 
 
         #DATAS EMAIL
@@ -137,8 +137,8 @@ class EspelhamentoController:
         self.viewSelect.input_destino_contato3.setText(str(dados['emailDestino'][7]))
         self.viewSelect.input_destino_status3.setText(str(dados['emailDestino'][8]))
 
-        self.viewSelect.input_metaAnulado.setText(str(dados['metaNova'][0]))
-        self.viewSelect.input_metaSuplementado.setText(str(dados['metaNova'][1]))
+        self.viewSelect.input_metaAnulado.setText(dados['metaOrigemSuplementado'][0])
+        self.viewSelect.input_metaSuplementado.setText(dados['metaDestinoSuplementado'][0])
 
         self.limpar_checkBox()
 
@@ -332,8 +332,10 @@ class EspelhamentoController:
     def proximo(self):
         self.dados_escolhidos = {
             "todos": self.viewSelect.radio_todos.isChecked(),
-            "metaAtual": self.viewSelect.radio_metaAtual.isChecked(),
-            "metaNova": self.viewSelect.radio_metaNova.isChecked(),
+            "metaOrigemAtual": self.viewSelect.radio_metaOrigemAtual.isChecked(),
+            "metaDestinoAtual": self.viewSelect.radio_metaDestinoAtual.isChecked(),
+            "metaOrigemSuplementado": self.viewSelect.radio_metaSuplementadoOrigem.isChecked(),
+            "metaDestinoSuplementado": self.viewSelect.radio_metaSuplementadoDestino.isChecked(),
             "dataEmail": self.viewSelect.radio_dataEmail.isChecked(),
             "contatosDestino": self.viewSelect.radio_contatosDestino.isChecked(),
             "contatosOrigem": self.viewSelect.radio_contatosOrigem.isChecked(),
@@ -346,7 +348,6 @@ class EspelhamentoController:
                 self.viewSelect.close()
                 return
 
-
         Erro("Selecione 1 dos campos para serem espelhados!", QMessageBox.Information)
 
     def lista_dados(self):
@@ -355,10 +356,14 @@ class EspelhamentoController:
         if self.dados_escolhidos['todos'] is True:
             return self.dados_salvos
         else:
-            if self.dados_escolhidos['metaAtual'] is True:
-                dados['metaOrigem'] = self.dados_salvos['metaOrigem']
-            if self.dados_escolhidos['metaNova'] is True:
-                dados['metaNova'] = self.dados_salvos['metaNova']
+            if self.dados_escolhidos['metaOrigemAtual'] is True:
+                dados['metaOrigemAtual'] = self.dados_salvos['metaOrigemAtual']
+            if self.dados_escolhidos['metaDestinoAtual'] is True:
+                dados['metaDestinoAtual'] = self.dados_salvos['metaDestinoAtual']
+            if self.dados_escolhidos['metaOrigemSuplementado'] is True:
+                dados['metaOrigemSuplementado'] = self.dados_salvos['metaOrigemSuplementado']
+            if self.dados_escolhidos['metaDestinoSuplementado'] is True:
+                dados['metaDestinoSuplementado'] = self.dados_salvos['metaDestinoSuplementado']
             if self.dados_escolhidos['dataEmail'] is True:
                 dados['dataEmail'] = self.dados_salvos['dataEmail']
             if self.dados_escolhidos['contatosDestino'] is True:
@@ -371,7 +376,6 @@ class EspelhamentoController:
             return dados
 
     def salvar(self):
-
         dados = self.lista_dados()
 
         self.ui.edicaoController.salvar_dados()
@@ -379,7 +383,6 @@ class EspelhamentoController:
             if item.check_relatorio.isChecked():
                 dados['id'] = [int(item.get_id())]
                 self.ui.principalController._db.atualizar_decreto_espelhado(dados)
-
 
         Erro("Dados salvos com sucesso.", QMessageBox.Information)
         self.view.close()

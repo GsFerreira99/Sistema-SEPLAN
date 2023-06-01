@@ -17,15 +17,19 @@ class SelectEspelhamentoView(Ui_Form, QDialog):
     def marcar_todos(self):
         if self.radio_todos.isChecked():
             self.radio_status.setChecked(True)
-            self.radio_metaNova.setChecked(True)
+            self.radio_metaOrigemAtual.setChecked(True)
+            self.radio_metaSuplementadoOrigem.setChecked(True)
+            self.radio_metaDestinoAtual.setChecked(True)
+            self.radio_metaSuplementadoDestino.setChecked(True)
             self.radio_dataEmail.setChecked(True)
-            self.radio_metaAtual.setChecked(True)
             self.radio_contatosDestino.setChecked(True)
             self.radio_contatosOrigem.setChecked(True)
         else:
             self.radio_status.setChecked(False)
-            self.radio_metaNova.setChecked(False)
+            self.radio_metaOrigemAtual.setChecked(True)
+            self.radio_metaSuplementadoOrigem.setChecked(True)
+            self.radio_metaDestinoAtual.setChecked(True)
+            self.radio_metaSuplementadoDestino.setChecked(True)
             self.radio_dataEmail.setChecked(False)
-            self.radio_metaAtual.setChecked(False)
             self.radio_contatosDestino.setChecked(False)
             self.radio_contatosOrigem.setChecked(False)

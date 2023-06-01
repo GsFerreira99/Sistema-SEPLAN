@@ -221,19 +221,58 @@ class DataBase:
         self._db.commit()
     def atualizar_decreto_espelhado(self, val):
         try:
-            if type(val['metaOrigem']) is list:
-                v = val['metaOrigem'] + val['id']
+            if type(val['metaOrigemAtual']) is list:
+                v = val['metaOrigemAtual'] + val['id']
                 sql = """
                 UPDATE 
                     decretos 
                 SET 
-                    VALOR_FISICO_ATUAL_ANULADO = %s,
+                    VALOR_FISICO_ATUAL_ANULADO = %s
+                WHERE 
+                    id = %s
+                    """
+                self._cursor.execute(sql, v)
+        except Exception as e:
+            print(e)
+        try:
+            if type(val['metaDestinoAtual']) is list:
+                v = val['metaDestinoAtual'] + val['id']
+                sql = """
+                UPDATE 
+                    decretos 
+                SET 
                     VALOR_FISICO_ATUAL_SUPLEMENTADO = %s
                 WHERE 
                     id = %s"""
                 self._cursor.execute(sql, v)
-        except:
-            pass
+        except Exception as e:
+            print(e)
+        try:
+            if type(val['metaOrigemSuplementado']) is list:
+                v = val['metaOrigemSuplementado'] + val['id']
+                sql = """
+                UPDATE 
+                    decretos 
+                SET 
+                    NOVA_META_FISICA_ANULADO = %s
+                WHERE 
+                    id = %s"""
+                self._cursor.execute(sql, v)
+        except Exception as e:
+            print(e)
+        try:
+            if type(val['metaDestinoSuplementado']) is list:
+                v = val['metaDestinoSuplementado'] + val['id']
+                sql = """
+                UPDATE 
+                    decretos 
+                SET 
+                    NOVA_META_FISICA_SUPLEMENTADO = %s
+                WHERE 
+                    id = %s"""
+                self._cursor.execute(sql, v)
+        except Exception as e:
+            print(e)
         try:
             if type(val['dataEmail']) is list:
                 v = val['dataEmail'] + val['id']
@@ -246,8 +285,8 @@ class DataBase:
                 WHERE 
                     id = %s"""
                 self._cursor.execute(sql, v)
-        except:
-            pass
+        except Exception as e:
+            print(e)
         try:
             if type(val['emailOrigem']) is list:
                 v = val['emailOrigem'] + val['id']
@@ -267,8 +306,8 @@ class DataBase:
                 WHERE 
                     id = %s"""
                 self._cursor.execute(sql, v)
-        except:
-            pass
+        except Exception as e:
+            print(e)
         try:
             if type(val['emailDestino']) is list:
                 v = val['emailDestino'] + val['id']
@@ -288,22 +327,8 @@ class DataBase:
                 WHERE 
                     id = %s"""
                 self._cursor.execute(sql, v)
-        except:
-            pass
-        try:
-            if type(val['metaNova']) is list:
-                v = val['metaNova'] + val['id']
-                sql = """
-                UPDATE 
-                    decretos 
-                SET 
-                    NOVA_META_FISICA_ANULADO = %s,
-                    NOVA_META_FISICA_SUPLEMENTADO = %s
-                WHERE 
-                    id = %s"""
-                self._cursor.execute(sql, v)
-        except:
-            pass
+        except Exception as e:
+            print(e)
         try:
             if type(val['status']) is list:
                 v = val['status'] + val['id']
@@ -317,8 +342,8 @@ class DataBase:
                 WHERE 
                     id = %s"""
                 self._cursor.execute(sql, v)
-        except:
-            pass
+        except Exception as e:
+            print(e)
         self._db.commit()
 
     def select_busca(self, campo, tela):
