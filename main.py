@@ -7,6 +7,7 @@ from telas.dashboard.dashboardController import DashBoardController
 from telas.edicao.edicaoController import EdicaoController
 from telas.main.mainView import MainView
 
+
 class App:
     def __init__(self):
         """Responsável por Iniciar a Aplicação"""

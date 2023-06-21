@@ -49,6 +49,11 @@ class EspelhamentoController:
         self.inserir_dados_scroll('TODOS')
 
     def inserir_dados_scroll(self, filtro):
+        self.view.checkBox.setChecked(False)
+        try:
+            self.view.pagi_inicio_fim(True)
+        except:
+            pass
         if filtro == 'INSERIDO SISTEMA':
             self.definir_dados_scroll(self.db.select_inserido)
             self._items = self.view.preencher_scroll(self.view.dados_pag, 1, True)
@@ -316,14 +321,14 @@ class EspelhamentoController:
         else:
             status = False
 
-        for obj in self._items:
+        for obj in self.view._items:
             try:
-                    obj.check_relatorio.setChecked(status)
-            except IndexError:
+                obj.check_relatorio.setChecked(status)
+            except IndexError as e:
                 pass
-            except TypeError:
+            except TypeError as e:
                 pass
-            except RuntimeError:
+            except RuntimeError as e:
                 pass
 
     def show(self):
@@ -339,7 +344,9 @@ class EspelhamentoController:
             "dataEmail": self.viewSelect.radio_dataEmail.isChecked(),
             "contatosDestino": self.viewSelect.radio_contatosDestino.isChecked(),
             "contatosOrigem": self.viewSelect.radio_contatosOrigem.isChecked(),
-            "status": self.viewSelect.radio_status.isChecked(),
+            "statusEnviado": self.viewSelect.radio_statusEnviado.isChecked(),
+            "statusMetas": self.viewSelect.radio_statusMetas.isChecked(),
+            "statusSistema": self.viewSelect.radio_statusSistema.isChecked(),
         }
 
         for i in self.dados_escolhidos.values():
@@ -370,8 +377,12 @@ class EspelhamentoController:
                 dados['emailDestino'] = self.dados_salvos['emailDestino']
             if self.dados_escolhidos['contatosOrigem'] is True:
                 dados['emailOrigem'] = self.dados_salvos['emailOrigem']
-            if self.dados_escolhidos['status'] is True:
-                dados['status'] = self.dados_salvos['status']
+            if self.dados_escolhidos['statusEnviado'] is True:
+                dados['statusEnviado'] = [self.dados_salvos['status'][0]]
+            if self.dados_escolhidos['statusMetas'] is True:
+                dados['statusMetas'] = [self.dados_salvos['status'][1]]
+            if self.dados_escolhidos['statusSistema'] is True:
+                dados['statusSistema'] = [self.dados_salvos['status'][2]]
             dados['id'] = self.dados_salvos['id']
             return dados
 
@@ -379,10 +390,21 @@ class EspelhamentoController:
         dados = self.lista_dados()
 
         self.ui.edicaoController.salvar_dados()
-        for item in self._items:
-            if item.check_relatorio.isChecked():
-                dados['id'] = [int(item.get_id())]
-                self.ui.principalController._db.atualizar_decreto_espelhado(dados)
+
+
+        if self.view.checkBox.isChecked() is True:
+            try:
+                for j, i in enumerate(self.view.dados_total):
+                    d = self.view.dados_total.iloc[j]
+                    dados['id'] = [int(d['id'])]
+                    self.ui.principalController._db.atualizar_decreto_espelhado(dados)
+            except IndexError as e:
+                print(e)
+        else:
+            for item in self._items:
+                if item.check_relatorio.isChecked():
+                    dados['id'] = [int(item.get_id())]
+                    self.ui.principalController._db.atualizar_decreto_espelhado(dados)
 
         Erro("Dados salvos com sucesso.", QMessageBox.Information)
         self.view.close()

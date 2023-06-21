@@ -10,6 +10,7 @@ build_exe_options = {
 
 
 
+
 # base="Win32GUI" should be used only for Windows GUI app
 
 setup(

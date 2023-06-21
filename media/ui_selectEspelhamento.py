@@ -1,22 +1,30 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'Espelhamento_SelectBOBThc.ui'
+## Form generated from reading UI file 'Espelhamento_SelectFJOtTY.ui'
 ##
-## Created by: Qt User Interface Compiler version 5.14.1
+## Created by: Qt User Interface Compiler version 6.5.1
 ##
 ## WARNING! All changes made in this file will be lost when recompiling UI file!
 ################################################################################
 
-from PyQt5.QtCore import *
-from PyQt5.QtGui import *
-from PyQt5.QtWidgets import *
+from PyQt5.QtCore import (QCoreApplication, QDate, QDateTime, QLocale,
+    QMetaObject, QObject, QPoint, QRect,
+    QSize, QTime, QUrl, Qt)
+from PyQt5.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
+    QFont, QFontDatabase, QGradient, QIcon,
+    QImage, QKeySequence, QLinearGradient, QPainter,
+    QPalette, QPixmap, QRadialGradient, QTransform)
+from PyQt5.QtWidgets import (QApplication, QCheckBox, QDateEdit, QFrame,
+    QGridLayout, QHBoxLayout, QLabel, QLineEdit,
+    QPushButton, QRadioButton, QSizePolicy, QVBoxLayout,
+    QWidget)
 
 import media.resource_rc
 
 class Ui_Form(object):
     def setupUi(self, Form):
-        if Form.objectName():
+        if not Form.objectName():
             Form.setObjectName(u"Form")
         Form.resize(724, 748)
         Form.setMinimumSize(QSize(724, 300))
@@ -41,10 +49,9 @@ class Ui_Form(object):
         self.lb_tituloPrincipal = QLabel(self.Titulo)
         self.lb_tituloPrincipal.setObjectName(u"lb_tituloPrincipal")
         font = QFont()
-        font.setFamily(u"Arial")
+        font.setFamilies([u"Arial"])
         font.setPointSize(18)
         font.setBold(True)
-        font.setWeight(75)
         self.lb_tituloPrincipal.setFont(font)
         self.lb_tituloPrincipal.setStyleSheet(u"color: white;")
         self.lb_tituloPrincipal.setAlignment(Qt.AlignCenter)
@@ -65,7 +72,6 @@ class Ui_Form(object):
         font1 = QFont()
         font1.setPointSize(10)
         font1.setBold(True)
-        font1.setWeight(75)
         self.radio_todos.setFont(font1)
         self.radio_todos.setAutoExclusive(False)
 
@@ -100,10 +106,9 @@ class Ui_Form(object):
         self.lb_metaDestinoAtual_titulo.setSizePolicy(sizePolicy)
         self.lb_metaDestinoAtual_titulo.setMaximumSize(QSize(16777215, 20))
         font2 = QFont()
-        font2.setFamily(u"Calibri")
+        font2.setFamilies([u"Calibri"])
         font2.setPointSize(12)
         font2.setBold(False)
-        font2.setWeight(50)
         self.lb_metaDestinoAtual_titulo.setFont(font2)
 
         self.verticalLayout_14.addWidget(self.lb_metaDestinoAtual_titulo)
@@ -113,7 +118,7 @@ class Ui_Form(object):
         self.input_metaOrigemAtual_2.setEnabled(False)
         self.input_metaOrigemAtual_2.setMinimumSize(QSize(0, 25))
         font3 = QFont()
-        font3.setFamily(u"Calibri")
+        font3.setFamilies([u"Calibri"])
         font3.setPointSize(10)
         self.input_metaOrigemAtual_2.setFont(font3)
         self.input_metaOrigemAtual_2.setStyleSheet(u"QLineEdit {\n"
@@ -154,11 +159,18 @@ class Ui_Form(object):
         self.inputCheck_emailEnviado.setObjectName(u"inputCheck_emailEnviado")
         self.inputCheck_emailEnviado.setEnabled(False)
         font4 = QFont()
-        font4.setFamily(u"Calibri")
+        font4.setFamilies([u"Calibri"])
         font4.setPointSize(13)
         self.inputCheck_emailEnviado.setFont(font4)
 
         self.horizontalLayout_3.addWidget(self.inputCheck_emailEnviado)
+
+        self.radio_statusMetas = QRadioButton(self.frame_13)
+        self.radio_statusMetas.setObjectName(u"radio_statusMetas")
+        self.radio_statusMetas.setMaximumSize(QSize(20, 16777215))
+        self.radio_statusMetas.setAutoExclusive(False)
+
+        self.horizontalLayout_3.addWidget(self.radio_statusMetas)
 
         self.inputCheck_inseridoMetas = QCheckBox(self.frame_13)
         self.inputCheck_inseridoMetas.setObjectName(u"inputCheck_inseridoMetas")
@@ -166,6 +178,13 @@ class Ui_Form(object):
         self.inputCheck_inseridoMetas.setFont(font4)
 
         self.horizontalLayout_3.addWidget(self.inputCheck_inseridoMetas)
+
+        self.radio_statusSistema = QRadioButton(self.frame_13)
+        self.radio_statusSistema.setObjectName(u"radio_statusSistema")
+        self.radio_statusSistema.setMaximumSize(QSize(20, 16777215))
+        self.radio_statusSistema.setAutoExclusive(False)
+
+        self.horizontalLayout_3.addWidget(self.radio_statusSistema)
 
         self.inputCheck_atualizadoSistema = QCheckBox(self.frame_13)
         self.inputCheck_atualizadoSistema.setObjectName(u"inputCheck_atualizadoSistema")
@@ -200,10 +219,9 @@ class Ui_Form(object):
         self.lb_dataInicial_titulo.setSizePolicy(sizePolicy)
         self.lb_dataInicial_titulo.setMaximumSize(QSize(16777215, 20))
         font5 = QFont()
-        font5.setFamily(u"Calibri")
+        font5.setFamilies([u"Calibri"])
         font5.setPointSize(12)
         font5.setBold(True)
-        font5.setWeight(75)
         self.lb_dataInicial_titulo.setFont(font5)
 
         self.gridLayout_4.addWidget(self.lb_dataInicial_titulo, 0, 0, 1, 1)
@@ -221,7 +239,7 @@ class Ui_Form(object):
 "	border-bottom: 2px solid rgb(161, 150, 170)\n"
 "}\n"
 "")
-        self.inputDate_emailInicial.setDateTime(QDateTime(QDate(2022, 6, 7), QTime(0, 0, 0)))
+        self.inputDate_emailInicial.setDateTime(QDateTime(QDate(2022, 6, 7), QTime(3, 0, 0)))
         self.inputDate_emailInicial.setCalendarPopup(True)
 
         self.gridLayout_4.addWidget(self.inputDate_emailInicial, 2, 0, 1, 1)
@@ -276,7 +294,7 @@ class Ui_Form(object):
 "QDateEdit:focus {\n"
 "	border-bottom: 2px solid rgb(161, 150, 170)\n"
 "}")
-        self.inputDate_destino1.setDateTime(QDateTime(QDate(2022, 6, 7), QTime(0, 0, 0)))
+        self.inputDate_destino1.setDateTime(QDateTime(QDate(2022, 6, 7), QTime(3, 0, 0)))
         self.inputDate_destino1.setCalendarPopup(True)
 
         self.gridLayout_3.addWidget(self.inputDate_destino1, 1, 0, 1, 1)
@@ -370,7 +388,7 @@ class Ui_Form(object):
 "QDateEdit:focus {\n"
 "	border-bottom: 2px solid rgb(161, 150, 170)\n"
 "}")
-        self.inputDate_destino2.setDateTime(QDateTime(QDate(2022, 6, 7), QTime(0, 0, 0)))
+        self.inputDate_destino2.setDateTime(QDateTime(QDate(2022, 6, 7), QTime(3, 0, 0)))
         self.inputDate_destino2.setCalendarPopup(True)
 
         self.gridLayout_3.addWidget(self.inputDate_destino2, 3, 0, 1, 1)
@@ -397,10 +415,9 @@ class Ui_Form(object):
         self.label_24.setSizePolicy(sizePolicy)
         self.label_24.setMaximumSize(QSize(16777215, 20))
         font7 = QFont()
-        font7.setFamily(u"Calibri")
+        font7.setFamilies([u"Calibri"])
         font7.setPointSize(13)
         font7.setBold(False)
-        font7.setWeight(50)
         self.label_24.setFont(font7)
 
         self.gridLayout_3.addWidget(self.label_24, 0, 0, 1, 1)
@@ -419,7 +436,7 @@ class Ui_Form(object):
 "QDateEdit:focus {\n"
 "	border-bottom: 2px solid rgb(161, 150, 170)\n"
 "}")
-        self.inputDate_destino3.setDateTime(QDateTime(QDate(2022, 6, 7), QTime(0, 0, 0)))
+        self.inputDate_destino3.setDateTime(QDateTime(QDate(2022, 6, 7), QTime(3, 0, 0)))
         self.inputDate_destino3.setCalendarPopup(True)
 
         self.gridLayout_3.addWidget(self.inputDate_destino3, 4, 0, 1, 1)
@@ -427,11 +444,11 @@ class Ui_Form(object):
 
         self.gridLayout.addWidget(self.frame_18, 3, 2, 1, 4)
 
-        self.radio_status = QRadioButton(self.frame_2)
-        self.radio_status.setObjectName(u"radio_status")
-        self.radio_status.setAutoExclusive(False)
+        self.radio_statusEnviado = QRadioButton(self.frame_2)
+        self.radio_statusEnviado.setObjectName(u"radio_statusEnviado")
+        self.radio_statusEnviado.setAutoExclusive(False)
 
-        self.gridLayout.addWidget(self.radio_status, 5, 0, 1, 1)
+        self.gridLayout.addWidget(self.radio_statusEnviado, 5, 0, 1, 1)
 
         self.frame_14 = QFrame(self.frame_2)
         self.frame_14.setObjectName(u"frame_14")
@@ -635,7 +652,7 @@ class Ui_Form(object):
 "QDateEdit:focus {\n"
 "	border-bottom: 2px solid rgb(161, 150, 170)\n"
 "}")
-        self.inputDate_origem1.setDateTime(QDateTime(QDate(2022, 6, 7), QTime(0, 0, 0)))
+        self.inputDate_origem1.setDateTime(QDateTime(QDate(2022, 6, 7), QTime(3, 0, 0)))
         self.inputDate_origem1.setCalendarPopup(True)
 
         self.gridLayout_2.addWidget(self.inputDate_origem1, 1, 0, 1, 1)
@@ -654,7 +671,7 @@ class Ui_Form(object):
 "QDateEdit:focus {\n"
 "	border-bottom: 2px solid rgb(161, 150, 170)\n"
 "}")
-        self.inputDate_origem2.setDateTime(QDateTime(QDate(2022, 6, 7), QTime(0, 0, 0)))
+        self.inputDate_origem2.setDateTime(QDateTime(QDate(2022, 6, 7), QTime(3, 0, 0)))
         self.inputDate_origem2.setCalendarPopup(True)
 
         self.gridLayout_2.addWidget(self.inputDate_origem2, 2, 0, 1, 1)
@@ -673,7 +690,7 @@ class Ui_Form(object):
 "QDateEdit:focus {\n"
 "	border-bottom: 2px solid rgb(161, 150, 170)\n"
 "}")
-        self.inputDate_origem3.setDateTime(QDateTime(QDate(2022, 6, 7), QTime(0, 0, 0)))
+        self.inputDate_origem3.setDateTime(QDateTime(QDate(2022, 6, 7), QTime(3, 0, 0)))
         self.inputDate_origem3.setCalendarPopup(True)
 
         self.gridLayout_2.addWidget(self.inputDate_origem3, 3, 0, 1, 1)
@@ -745,10 +762,9 @@ class Ui_Form(object):
         self.btn_proximo.setObjectName(u"btn_proximo")
         self.btn_proximo.setMinimumSize(QSize(0, 40))
         font8 = QFont()
-        font8.setFamily(u"Calibri")
+        font8.setFamilies([u"Calibri"])
         font8.setPointSize(15)
         font8.setBold(True)
-        font8.setWeight(75)
         self.btn_proximo.setFont(font8)
         self.btn_proximo.setStyleSheet(u"QPushButton {\n"
 "border:none;\n"
@@ -795,7 +811,9 @@ class Ui_Form(object):
         self.radio_contatosDestino.setText("")
         self.radio_dataEmail.setText("")
         self.inputCheck_emailEnviado.setText(QCoreApplication.translate("Form", u"E-mail Enviado", None))
+        self.radio_statusMetas.setText("")
         self.inputCheck_inseridoMetas.setText(QCoreApplication.translate("Form", u"Inserido Metas", None))
+        self.radio_statusSistema.setText("")
         self.inputCheck_atualizadoSistema.setText(QCoreApplication.translate("Form", u"Atualizado Sistema", None))
         self.radio_contatosOrigem.setText("")
         self.lb_dataInicial_titulo.setText(QCoreApplication.translate("Form", u"Data Email Inicial", None))
@@ -811,7 +829,7 @@ class Ui_Form(object):
         self.input_destino_contato3.setText("")
         self.input_destino_contato3.setPlaceholderText(QCoreApplication.translate("Form", u"Contato 3", None))
         self.label_24.setText(QCoreApplication.translate("Form", u"Destino", None))
-        self.radio_status.setText("")
+        self.radio_statusEnviado.setText("")
         self.lb_metaOrigemAtual_titulo.setText(QCoreApplication.translate("Form", u"Meta F\u00cdSICA de Origem ATUAL", None))
         self.lb_metaAnulado_titulo.setText(QCoreApplication.translate("Form", u"Nova Meta F\u00edsica Anulado (Origem)", None))
         self.label_23.setText(QCoreApplication.translate("Form", u"Origem", None))

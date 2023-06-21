@@ -330,14 +330,38 @@ class DataBase:
         except Exception as e:
             print(e)
         try:
-            if type(val['status']) is list:
-                v = val['status'] + val['id']
+            if type(val['statusEnviado']) is list:
+                v = val['statusEnviado'] + val['id']
                 sql = """
                 UPDATE 
                     decretos 
                 SET 
-                    EMAIL_ENVIADO = %s,
-                    INSERIDO_METAS = %s,
+                    EMAIL_ENVIADO = %s
+                WHERE 
+                    id = %s"""
+                self._cursor.execute(sql, v)
+        except Exception as e:
+            print(e)
+        try:
+            if type(val['statusMetas']) is list:
+                v = val['statusMetas'] + val['id']
+                sql = """
+                UPDATE 
+                    decretos 
+                SET 
+                    INSERIDO_METAS = %s
+                WHERE 
+                    id = %s"""
+                self._cursor.execute(sql, v)
+        except Exception as e:
+            print(e)
+        try:
+            if type(val['statusSistema']) is list:
+                v = val['statusSistema'] + val['id']
+                sql = """
+                UPDATE 
+                    decretos 
+                SET 
                     ATUALIZADO_NO_SISTEMA = %s
                 WHERE 
                     id = %s"""

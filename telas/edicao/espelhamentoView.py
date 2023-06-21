@@ -26,7 +26,6 @@ class EspelhamentoView(Ui_Form, QDialog):
         self.dados_pag = []
         self._items = []
 
-
     def preencher_scroll(self, dados, id: int, tipo: bool = True, esp:bool=True):
         self.limpar()
         self.widget = QWidget()
@@ -44,12 +43,18 @@ class EspelhamentoView(Ui_Form, QDialog):
         for j, i in enumerate(dados.index):
             try:
                 object = ItemTabelaView(self.ui, dados.iloc[j])
+                if self.checkBox.isChecked():
+                    object.check_relatorio.setChecked(True)
                 items.append(object)
                 self.vbox.addWidget(object)
                 if esp is True:
                     object.ocultar_seta()
 
             except IndexError:
+                pass
+            except TypeError:
+                pass
+            except RuntimeError:
                 pass
 
         self.verticalSpacer = QSpacerItem(2000, 40, QSizePolicy.Maximum, QSizePolicy.Expanding)
@@ -130,8 +135,7 @@ class EspelhamentoView(Ui_Form, QDialog):
                 self.paginacao_ativa - 1,
                 self.paginacao_ativa])
             self.click_botoes_pag(5)
-        self.preencher_scroll(self.dados_pag, self.paginacao_ativa)
-        self.verificar_check()
+        self.ui._items = self.preencher_scroll(self.dados_pag, self.paginacao_ativa)
 
     def click_botoes_pag(self, id: int):
             try:
@@ -177,8 +181,7 @@ class EspelhamentoView(Ui_Form, QDialog):
         elif tipo is False and self.paginacao_ativa!=1:
             self.paginacao_ativa -= 1
             self.click_botoes_pag(self.paginacao_ativa)
-        self.preencher_scroll(self.dados_pag, self.paginacao_ativa)
-        self.verificar_check()
+        self.ui._items = self.preencher_scroll(self.dados_pag, self.paginacao_ativa)
 
     def verificar_check(self):
         if self.checkBox.isChecked() is True:
@@ -220,5 +223,3 @@ class EspelhamentoView(Ui_Form, QDialog):
         return pages
 
 
-
-    788420488
