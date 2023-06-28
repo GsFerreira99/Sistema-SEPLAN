@@ -64,7 +64,6 @@ border:none</string>
           <font>
            <family>Arial</family>
            <pointsize>18</pointsize>
-           <weight>75</weight>
            <bold>true</bold>
           </font>
          </property>
@@ -154,7 +153,6 @@ border:none</string>
                 <font>
                  <family>Calibri</family>
                  <pointsize>30</pointsize>
-                 <weight>75</weight>
                  <bold>true</bold>
                 </font>
                </property>
@@ -172,7 +170,6 @@ border:none</string>
                 <font>
                  <family>Calibri</family>
                  <pointsize>10</pointsize>
-                 <weight>50</weight>
                  <bold>false</bold>
                 </font>
                </property>
@@ -211,7 +208,6 @@ border:none</string>
                 <font>
                  <family>Calibri</family>
                  <pointsize>30</pointsize>
-                 <weight>75</weight>
                  <bold>true</bold>
                 </font>
                </property>
@@ -229,7 +225,6 @@ border:none</string>
                 <font>
                  <family>Calibri</family>
                  <pointsize>10</pointsize>
-                 <weight>50</weight>
                  <bold>false</bold>
                 </font>
                </property>
@@ -268,7 +263,6 @@ border:none</string>
                 <font>
                  <family>Calibri</family>
                  <pointsize>30</pointsize>
-                 <weight>75</weight>
                  <bold>true</bold>
                 </font>
                </property>
@@ -286,7 +280,6 @@ border:none</string>
                 <font>
                  <family>Calibri</family>
                  <pointsize>10</pointsize>
-                 <weight>50</weight>
                  <bold>false</bold>
                 </font>
                </property>
@@ -325,7 +318,6 @@ border:none</string>
                 <font>
                  <family>Calibri</family>
                  <pointsize>30</pointsize>
-                 <weight>75</weight>
                  <bold>true</bold>
                 </font>
                </property>
@@ -343,7 +335,6 @@ border:none</string>
                 <font>
                  <family>Calibri</family>
                  <pointsize>10</pointsize>
-                 <weight>50</weight>
                  <bold>false</bold>
                 </font>
                </property>
@@ -382,7 +373,6 @@ border:none</string>
                 <font>
                  <family>Calibri</family>
                  <pointsize>30</pointsize>
-                 <weight>75</weight>
                  <bold>true</bold>
                 </font>
                </property>
@@ -400,7 +390,6 @@ border:none</string>
                 <font>
                  <family>Calibri</family>
                  <pointsize>10</pointsize>
-                 <weight>50</weight>
                  <bold>false</bold>
                 </font>
                </property>
@@ -655,6 +644,34 @@ QFrame {
                 </size>
                </property>
               </spacer>
+             </item>
+             <item>
+              <widget class="QPushButton" name="btn_metricas">
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
+               <property name="maximumSize">
+                <size>
+                 <width>16777215</width>
+                 <height>40</height>
+                </size>
+               </property>
+               <property name="font">
+                <font>
+                 <family>Arial</family>
+                 <pointsize>13</pointsize>
+                </font>
+               </property>
+               <property name="styleSheet">
+                <string notr="true"/>
+               </property>
+               <property name="text">
+                <string>Métricas</string>
+               </property>
+              </widget>
              </item>
              <item>
               <widget class="QPushButton" name="btn_relatorio_excel">
@@ -998,7 +1015,6 @@ QPushButton:pressed {
                       <font>
                        <family>Calibri</family>
                        <pointsize>13</pointsize>
-                       <weight>50</weight>
                        <bold>false</bold>
                       </font>
                      </property>

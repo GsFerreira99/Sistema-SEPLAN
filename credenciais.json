@@ -1,5 +1,5 @@
 {
-    "host": "",
+    "host": "localhost",
     "user": "",
     "password": "",
     "porta": "3306"

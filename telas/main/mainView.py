@@ -10,5 +10,3 @@ class MainView(Ui_Form, QWidget):
         """Cria a janela principal do sistema onde são inseridas todas as outras telas"""
         super().__init__(parent)
         super().setupUi(self)
-
-    

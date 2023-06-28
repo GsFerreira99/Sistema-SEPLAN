@@ -1,14 +1,14 @@
 from cmath import e
 from media.ui_dashboard import Ui_Form
 from telas.dashboard.itemTabelaView import ItemTabelaView
-from PyQt5.QtWidgets import QWidget, QVBoxLayout, QSpacerItem, QSizePolicy, QFileDialog, QPushButton
+from PyQt5.QtWidgets import QWidget, QVBoxLayout, QSpacerItem, QSizePolicy, QFileDialog, QPushButton, QMainWindow
 from PyQt5.QtCore import Qt, QSize
 
 import pandas as pd
 
 
 
-class DashboardView(Ui_Form, QWidget):
+class DashboardView(Ui_Form, QMainWindow):
 
     def __init__(self, ui, parent=None):
         super().__init__(parent)

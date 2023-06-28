@@ -44,9 +44,14 @@ class DashBoardController:
         self.view.btn_relatorio.clicked.connect(lambda: self.caminho_relatorio())
         self.view.btn_relatorio_excel.clicked.connect(lambda: self.caminho_relatorio_excel())
         self.view.btn_planilha.clicked.connect(lambda: self.selecionar_plan())
+        self.view.btn_metricas.clicked.connect(lambda: self.metricas())
 
         self.view.btn_busca.clicked.connect(lambda: self.busca())
-    
+
+    def metricas(self):
+        self.ui.view.stackedWidget.setCurrentIndex(2)
+        self.ui.metricasController.preencher_filtro()
+
     def credenciais_servidor(self):
         dados = carregar_credenciais("credenciais.json")
         self._db = DataBase(dados['host'], dados['user'], dados['password'], dados['porta'])

@@ -1,33 +1,35 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'DashboardbSJHae.ui'
+## Form generated from reading UI file 'DashboardKXLGga.ui'
 ##
-## Created by: Qt User Interface Compiler version 5.14.1
+## Created by: Qt User Interface Compiler version 6.5.1
 ##
 ## WARNING! All changes made in this file will be lost when recompiling UI file!
 ################################################################################
 
-from PyQt5.QtCore import (QCoreApplication, QMetaObject, QObject, QPoint,
-    QRect, QSize, QUrl, Qt)
-from PyQt5.QtGui import (QBrush, QColor, QConicalGradient, QCursor, QFont,
-    QFontDatabase, QIcon, QLinearGradient, QPalette, QPainter, QPixmap,
-    QRadialGradient)
-from PyQt5.QtWidgets import *
-
+from PyQt5.QtCore import (QCoreApplication, QDate, QDateTime, QLocale,
+    QMetaObject, QObject, QPoint, QRect,
+    QSize, QTime, QUrl, Qt)
+from PyQt5.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
+    QFont, QFontDatabase, QGradient, QIcon,
+    QImage, QKeySequence, QLinearGradient, QPainter,
+    QPalette, QPixmap, QRadialGradient, QTransform)
+from PyQt5.QtWidgets import (QAbstractScrollArea, QApplication, QCheckBox, QComboBox,
+    QFrame, QHBoxLayout, QLabel, QLineEdit,
+    QMainWindow, QPushButton, QScrollArea, QSizePolicy,
+    QSpacerItem, QVBoxLayout, QWidget)
 import media.resource_rc
 
 class Ui_Form(object):
-
     def setupUi(self, MainWindow):
-        if MainWindow.objectName():
+        if not MainWindow.objectName():
             MainWindow.setObjectName(u"MainWindow")
         MainWindow.resize(1143, 739)
         MainWindow.setStyleSheet(u"background-color: rgb(255, 255, 255);\n"
 "border:none")
-        #self.centralwidget = QWidget(MainWindow)
-        #self.centralwidget.setObjectName(u"centralwidget")
-        self.centralwidget = MainWindow
+        self.centralwidget = QWidget(MainWindow)
+        self.centralwidget.setObjectName(u"centralwidget")
         self.verticalLayout = QVBoxLayout(self.centralwidget)
         self.verticalLayout.setSpacing(0)
         self.verticalLayout.setObjectName(u"verticalLayout")
@@ -48,10 +50,9 @@ class Ui_Form(object):
         self.lb_tituloPrincipal = QLabel(self.Titulo)
         self.lb_tituloPrincipal.setObjectName(u"lb_tituloPrincipal")
         font = QFont()
-        font.setFamily(u"Arial")
+        font.setFamilies([u"Arial"])
         font.setPointSize(18)
         font.setBold(True)
-        font.setWeight(75)
         self.lb_tituloPrincipal.setFont(font)
         self.lb_tituloPrincipal.setStyleSheet(u"color: white;")
         self.lb_tituloPrincipal.setAlignment(Qt.AlignCenter)
@@ -89,10 +90,9 @@ class Ui_Form(object):
         self.lb_cont_todos = QLabel(self.frame_4)
         self.lb_cont_todos.setObjectName(u"lb_cont_todos")
         font1 = QFont()
-        font1.setFamily(u"Calibri")
+        font1.setFamilies([u"Calibri"])
         font1.setPointSize(30)
         font1.setBold(True)
-        font1.setWeight(75)
         self.lb_cont_todos.setFont(font1)
         self.lb_cont_todos.setAlignment(Qt.AlignCenter)
 
@@ -101,10 +101,9 @@ class Ui_Form(object):
         self.lb_titulo_todos = QLabel(self.frame_4)
         self.lb_titulo_todos.setObjectName(u"lb_titulo_todos")
         font2 = QFont()
-        font2.setFamily(u"Calibri")
+        font2.setFamilies([u"Calibri"])
         font2.setPointSize(10)
         font2.setBold(False)
-        font2.setWeight(50)
         self.lb_titulo_todos.setFont(font2)
         self.lb_titulo_todos.setAlignment(Qt.AlignCenter)
 
@@ -268,7 +267,7 @@ class Ui_Form(object):
         self.btn_todos.setSizePolicy(sizePolicy2)
         self.btn_todos.setMaximumSize(QSize(16777215, 40))
         font3 = QFont()
-        font3.setFamily(u"Arial")
+        font3.setFamilies([u"Arial"])
         font3.setPointSize(13)
         self.btn_todos.setFont(font3)
         self.btn_todos.setStyleSheet(u"")
@@ -318,6 +317,16 @@ class Ui_Form(object):
         self.verticalSpacer = QSpacerItem(20, 40, QSizePolicy.Minimum, QSizePolicy.Expanding)
 
         self.verticalLayout_4.addItem(self.verticalSpacer)
+
+        self.btn_metricas = QPushButton(self.frame_5)
+        self.btn_metricas.setObjectName(u"btn_metricas")
+        sizePolicy2.setHeightForWidth(self.btn_metricas.sizePolicy().hasHeightForWidth())
+        self.btn_metricas.setSizePolicy(sizePolicy2)
+        self.btn_metricas.setMaximumSize(QSize(16777215, 40))
+        self.btn_metricas.setFont(font3)
+        self.btn_metricas.setStyleSheet(u"")
+
+        self.verticalLayout_4.addWidget(self.btn_metricas)
 
         self.btn_relatorio_excel = QPushButton(self.frame_5)
         self.btn_relatorio_excel.setObjectName(u"btn_relatorio_excel")
@@ -371,7 +380,7 @@ class Ui_Form(object):
         self.lb_busca = QLabel(self.frame_10)
         self.lb_busca.setObjectName(u"lb_busca")
         font4 = QFont()
-        font4.setFamily(u"Arial")
+        font4.setFamilies([u"Arial"])
         font4.setPointSize(12)
         self.lb_busca.setFont(font4)
 
@@ -466,10 +475,9 @@ class Ui_Form(object):
         self.lb_filtro = QLabel(self.frame_2)
         self.lb_filtro.setObjectName(u"lb_filtro")
         font5 = QFont()
-        font5.setFamily(u"Calibri")
+        font5.setFamilies([u"Calibri"])
         font5.setPointSize(13)
         font5.setBold(False)
-        font5.setWeight(50)
         self.lb_filtro.setFont(font5)
         self.lb_filtro.setStyleSheet(u"margin-left: 15px")
         self.lb_filtro.setAlignment(Qt.AlignLeading|Qt.AlignLeft|Qt.AlignVCenter)
@@ -651,7 +659,7 @@ class Ui_Form(object):
 
         self.verticalLayout.addWidget(self.frame)
 
-        #MainWindow.setCentralWidget(self.centralwidget)
+        MainWindow.setCentralWidget(self.centralwidget)
 
         self.retranslateUi(MainWindow)
 
@@ -676,6 +684,7 @@ class Ui_Form(object):
         self.btn_email.setText(QCoreApplication.translate("MainWindow", u"E-mail Enviado", None))
         self.btn_metas.setText(QCoreApplication.translate("MainWindow", u"Metas Inseridas", None))
         self.btn_inserido.setText(QCoreApplication.translate("MainWindow", u"Inserido no Sistema", None))
+        self.btn_metricas.setText(QCoreApplication.translate("MainWindow", u"M\u00e9tricas", None))
         self.btn_relatorio_excel.setText(QCoreApplication.translate("MainWindow", u"Gerar Excel", None))
         self.btn_relatorio.setText(QCoreApplication.translate("MainWindow", u"Gerar PDF", None))
         self.btn_planilha.setText(QCoreApplication.translate("MainWindow", u"Selecionar Planilha", None))

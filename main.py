@@ -5,6 +5,7 @@ import sys
 #Controlers
 from telas.dashboard.dashboardController import DashBoardController
 from telas.edicao.edicaoController import EdicaoController
+from telas.metricas.metricasController import MetricasController
 from telas.main.mainView import MainView
 
 
@@ -14,11 +15,12 @@ class App:
         self.view = MainView()
 
         self.edicaoController = EdicaoController(self)
-
         self.principalController = DashBoardController(self)
+        self.metricasController = MetricasController(self)
 
         self.view.stackedWidget.insertWidget(0, self.principalController.view)
         self.view.stackedWidget.insertWidget(1, self.edicaoController.view)
+        self.view.stackedWidget.insertWidget(2, self.metricasController.view)
         self.view.show()
 
 

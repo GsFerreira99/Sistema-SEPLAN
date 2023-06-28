@@ -602,3 +602,36 @@ class DataBase:
     @property
     def select_inserido(self):
         return pd.read_sql("SELECT * FROM decretos WHERE ATUALIZADO_NO_SISTEMA = 'ok' ORDER BY DATA_ALTERACAO_ORCAMENTARIA DESC", con=self._engine)
+
+    @property
+    def select_secretarias(self):
+        return pd.read_sql("SELECT DISTINCT NOME_ORGAO_SUPLEMENTADO2 FROM decretos",con=self._engine)
+
+    @property
+    def select_score_1(self):
+        email = pd.read_sql("SELECT COUNT(INSERIDO_METAS) FROM decretos WHERE INSERIDO_METAS='ok'", con=self._engine)
+        todos = pd.read_sql("SELECT COUNT(N_DECRETO) FROM decretos", con=self._engine)
+
+        return int(email.iloc[0]['COUNT(INSERIDO_METAS)']) / int(todos.iloc[0]['COUNT(N_DECRETO)'])
+
+    @property
+    def select_score_2(self):
+        email = pd.read_sql("SELECT COUNT(EMAIL_ENVIADO) FROM decretos WHERE EMAIL_ENVIADO='ok'", con=self._engine)
+        todos = pd.read_sql("SELECT COUNT(N_DECRETO) FROM decretos", con=self._engine)
+
+        return int(email.iloc[0]['COUNT(EMAIL_ENVIADO)'])/int(todos.iloc[0]['COUNT(N_DECRETO)'])
+
+    def select_filtro_score_2(self, filtro: str):
+        email = pd.read_sql(
+            f"SELECT COUNT(INSERIDO_METAS) FROM decretos WHERE INSERIDO_METAS='ok' AND (NOME_ORGAO_SUPLEMENTADO2 = '{filtro}' OR NOME_ORGAO_ANULADO = '{filtro}')", con=self._engine)
+        todos = pd.read_sql(
+            f"SELECT COUNT(N_DECRETO) FROM decretos WHERE NOME_ORGAO_SUPLEMENTADO2 = '{filtro}' OR NOME_ORGAO_ANULADO = '{filtro}'", con=self._engine)
+
+        return int(email.iloc[0]['COUNT(INSERIDO_METAS)']) / int(todos.iloc[0]['COUNT(N_DECRETO)'])
+
+    def select_filtro_score_1(self, filtro: str):
+        email = pd.read_sql(f"SELECT COUNT(EMAIL_ENVIADO) FROM decretos WHERE EMAIL_ENVIADO='ok'  AND (NOME_ORGAO_SUPLEMENTADO2 = '{filtro}' OR NOME_ORGAO_ANULADO = '{filtro}')", con=self._engine)
+        todos = pd.read_sql(f"SELECT COUNT(N_DECRETO) FROM decretos WHERE NOME_ORGAO_SUPLEMENTADO2 = '{filtro}' OR NOME_ORGAO_ANULADO = '{filtro}'", con=self._engine)
+
+        return int(email.iloc[0]['COUNT(EMAIL_ENVIADO)']) / int(todos.iloc[0]['COUNT(N_DECRETO)'])
+
