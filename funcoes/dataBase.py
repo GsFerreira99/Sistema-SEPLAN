@@ -18,16 +18,58 @@ class DataBase:
                         user=self._user,
                         password=self._password,
                         port=self._porta,
-                        database="interfaceplanilha"
+                        database="interfaceplanilha",
                         )
-            self._cursor = self._db.cursor()
+            self._cursor = self._db.cursor(buffered=True)
             self._engine = create_engine(f'mysql://{self._user}:{self._password}@{self._host}:{self._porta}/interfaceplanilha')
+            print(self.create_column_decreto())
+            print(self.create_column_email())
             return "Conectado com sucesso."
         except (mysql.connector.errors.DatabaseError) as e:
             if e.errno == 1049:
                 return self.criar_db()
             else:
                 return e
+
+    def create_column_email(self):
+        try:
+            info = self._cursor.execute("""
+            SELECT `COLUMN_NAME`
+            FROM `INFORMATION_SCHEMA`.`COLUMNS`
+            WHERE `TABLE_SCHEMA`='interfaceplanilha'
+            AND `TABLE_NAME`='decretos'
+            AND `COLUMN_NAME`='GERA_EMAIL';""")
+            if info is None:
+                self._cursor.execute("""
+                    ALTER TABLE decretos
+                    ADD COLUMN GERA_EMAIL BOOLEAN DEFAULT FALSE AFTER STATUS_3_DESTINO;""")
+        except Exception as e:
+            if e.msg == "Duplicate column name 'GERA_EMAIL'":
+                return 'GERA_EMAIL Já Existe'
+            self._cursor.execute("""
+                ALTER TABLE decretos
+                ADD COLUMN GERA_EMAIL BOOLEAN DEFAULT FALSE AFTER STATUS_3_DESTINO;""")
+        return "Tabela 'GERA_EMAIL' criada com sucesso."
+
+    def create_column_decreto(self):
+        try:
+            info = self._cursor.execute("""
+            SELECT `COLUMN_NAME`
+            FROM `INFORMATION_SCHEMA`.`COLUMNS`
+            WHERE `TABLE_SCHEMA`='interfaceplanilha'
+            AND `TABLE_NAME`='decretos'
+            AND `COLUMN_NAME`='PERMANECE_DECRETO';""")
+            if info is None:
+                self._cursor.execute("""
+                    ALTER TABLE decretos
+                    ADD COLUMN PERMANECE_DECRETO BOOLEAN DEFAULT FALSE AFTER STATUS_3_DESTINO;""")
+        except Exception as e:
+            if e.msg == "Duplicate column name 'PERMANECE_DECRETO'":
+                return 'PERMANECE_DECRETO Já Existe'
+            self._cursor.execute("""
+                ALTER TABLE decretos
+                ADD COLUMN PERMANECE_DECRETO BOOLEAN DEFAULT FALSE AFTER STATUS_3_DESTINO;""")
+        return "Tabela 'PERMANECE_DECRETO' criada com sucesso."
 
     def criar_db(self):
         db = mysql.connector.connect(
@@ -213,7 +255,9 @@ class DataBase:
             NOVA_META_FISICA_SUPLEMENTADO = %s,
             EMAIL_ENVIADO = %s,
             INSERIDO_METAS = %s,
-            ATUALIZADO_NO_SISTEMA = %s
+            ATUALIZADO_NO_SISTEMA = %s,
+            GERA_EMAIL = %s,
+            PERMANECE_DECRETO = %s
         WHERE 
             id = %s"""
 
@@ -228,6 +272,34 @@ class DataBase:
                     decretos 
                 SET 
                     VALOR_FISICO_ATUAL_ANULADO = %s
+                WHERE 
+                    id = %s
+                    """
+                self._cursor.execute(sql, v)
+        except Exception as e:
+            print(e)
+        try:
+            if type(val['geraEmail']) is list:
+                v = val['geraEmail'] + val['id']
+                sql = """
+                UPDATE 
+                    decretos 
+                SET 
+                    GERA_EMAIL = %s
+                WHERE 
+                    id = %s
+                    """
+                self._cursor.execute(sql, v)
+        except Exception as e:
+            print(e)
+        try:
+            if type(val['permaneceMeta']) is list:
+                v = val['permaneceMeta'] + val['id']
+                sql = """
+                UPDATE 
+                    decretos 
+                SET 
+                    PERMANECE_DECRETO = %s
                 WHERE 
                     id = %s
                     """

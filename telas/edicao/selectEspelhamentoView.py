@@ -26,6 +26,8 @@ class SelectEspelhamentoView(Ui_Form, QDialog):
             self.radio_dataEmail.setChecked(True)
             self.radio_contatosDestino.setChecked(True)
             self.radio_contatosOrigem.setChecked(True)
+            self.radio_naoGeraEmail.setChecked(True)
+            self.radio_permaneceMeta.setChecked(True)
         else:
             self.radio_statusMetas.setChecked(False)
             self.radio_statusSistema.setChecked(False)
@@ -37,3 +39,5 @@ class SelectEspelhamentoView(Ui_Form, QDialog):
             self.radio_dataEmail.setChecked(False)
             self.radio_contatosDestino.setChecked(False)
             self.radio_contatosOrigem.setChecked(False)
+            self.radio_naoGeraEmail.setChecked(False)
+            self.radio_permaneceMeta.setChecked(False)

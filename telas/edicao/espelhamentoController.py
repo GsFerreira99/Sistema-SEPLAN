@@ -154,6 +154,10 @@ class EspelhamentoController:
         if dados['status'][2] == 'ok':
             self.viewSelect.inputCheck_atualizadoSistema.setChecked(True)
 
+        if int(dados['geraEmail']) == 1:
+            self.viewSelect.check_naoGeraEmail.setChecked(True)
+        if int(dados['permaneceMeta']) == 1:
+            self.viewSelect.check_permaneceMeta.setChecked(True)
 
     def limpar_select(self):
         self.viewSelect.lb_decreto_info.setText("")
@@ -347,6 +351,8 @@ class EspelhamentoController:
             "statusEnviado": self.viewSelect.radio_statusEnviado.isChecked(),
             "statusMetas": self.viewSelect.radio_statusMetas.isChecked(),
             "statusSistema": self.viewSelect.radio_statusSistema.isChecked(),
+            "permaneceMeta": self.viewSelect.radio_permaneceMeta.isChecked(),
+            "geraEmail": self.viewSelect.radio_naoGeraEmail.isChecked(),
         }
 
         for i in self.dados_escolhidos.values():
@@ -383,6 +389,10 @@ class EspelhamentoController:
                 dados['statusMetas'] = [self.dados_salvos['status'][1]]
             if self.dados_escolhidos['statusSistema'] is True:
                 dados['statusSistema'] = [self.dados_salvos['status'][2]]
+            if self.dados_escolhidos['permaneceMeta'] is True:
+                dados['permaneceMeta'] = [self.dados_salvos['permaneceMeta']]
+            if self.dados_escolhidos['geraEmail'] is True:
+                dados['geraEmail'] = [self.dados_salvos['geraEmail']]
             dados['id'] = self.dados_salvos['id']
             return dados
 
@@ -416,6 +426,8 @@ class EspelhamentoController:
         self.viewSelect.inputCheck_emailEnviado.setChecked(False)
         self.viewSelect.inputCheck_inseridoMetas.setChecked(False)
         self.viewSelect.inputCheck_atualizadoSistema.setChecked(False)
+        self.viewSelect.check_naoGeraEmail.setChecked(False)
+        self.viewSelect.check_permaneceMeta.setChecked(False)
 
     def montar_data(self, data):
         try:

@@ -126,6 +126,11 @@ class EdicaoView(Ui_Form, QWidget):
         if str(dados['ATUALIZADO_NO_SISTEMA']) == 'ok':
             self.inputCheck_atualizadoSistema.setChecked(True)
 
+        if int(dados['GERA_EMAIL']) == 1:
+            self.inputCheck_emailEnviado_4.setChecked(True)
+        if int(dados['PERMANECE_DECRETO']) == 1:
+            self.inputCheck_emailEnviado_2.setChecked(True)
+
         self.ativar_campos(dados)
         
     def ativar_campos(self, dados):
@@ -173,6 +178,8 @@ class EdicaoView(Ui_Form, QWidget):
         self.inputCheck_emailEnviado.setChecked(False)
         self.inputCheck_inseridoMetas.setChecked(False)
         self.inputCheck_atualizadoSistema.setChecked(False)
+        self.inputCheck_emailEnviado_4.setChecked(False)
+        self.inputCheck_emailEnviado_2.setChecked(False)
 
     def montar_data(self, data):
         try:

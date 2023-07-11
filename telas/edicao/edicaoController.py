@@ -48,6 +48,8 @@ class EdicaoController:
             "emailOrigem": [],
             "status": [],
             "id": [],
+            "permaneceMeta": [],
+            "geraEmail": [],
         }
 
         d['metaOrigemAtual'].append(self.view.input_metaOrigemAtual.text())
@@ -119,6 +121,9 @@ class EdicaoController:
             d['status'].append('ok')
         else:
             d['status'].append('')
+
+        d['permaneceMeta'] = self.view.inputCheck_emailEnviado_2.isChecked()
+        d['geraEmail'] = self.view.inputCheck_emailEnviado_4.isChecked()
 
         d['id'].append(int(self.ui.dados['id']))
 
@@ -243,6 +248,9 @@ NOVA Meta FÌSICA de Destino:
             dados.append('ok')
         else:
             dados.append('')
+
+        dados.append(self.view.inputCheck_emailEnviado_4.isChecked())
+        dados.append(self.view.inputCheck_emailEnviado_2.isChecked())
 
         dados.append(int(self.ui.dados['id']))
 

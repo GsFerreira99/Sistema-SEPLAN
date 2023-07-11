@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>903</width>
+    <width>1137</width>
     <height>841</height>
    </rect>
   </property>
@@ -1562,21 +1562,8 @@ QCalendarWidget QWidget{
              <property name="verticalSpacing">
               <number>10</number>
              </property>
-             <item row="7" column="0">
-              <spacer name="verticalSpacer_2">
-               <property name="orientation">
-                <enum>Qt::Vertical</enum>
-               </property>
-               <property name="sizeHint" stdset="0">
-                <size>
-                 <width>20</width>
-                 <height>40</height>
-                </size>
-               </property>
-              </spacer>
-             </item>
-             <item row="5" column="0">
-              <widget class="QFrame" name="frame_20">
+             <item row="4" column="0" colspan="2">
+              <widget class="QFrame" name="frame_17">
                <property name="sizePolicy">
                 <sizepolicy hsizetype="Preferred" vsizetype="Expanding">
                  <horstretch>0</horstretch>
@@ -1586,8 +1573,13 @@ QCalendarWidget QWidget{
                <property name="maximumSize">
                 <size>
                  <width>16777215</width>
-                 <height>60</height>
+                 <height>250</height>
                 </size>
+               </property>
+               <property name="font">
+                <font>
+                 <pointsize>8</pointsize>
+                </font>
                </property>
                <property name="frameShape">
                 <enum>QFrame::StyledPanel</enum>
@@ -1595,9 +1587,9 @@ QCalendarWidget QWidget{
                <property name="frameShadow">
                 <enum>QFrame::Raised</enum>
                </property>
-               <layout class="QVBoxLayout" name="verticalLayout_17">
+               <layout class="QGridLayout" name="gridLayout_2">
                 <property name="leftMargin">
-                 <number>0</number>
+                 <number>30</number>
                 </property>
                 <property name="topMargin">
                  <number>0</number>
@@ -1608,37 +1600,11 @@ QCalendarWidget QWidget{
                 <property name="bottomMargin">
                  <number>0</number>
                 </property>
-                <item>
-                 <widget class="QLabel" name="lb_metaSuplementado_titulo">
-                  <property name="sizePolicy">
-                   <sizepolicy hsizetype="Preferred" vsizetype="Expanding">
-                    <horstretch>0</horstretch>
-                    <verstretch>0</verstretch>
-                   </sizepolicy>
-                  </property>
-                  <property name="maximumSize">
-                   <size>
-                    <width>16777215</width>
-                    <height>20</height>
-                   </size>
-                  </property>
-                  <property name="font">
-                   <font>
-                    <family>Calibri</family>
-                    <pointsize>12</pointsize>
-                    <bold>true</bold>
-                   </font>
-                  </property>
-                  <property name="text">
-                   <string>Nova Meta Física Suplementado (Destino)</string>
-                  </property>
-                  <property name="buddy">
-                   <cstring>input_metaOrigemAtual</cstring>
-                  </property>
-                 </widget>
-                </item>
-                <item>
-                 <widget class="QLineEdit" name="input_metaSuplementado">
+                <property name="horizontalSpacing">
+                 <number>30</number>
+                </property>
+                <item row="3" column="2">
+                 <widget class="QLineEdit" name="input_origem_status3">
                   <property name="minimumSize">
                    <size>
                     <width>0</width>
@@ -1661,12 +1627,327 @@ QLineEdit:focus {
 	border-bottom: 2px solid rgb(161, 150, 170)
 }</string>
                   </property>
+                  <property name="placeholderText">
+                   <string>Status 3</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="1" column="0">
+                 <widget class="QDateEdit" name="inputDate_origem1">
+                  <property name="minimumSize">
+                   <size>
+                    <width>0</width>
+                    <height>25</height>
+                   </size>
+                  </property>
+                  <property name="maximumSize">
+                   <size>
+                    <width>100</width>
+                    <height>16777215</height>
+                   </size>
+                  </property>
+                  <property name="styleSheet">
+                   <string notr="true">QDateEdit {
+	border: none;
+	border-bottom: 1px solid rgb(161, 150, 170)
+}
+
+QDateEdit:focus {
+	border-bottom: 2px solid rgb(161, 150, 170)
+}</string>
+                  </property>
+                  <property name="dateTime">
+                   <datetime>
+                    <hour>6</hour>
+                    <minute>0</minute>
+                    <second>0</second>
+                    <year>2022</year>
+                    <month>6</month>
+                    <day>7</day>
+                   </datetime>
+                  </property>
+                  <property name="calendarPopup">
+                   <bool>true</bool>
+                  </property>
+                 </widget>
+                </item>
+                <item row="0" column="0">
+                 <widget class="QLabel" name="label_23">
+                  <property name="sizePolicy">
+                   <sizepolicy hsizetype="Preferred" vsizetype="Expanding">
+                    <horstretch>0</horstretch>
+                    <verstretch>0</verstretch>
+                   </sizepolicy>
+                  </property>
+                  <property name="maximumSize">
+                   <size>
+                    <width>16777215</width>
+                    <height>20</height>
+                   </size>
+                  </property>
+                  <property name="font">
+                   <font>
+                    <family>Calibri</family>
+                    <pointsize>13</pointsize>
+                    <bold>false</bold>
+                   </font>
+                  </property>
+                  <property name="text">
+                   <string>Origem</string>
+                  </property>
+                  <property name="buddy">
+                   <cstring>input_metaOrigemAtual</cstring>
+                  </property>
+                 </widget>
+                </item>
+                <item row="3" column="1">
+                 <widget class="QLineEdit" name="input_origem_contato3">
+                  <property name="minimumSize">
+                   <size>
+                    <width>0</width>
+                    <height>25</height>
+                   </size>
+                  </property>
+                  <property name="font">
+                   <font>
+                    <family>Calibri</family>
+                    <pointsize>10</pointsize>
+                   </font>
+                  </property>
+                  <property name="styleSheet">
+                   <string notr="true">QLineEdit {
+	border: none;
+	border-bottom: 1px solid rgb(161, 150, 170)
+}
+
+QLineEdit:focus {
+	border-bottom: 2px solid rgb(161, 150, 170)
+}</string>
+                  </property>
+                  <property name="text">
+                   <string/>
+                  </property>
+                  <property name="placeholderText">
+                   <string>Contato 3</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="3" column="0">
+                 <widget class="QDateEdit" name="inputDate_origem3">
+                  <property name="sizePolicy">
+                   <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+                    <horstretch>0</horstretch>
+                    <verstretch>0</verstretch>
+                   </sizepolicy>
+                  </property>
+                  <property name="minimumSize">
+                   <size>
+                    <width>0</width>
+                    <height>25</height>
+                   </size>
+                  </property>
+                  <property name="maximumSize">
+                   <size>
+                    <width>100</width>
+                    <height>16777215</height>
+                   </size>
+                  </property>
+                  <property name="styleSheet">
+                   <string notr="true">QDateEdit {
+	border: none;
+	border-bottom: 1px solid rgb(161, 150, 170)
+}
+
+QDateEdit:focus {
+	border-bottom: 2px solid rgb(161, 150, 170)
+}</string>
+                  </property>
+                  <property name="dateTime">
+                   <datetime>
+                    <hour>6</hour>
+                    <minute>0</minute>
+                    <second>0</second>
+                    <year>2022</year>
+                    <month>6</month>
+                    <day>7</day>
+                   </datetime>
+                  </property>
+                  <property name="calendarPopup">
+                   <bool>true</bool>
+                  </property>
+                 </widget>
+                </item>
+                <item row="1" column="2">
+                 <widget class="QLineEdit" name="input_origem_status1">
+                  <property name="minimumSize">
+                   <size>
+                    <width>0</width>
+                    <height>25</height>
+                   </size>
+                  </property>
+                  <property name="font">
+                   <font>
+                    <family>Calibri</family>
+                    <pointsize>10</pointsize>
+                   </font>
+                  </property>
+                  <property name="styleSheet">
+                   <string notr="true">QLineEdit {
+	border: none;
+	border-bottom: 1px solid rgb(161, 150, 170)
+}
+
+QLineEdit:focus {
+	border-bottom: 2px solid rgb(161, 150, 170)
+}</string>
+                  </property>
+                  <property name="placeholderText">
+                   <string>Status 1</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="2" column="1">
+                 <widget class="QLineEdit" name="input_origem_contato2">
+                  <property name="minimumSize">
+                   <size>
+                    <width>0</width>
+                    <height>25</height>
+                   </size>
+                  </property>
+                  <property name="font">
+                   <font>
+                    <family>Calibri</family>
+                    <pointsize>10</pointsize>
+                   </font>
+                  </property>
+                  <property name="styleSheet">
+                   <string notr="true">QLineEdit {
+	border: none;
+	border-bottom: 1px solid rgb(161, 150, 170)
+}
+
+QLineEdit:focus {
+	border-bottom: 2px solid rgb(161, 150, 170)
+}</string>
+                  </property>
+                  <property name="text">
+                   <string/>
+                  </property>
+                  <property name="placeholderText">
+                   <string>Contato 2</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="2" column="2">
+                 <widget class="QLineEdit" name="input_origem_status2">
+                  <property name="minimumSize">
+                   <size>
+                    <width>0</width>
+                    <height>25</height>
+                   </size>
+                  </property>
+                  <property name="font">
+                   <font>
+                    <family>Calibri</family>
+                    <pointsize>10</pointsize>
+                   </font>
+                  </property>
+                  <property name="styleSheet">
+                   <string notr="true">QLineEdit {
+	border: none;
+	border-bottom: 1px solid rgb(161, 150, 170)
+}
+
+QLineEdit:focus {
+	border-bottom: 2px solid rgb(161, 150, 170)
+}</string>
+                  </property>
+                  <property name="placeholderText">
+                   <string>Status 2</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="2" column="0">
+                 <widget class="QDateEdit" name="inputDate_origem2">
+                  <property name="sizePolicy">
+                   <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+                    <horstretch>0</horstretch>
+                    <verstretch>0</verstretch>
+                   </sizepolicy>
+                  </property>
+                  <property name="minimumSize">
+                   <size>
+                    <width>0</width>
+                    <height>25</height>
+                   </size>
+                  </property>
+                  <property name="maximumSize">
+                   <size>
+                    <width>100</width>
+                    <height>16777215</height>
+                   </size>
+                  </property>
+                  <property name="styleSheet">
+                   <string notr="true">QDateEdit {
+	border: none;
+	border-bottom: 1px solid rgb(161, 150, 170)
+}
+
+QDateEdit:focus {
+	border-bottom: 2px solid rgb(161, 150, 170)
+}</string>
+                  </property>
+                  <property name="dateTime">
+                   <datetime>
+                    <hour>6</hour>
+                    <minute>0</minute>
+                    <second>0</second>
+                    <year>2022</year>
+                    <month>6</month>
+                    <day>7</day>
+                   </datetime>
+                  </property>
+                  <property name="calendarPopup">
+                   <bool>true</bool>
+                  </property>
+                 </widget>
+                </item>
+                <item row="1" column="1">
+                 <widget class="QLineEdit" name="input_origem_contato1">
+                  <property name="minimumSize">
+                   <size>
+                    <width>0</width>
+                    <height>25</height>
+                   </size>
+                  </property>
+                  <property name="font">
+                   <font>
+                    <family>Calibri</family>
+                    <pointsize>10</pointsize>
+                   </font>
+                  </property>
+                  <property name="styleSheet">
+                   <string notr="true">QLineEdit {
+	border: none;
+	border-bottom: 1px solid rgb(161, 150, 170)
+}
+
+QLineEdit:focus {
+	border-bottom: 2px solid rgb(161, 150, 170)
+}</string>
+                  </property>
+                  <property name="text">
+                   <string/>
+                  </property>
+                  <property name="placeholderText">
+                   <string>Contato 1</string>
+                  </property>
                  </widget>
                 </item>
                </layout>
               </widget>
              </item>
-             <item row="4" column="0">
+             <item row="6" column="0">
               <widget class="QFrame" name="frame_19">
                <property name="sizePolicy">
                 <sizepolicy hsizetype="Preferred" vsizetype="Expanding">
@@ -1757,7 +2038,7 @@ QLineEdit:focus {
                </layout>
               </widget>
              </item>
-             <item row="0" column="0">
+             <item row="1" column="0">
               <widget class="QFrame" name="frame_14">
                <property name="sizePolicy">
                 <sizepolicy hsizetype="Preferred" vsizetype="Expanding">
@@ -1848,620 +2129,20 @@ QLineEdit:focus {
                </layout>
               </widget>
              </item>
-             <item row="0" column="1">
-              <widget class="QFrame" name="frame_15">
-               <property name="sizePolicy">
-                <sizepolicy hsizetype="Preferred" vsizetype="Expanding">
-                 <horstretch>0</horstretch>
-                 <verstretch>0</verstretch>
-                </sizepolicy>
+             <item row="9" column="0">
+              <spacer name="verticalSpacer_2">
+               <property name="orientation">
+                <enum>Qt::Vertical</enum>
                </property>
-               <property name="maximumSize">
+               <property name="sizeHint" stdset="0">
                 <size>
-                 <width>16777215</width>
-                 <height>60</height>
+                 <width>20</width>
+                 <height>40</height>
                 </size>
                </property>
-               <property name="frameShape">
-                <enum>QFrame::StyledPanel</enum>
-               </property>
-               <property name="frameShadow">
-                <enum>QFrame::Raised</enum>
-               </property>
-               <layout class="QVBoxLayout" name="verticalLayout_14">
-                <property name="leftMargin">
-                 <number>0</number>
-                </property>
-                <property name="topMargin">
-                 <number>0</number>
-                </property>
-                <property name="rightMargin">
-                 <number>0</number>
-                </property>
-                <property name="bottomMargin">
-                 <number>0</number>
-                </property>
-                <item>
-                 <widget class="QLabel" name="lb_metaDestinoAtual_titulo">
-                  <property name="sizePolicy">
-                   <sizepolicy hsizetype="Preferred" vsizetype="Expanding">
-                    <horstretch>0</horstretch>
-                    <verstretch>0</verstretch>
-                   </sizepolicy>
-                  </property>
-                  <property name="maximumSize">
-                   <size>
-                    <width>16777215</width>
-                    <height>20</height>
-                   </size>
-                  </property>
-                  <property name="font">
-                   <font>
-                    <family>Calibri</family>
-                    <pointsize>12</pointsize>
-                    <bold>false</bold>
-                   </font>
-                  </property>
-                  <property name="text">
-                   <string>Meta FÍSICA de Destino ATUAL</string>
-                  </property>
-                  <property name="buddy">
-                   <cstring>input_metaOrigemAtual_2</cstring>
-                  </property>
-                 </widget>
-                </item>
-                <item>
-                 <widget class="QLineEdit" name="input_metaOrigemAtual_2">
-                  <property name="minimumSize">
-                   <size>
-                    <width>0</width>
-                    <height>25</height>
-                   </size>
-                  </property>
-                  <property name="font">
-                   <font>
-                    <family>Calibri</family>
-                    <pointsize>10</pointsize>
-                   </font>
-                  </property>
-                  <property name="styleSheet">
-                   <string notr="true">QLineEdit {
-	border: none;
-	border-bottom: 1px solid rgb(161, 150, 170)
-}
-
-QLineEdit:focus {
-	border-bottom: 2px solid rgb(161, 150, 170)
-}</string>
-                  </property>
-                 </widget>
-                </item>
-               </layout>
-              </widget>
+              </spacer>
              </item>
-             <item row="1" column="0">
-              <widget class="QFrame" name="frame_16">
-               <property name="sizePolicy">
-                <sizepolicy hsizetype="Preferred" vsizetype="Expanding">
-                 <horstretch>0</horstretch>
-                 <verstretch>0</verstretch>
-                </sizepolicy>
-               </property>
-               <property name="maximumSize">
-                <size>
-                 <width>16777215</width>
-                 <height>60</height>
-                </size>
-               </property>
-               <property name="frameShape">
-                <enum>QFrame::StyledPanel</enum>
-               </property>
-               <property name="frameShadow">
-                <enum>QFrame::Raised</enum>
-               </property>
-               <layout class="QGridLayout" name="gridLayout_4">
-                <property name="leftMargin">
-                 <number>15</number>
-                </property>
-                <property name="topMargin">
-                 <number>0</number>
-                </property>
-                <property name="rightMargin">
-                 <number>0</number>
-                </property>
-                <property name="bottomMargin">
-                 <number>0</number>
-                </property>
-                <item row="0" column="0">
-                 <widget class="QLabel" name="lb_dataInicial_titulo">
-                  <property name="sizePolicy">
-                   <sizepolicy hsizetype="Preferred" vsizetype="Expanding">
-                    <horstretch>0</horstretch>
-                    <verstretch>0</verstretch>
-                   </sizepolicy>
-                  </property>
-                  <property name="maximumSize">
-                   <size>
-                    <width>16777215</width>
-                    <height>20</height>
-                   </size>
-                  </property>
-                  <property name="font">
-                   <font>
-                    <family>Calibri</family>
-                    <pointsize>12</pointsize>
-                    <bold>true</bold>
-                   </font>
-                  </property>
-                  <property name="text">
-                   <string>Data Email Inicial</string>
-                  </property>
-                  <property name="buddy">
-                   <cstring>input_metaOrigemAtual</cstring>
-                  </property>
-                 </widget>
-                </item>
-                <item row="2" column="0">
-                 <widget class="QDateEdit" name="inputDate_emailInicial">
-                  <property name="minimumSize">
-                   <size>
-                    <width>0</width>
-                    <height>25</height>
-                   </size>
-                  </property>
-                  <property name="maximumSize">
-                   <size>
-                    <width>150</width>
-                    <height>16777215</height>
-                   </size>
-                  </property>
-                  <property name="styleSheet">
-                   <string notr="true">QDateEdit {
-	border: none;
-	border-bottom: 1px solid rgb(161, 150, 170)
-}
-
-QDateEdit:focus {
-	border-bottom: 2px solid rgb(161, 150, 170)
-}
-</string>
-                  </property>
-                  <property name="dateTime">
-                   <datetime>
-                    <hour>3</hour>
-                    <minute>0</minute>
-                    <second>0</second>
-                    <year>2022</year>
-                    <month>6</month>
-                    <day>7</day>
-                   </datetime>
-                  </property>
-                  <property name="calendarPopup">
-                   <bool>true</bool>
-                  </property>
-                 </widget>
-                </item>
-                <item row="2" column="1">
-                 <widget class="QLineEdit" name="input_origem_contato1_2">
-                  <property name="minimumSize">
-                   <size>
-                    <width>0</width>
-                    <height>25</height>
-                   </size>
-                  </property>
-                  <property name="font">
-                   <font>
-                    <family>Calibri</family>
-                    <pointsize>10</pointsize>
-                   </font>
-                  </property>
-                  <property name="styleSheet">
-                   <string notr="true">QLineEdit {
-	border: none;
-	border-bottom: 1px solid rgb(161, 150, 170)
-}
-
-QLineEdit:focus {
-	border-bottom: 2px solid rgb(161, 150, 170)
-}</string>
-                  </property>
-                  <property name="text">
-                   <string/>
-                  </property>
-                  <property name="placeholderText">
-                   <string>Destinatários</string>
-                  </property>
-                 </widget>
-                </item>
-               </layout>
-              </widget>
-             </item>
-             <item row="2" column="0" colspan="2">
-              <widget class="QFrame" name="frame_17">
-               <property name="sizePolicy">
-                <sizepolicy hsizetype="Preferred" vsizetype="Expanding">
-                 <horstretch>0</horstretch>
-                 <verstretch>0</verstretch>
-                </sizepolicy>
-               </property>
-               <property name="maximumSize">
-                <size>
-                 <width>16777215</width>
-                 <height>250</height>
-                </size>
-               </property>
-               <property name="font">
-                <font>
-                 <pointsize>8</pointsize>
-                </font>
-               </property>
-               <property name="frameShape">
-                <enum>QFrame::StyledPanel</enum>
-               </property>
-               <property name="frameShadow">
-                <enum>QFrame::Raised</enum>
-               </property>
-               <layout class="QGridLayout" name="gridLayout_2">
-                <property name="leftMargin">
-                 <number>30</number>
-                </property>
-                <property name="topMargin">
-                 <number>0</number>
-                </property>
-                <property name="rightMargin">
-                 <number>0</number>
-                </property>
-                <property name="bottomMargin">
-                 <number>0</number>
-                </property>
-                <property name="horizontalSpacing">
-                 <number>30</number>
-                </property>
-                <item row="0" column="0">
-                 <widget class="QLabel" name="label_23">
-                  <property name="sizePolicy">
-                   <sizepolicy hsizetype="Preferred" vsizetype="Expanding">
-                    <horstretch>0</horstretch>
-                    <verstretch>0</verstretch>
-                   </sizepolicy>
-                  </property>
-                  <property name="maximumSize">
-                   <size>
-                    <width>16777215</width>
-                    <height>20</height>
-                   </size>
-                  </property>
-                  <property name="font">
-                   <font>
-                    <family>Calibri</family>
-                    <pointsize>13</pointsize>
-                    <bold>false</bold>
-                   </font>
-                  </property>
-                  <property name="text">
-                   <string>Origem</string>
-                  </property>
-                  <property name="buddy">
-                   <cstring>input_metaOrigemAtual</cstring>
-                  </property>
-                 </widget>
-                </item>
-                <item row="1" column="2">
-                 <widget class="QLineEdit" name="input_origem_status1">
-                  <property name="minimumSize">
-                   <size>
-                    <width>0</width>
-                    <height>25</height>
-                   </size>
-                  </property>
-                  <property name="font">
-                   <font>
-                    <family>Calibri</family>
-                    <pointsize>10</pointsize>
-                   </font>
-                  </property>
-                  <property name="styleSheet">
-                   <string notr="true">QLineEdit {
-	border: none;
-	border-bottom: 1px solid rgb(161, 150, 170)
-}
-
-QLineEdit:focus {
-	border-bottom: 2px solid rgb(161, 150, 170)
-}</string>
-                  </property>
-                  <property name="placeholderText">
-                   <string>Status 1</string>
-                  </property>
-                 </widget>
-                </item>
-                <item row="1" column="1">
-                 <widget class="QLineEdit" name="input_origem_contato1">
-                  <property name="minimumSize">
-                   <size>
-                    <width>0</width>
-                    <height>25</height>
-                   </size>
-                  </property>
-                  <property name="font">
-                   <font>
-                    <family>Calibri</family>
-                    <pointsize>10</pointsize>
-                   </font>
-                  </property>
-                  <property name="styleSheet">
-                   <string notr="true">QLineEdit {
-	border: none;
-	border-bottom: 1px solid rgb(161, 150, 170)
-}
-
-QLineEdit:focus {
-	border-bottom: 2px solid rgb(161, 150, 170)
-}</string>
-                  </property>
-                  <property name="text">
-                   <string/>
-                  </property>
-                  <property name="placeholderText">
-                   <string>Contato 1</string>
-                  </property>
-                 </widget>
-                </item>
-                <item row="2" column="1">
-                 <widget class="QLineEdit" name="input_origem_contato2">
-                  <property name="minimumSize">
-                   <size>
-                    <width>0</width>
-                    <height>25</height>
-                   </size>
-                  </property>
-                  <property name="font">
-                   <font>
-                    <family>Calibri</family>
-                    <pointsize>10</pointsize>
-                   </font>
-                  </property>
-                  <property name="styleSheet">
-                   <string notr="true">QLineEdit {
-	border: none;
-	border-bottom: 1px solid rgb(161, 150, 170)
-}
-
-QLineEdit:focus {
-	border-bottom: 2px solid rgb(161, 150, 170)
-}</string>
-                  </property>
-                  <property name="text">
-                   <string/>
-                  </property>
-                  <property name="placeholderText">
-                   <string>Contato 2</string>
-                  </property>
-                 </widget>
-                </item>
-                <item row="3" column="1">
-                 <widget class="QLineEdit" name="input_origem_contato3">
-                  <property name="minimumSize">
-                   <size>
-                    <width>0</width>
-                    <height>25</height>
-                   </size>
-                  </property>
-                  <property name="font">
-                   <font>
-                    <family>Calibri</family>
-                    <pointsize>10</pointsize>
-                   </font>
-                  </property>
-                  <property name="styleSheet">
-                   <string notr="true">QLineEdit {
-	border: none;
-	border-bottom: 1px solid rgb(161, 150, 170)
-}
-
-QLineEdit:focus {
-	border-bottom: 2px solid rgb(161, 150, 170)
-}</string>
-                  </property>
-                  <property name="text">
-                   <string/>
-                  </property>
-                  <property name="placeholderText">
-                   <string>Contato 3</string>
-                  </property>
-                 </widget>
-                </item>
-                <item row="2" column="2">
-                 <widget class="QLineEdit" name="input_origem_status2">
-                  <property name="minimumSize">
-                   <size>
-                    <width>0</width>
-                    <height>25</height>
-                   </size>
-                  </property>
-                  <property name="font">
-                   <font>
-                    <family>Calibri</family>
-                    <pointsize>10</pointsize>
-                   </font>
-                  </property>
-                  <property name="styleSheet">
-                   <string notr="true">QLineEdit {
-	border: none;
-	border-bottom: 1px solid rgb(161, 150, 170)
-}
-
-QLineEdit:focus {
-	border-bottom: 2px solid rgb(161, 150, 170)
-}</string>
-                  </property>
-                  <property name="placeholderText">
-                   <string>Status 2</string>
-                  </property>
-                 </widget>
-                </item>
-                <item row="3" column="2">
-                 <widget class="QLineEdit" name="input_origem_status3">
-                  <property name="minimumSize">
-                   <size>
-                    <width>0</width>
-                    <height>25</height>
-                   </size>
-                  </property>
-                  <property name="font">
-                   <font>
-                    <family>Calibri</family>
-                    <pointsize>10</pointsize>
-                   </font>
-                  </property>
-                  <property name="styleSheet">
-                   <string notr="true">QLineEdit {
-	border: none;
-	border-bottom: 1px solid rgb(161, 150, 170)
-}
-
-QLineEdit:focus {
-	border-bottom: 2px solid rgb(161, 150, 170)
-}</string>
-                  </property>
-                  <property name="placeholderText">
-                   <string>Status 3</string>
-                  </property>
-                 </widget>
-                </item>
-                <item row="1" column="0">
-                 <widget class="QDateEdit" name="inputDate_origem1">
-                  <property name="minimumSize">
-                   <size>
-                    <width>0</width>
-                    <height>25</height>
-                   </size>
-                  </property>
-                  <property name="maximumSize">
-                   <size>
-                    <width>100</width>
-                    <height>16777215</height>
-                   </size>
-                  </property>
-                  <property name="styleSheet">
-                   <string notr="true">QDateEdit {
-	border: none;
-	border-bottom: 1px solid rgb(161, 150, 170)
-}
-
-QDateEdit:focus {
-	border-bottom: 2px solid rgb(161, 150, 170)
-}</string>
-                  </property>
-                  <property name="dateTime">
-                   <datetime>
-                    <hour>3</hour>
-                    <minute>0</minute>
-                    <second>0</second>
-                    <year>2022</year>
-                    <month>6</month>
-                    <day>7</day>
-                   </datetime>
-                  </property>
-                  <property name="calendarPopup">
-                   <bool>true</bool>
-                  </property>
-                 </widget>
-                </item>
-                <item row="2" column="0">
-                 <widget class="QDateEdit" name="inputDate_origem2">
-                  <property name="sizePolicy">
-                   <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
-                    <horstretch>0</horstretch>
-                    <verstretch>0</verstretch>
-                   </sizepolicy>
-                  </property>
-                  <property name="minimumSize">
-                   <size>
-                    <width>0</width>
-                    <height>25</height>
-                   </size>
-                  </property>
-                  <property name="maximumSize">
-                   <size>
-                    <width>100</width>
-                    <height>16777215</height>
-                   </size>
-                  </property>
-                  <property name="styleSheet">
-                   <string notr="true">QDateEdit {
-	border: none;
-	border-bottom: 1px solid rgb(161, 150, 170)
-}
-
-QDateEdit:focus {
-	border-bottom: 2px solid rgb(161, 150, 170)
-}</string>
-                  </property>
-                  <property name="dateTime">
-                   <datetime>
-                    <hour>3</hour>
-                    <minute>0</minute>
-                    <second>0</second>
-                    <year>2022</year>
-                    <month>6</month>
-                    <day>7</day>
-                   </datetime>
-                  </property>
-                  <property name="calendarPopup">
-                   <bool>true</bool>
-                  </property>
-                 </widget>
-                </item>
-                <item row="3" column="0">
-                 <widget class="QDateEdit" name="inputDate_origem3">
-                  <property name="sizePolicy">
-                   <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
-                    <horstretch>0</horstretch>
-                    <verstretch>0</verstretch>
-                   </sizepolicy>
-                  </property>
-                  <property name="minimumSize">
-                   <size>
-                    <width>0</width>
-                    <height>25</height>
-                   </size>
-                  </property>
-                  <property name="maximumSize">
-                   <size>
-                    <width>100</width>
-                    <height>16777215</height>
-                   </size>
-                  </property>
-                  <property name="styleSheet">
-                   <string notr="true">QDateEdit {
-	border: none;
-	border-bottom: 1px solid rgb(161, 150, 170)
-}
-
-QDateEdit:focus {
-	border-bottom: 2px solid rgb(161, 150, 170)
-}</string>
-                  </property>
-                  <property name="dateTime">
-                   <datetime>
-                    <hour>3</hour>
-                    <minute>0</minute>
-                    <second>0</second>
-                    <year>2022</year>
-                    <month>6</month>
-                    <day>7</day>
-                   </datetime>
-                  </property>
-                  <property name="calendarPopup">
-                   <bool>true</bool>
-                  </property>
-                 </widget>
-                </item>
-               </layout>
-              </widget>
-             </item>
-             <item row="3" column="0" colspan="2">
+             <item row="5" column="0" colspan="2">
               <widget class="QFrame" name="frame_18">
                <property name="sizePolicy">
                 <sizepolicy hsizetype="Preferred" vsizetype="Expanding">
@@ -2534,7 +2215,7 @@ QDateEdit:focus {
                   </property>
                   <property name="dateTime">
                    <datetime>
-                    <hour>3</hour>
+                    <hour>6</hour>
                     <minute>0</minute>
                     <second>0</second>
                     <year>2022</year>
@@ -2730,7 +2411,7 @@ QDateEdit:focus {
                   </property>
                   <property name="dateTime">
                    <datetime>
-                    <hour>3</hour>
+                    <hour>6</hour>
                     <minute>0</minute>
                     <second>0</second>
                     <year>2022</year>
@@ -2836,7 +2517,7 @@ QDateEdit:focus {
                   </property>
                   <property name="dateTime">
                    <datetime>
-                    <hour>3</hour>
+                    <hour>6</hour>
                     <minute>0</minute>
                     <second>0</second>
                     <year>2022</year>
@@ -2852,7 +2533,98 @@ QDateEdit:focus {
                </layout>
               </widget>
              </item>
-             <item row="6" column="0" colspan="2">
+             <item row="7" column="0">
+              <widget class="QFrame" name="frame_20">
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Preferred" vsizetype="Expanding">
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
+               <property name="maximumSize">
+                <size>
+                 <width>16777215</width>
+                 <height>60</height>
+                </size>
+               </property>
+               <property name="frameShape">
+                <enum>QFrame::StyledPanel</enum>
+               </property>
+               <property name="frameShadow">
+                <enum>QFrame::Raised</enum>
+               </property>
+               <layout class="QVBoxLayout" name="verticalLayout_17">
+                <property name="leftMargin">
+                 <number>0</number>
+                </property>
+                <property name="topMargin">
+                 <number>0</number>
+                </property>
+                <property name="rightMargin">
+                 <number>0</number>
+                </property>
+                <property name="bottomMargin">
+                 <number>0</number>
+                </property>
+                <item>
+                 <widget class="QLabel" name="lb_metaSuplementado_titulo">
+                  <property name="sizePolicy">
+                   <sizepolicy hsizetype="Preferred" vsizetype="Expanding">
+                    <horstretch>0</horstretch>
+                    <verstretch>0</verstretch>
+                   </sizepolicy>
+                  </property>
+                  <property name="maximumSize">
+                   <size>
+                    <width>16777215</width>
+                    <height>20</height>
+                   </size>
+                  </property>
+                  <property name="font">
+                   <font>
+                    <family>Calibri</family>
+                    <pointsize>12</pointsize>
+                    <bold>true</bold>
+                   </font>
+                  </property>
+                  <property name="text">
+                   <string>Nova Meta Física Suplementado (Destino)</string>
+                  </property>
+                  <property name="buddy">
+                   <cstring>input_metaOrigemAtual</cstring>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QLineEdit" name="input_metaSuplementado">
+                  <property name="minimumSize">
+                   <size>
+                    <width>0</width>
+                    <height>25</height>
+                   </size>
+                  </property>
+                  <property name="font">
+                   <font>
+                    <family>Calibri</family>
+                    <pointsize>10</pointsize>
+                   </font>
+                  </property>
+                  <property name="styleSheet">
+                   <string notr="true">QLineEdit {
+	border: none;
+	border-bottom: 1px solid rgb(161, 150, 170)
+}
+
+QLineEdit:focus {
+	border-bottom: 2px solid rgb(161, 150, 170)
+}</string>
+                  </property>
+                 </widget>
+                </item>
+               </layout>
+              </widget>
+             </item>
+             <item row="8" column="0" colspan="2">
               <widget class="QFrame" name="frame_13">
                <property name="minimumSize">
                 <size>
@@ -2919,6 +2691,272 @@ QDateEdit:focus {
                  </widget>
                 </item>
                </layout>
+              </widget>
+             </item>
+             <item row="1" column="1">
+              <widget class="QFrame" name="frame_15">
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Preferred" vsizetype="Expanding">
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
+               <property name="maximumSize">
+                <size>
+                 <width>16777215</width>
+                 <height>60</height>
+                </size>
+               </property>
+               <property name="frameShape">
+                <enum>QFrame::StyledPanel</enum>
+               </property>
+               <property name="frameShadow">
+                <enum>QFrame::Raised</enum>
+               </property>
+               <layout class="QVBoxLayout" name="verticalLayout_14">
+                <property name="leftMargin">
+                 <number>0</number>
+                </property>
+                <property name="topMargin">
+                 <number>0</number>
+                </property>
+                <property name="rightMargin">
+                 <number>0</number>
+                </property>
+                <property name="bottomMargin">
+                 <number>0</number>
+                </property>
+                <item>
+                 <widget class="QLabel" name="lb_metaDestinoAtual_titulo">
+                  <property name="sizePolicy">
+                   <sizepolicy hsizetype="Preferred" vsizetype="Expanding">
+                    <horstretch>0</horstretch>
+                    <verstretch>0</verstretch>
+                   </sizepolicy>
+                  </property>
+                  <property name="maximumSize">
+                   <size>
+                    <width>16777215</width>
+                    <height>20</height>
+                   </size>
+                  </property>
+                  <property name="font">
+                   <font>
+                    <family>Calibri</family>
+                    <pointsize>12</pointsize>
+                    <bold>false</bold>
+                   </font>
+                  </property>
+                  <property name="text">
+                   <string>Meta FÍSICA de Destino ATUAL</string>
+                  </property>
+                  <property name="buddy">
+                   <cstring>input_metaOrigemAtual_2</cstring>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QLineEdit" name="input_metaOrigemAtual_2">
+                  <property name="minimumSize">
+                   <size>
+                    <width>0</width>
+                    <height>25</height>
+                   </size>
+                  </property>
+                  <property name="font">
+                   <font>
+                    <family>Calibri</family>
+                    <pointsize>10</pointsize>
+                   </font>
+                  </property>
+                  <property name="styleSheet">
+                   <string notr="true">QLineEdit {
+	border: none;
+	border-bottom: 1px solid rgb(161, 150, 170)
+}
+
+QLineEdit:focus {
+	border-bottom: 2px solid rgb(161, 150, 170)
+}</string>
+                  </property>
+                 </widget>
+                </item>
+               </layout>
+              </widget>
+             </item>
+             <item row="6" column="1" rowspan="2">
+              <widget class="QFrame" name="frame_27">
+               <property name="frameShape">
+                <enum>QFrame::StyledPanel</enum>
+               </property>
+               <property name="frameShadow">
+                <enum>QFrame::Raised</enum>
+               </property>
+               <layout class="QVBoxLayout" name="verticalLayout_15">
+                <item>
+                 <widget class="QCheckBox" name="inputCheck_emailEnviado_2">
+                  <property name="font">
+                   <font>
+                    <family>Calibri</family>
+                    <pointsize>13</pointsize>
+                   </font>
+                  </property>
+                  <property name="text">
+                   <string>Permanece a mesma meta</string>
+                  </property>
+                 </widget>
+                </item>
+               </layout>
+              </widget>
+             </item>
+             <item row="3" column="1">
+              <widget class="QFrame" name="frame_16">
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Preferred" vsizetype="Expanding">
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
+               <property name="maximumSize">
+                <size>
+                 <width>16777215</width>
+                 <height>60</height>
+                </size>
+               </property>
+               <property name="frameShape">
+                <enum>QFrame::StyledPanel</enum>
+               </property>
+               <property name="frameShadow">
+                <enum>QFrame::Raised</enum>
+               </property>
+               <layout class="QGridLayout" name="gridLayout_4">
+                <property name="leftMargin">
+                 <number>15</number>
+                </property>
+                <property name="topMargin">
+                 <number>0</number>
+                </property>
+                <property name="rightMargin">
+                 <number>0</number>
+                </property>
+                <property name="bottomMargin">
+                 <number>0</number>
+                </property>
+                <item row="0" column="0">
+                 <widget class="QLabel" name="lb_dataInicial_titulo">
+                  <property name="sizePolicy">
+                   <sizepolicy hsizetype="Preferred" vsizetype="Expanding">
+                    <horstretch>0</horstretch>
+                    <verstretch>0</verstretch>
+                   </sizepolicy>
+                  </property>
+                  <property name="maximumSize">
+                   <size>
+                    <width>16777215</width>
+                    <height>20</height>
+                   </size>
+                  </property>
+                  <property name="font">
+                   <font>
+                    <family>Calibri</family>
+                    <pointsize>12</pointsize>
+                    <bold>true</bold>
+                   </font>
+                  </property>
+                  <property name="text">
+                   <string>Data Email Inicial</string>
+                  </property>
+                  <property name="buddy">
+                   <cstring>input_metaOrigemAtual</cstring>
+                  </property>
+                 </widget>
+                </item>
+                <item row="2" column="0">
+                 <widget class="QDateEdit" name="inputDate_emailInicial">
+                  <property name="minimumSize">
+                   <size>
+                    <width>0</width>
+                    <height>25</height>
+                   </size>
+                  </property>
+                  <property name="maximumSize">
+                   <size>
+                    <width>150</width>
+                    <height>16777215</height>
+                   </size>
+                  </property>
+                  <property name="styleSheet">
+                   <string notr="true">QDateEdit {
+	border: none;
+	border-bottom: 1px solid rgb(161, 150, 170)
+}
+
+QDateEdit:focus {
+	border-bottom: 2px solid rgb(161, 150, 170)
+}
+</string>
+                  </property>
+                  <property name="dateTime">
+                   <datetime>
+                    <hour>6</hour>
+                    <minute>0</minute>
+                    <second>0</second>
+                    <year>2022</year>
+                    <month>6</month>
+                    <day>7</day>
+                   </datetime>
+                  </property>
+                  <property name="calendarPopup">
+                   <bool>true</bool>
+                  </property>
+                 </widget>
+                </item>
+                <item row="2" column="1">
+                 <widget class="QLineEdit" name="input_origem_contato1_2">
+                  <property name="minimumSize">
+                   <size>
+                    <width>0</width>
+                    <height>25</height>
+                   </size>
+                  </property>
+                  <property name="font">
+                   <font>
+                    <family>Calibri</family>
+                    <pointsize>10</pointsize>
+                   </font>
+                  </property>
+                  <property name="styleSheet">
+                   <string notr="true">QLineEdit {
+	border: none;
+	border-bottom: 1px solid rgb(161, 150, 170)
+}
+
+QLineEdit:focus {
+	border-bottom: 2px solid rgb(161, 150, 170)
+}</string>
+                  </property>
+                  <property name="text">
+                   <string/>
+                  </property>
+                  <property name="placeholderText">
+                   <string>Destinatários</string>
+                  </property>
+                 </widget>
+                </item>
+               </layout>
+              </widget>
+             </item>
+             <item row="3" column="0">
+              <widget class="QCheckBox" name="inputCheck_emailEnviado_4">
+               <property name="font">
+                <font>
+                 <family>Calibri</family>
+                 <pointsize>13</pointsize>
+                </font>
+               </property>
+               <property name="text">
+                <string>Não gera email</string>
+               </property>
               </widget>
              </item>
             </layout>
