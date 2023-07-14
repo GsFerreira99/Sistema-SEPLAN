@@ -154,10 +154,10 @@ class EspelhamentoController:
         if dados['status'][2] == 'ok':
             self.viewSelect.inputCheck_atualizadoSistema.setChecked(True)
 
-        if int(dados['geraEmail']) == 1:
-            self.viewSelect.check_naoGeraEmail.setChecked(True)
-        if int(dados['permaneceMeta']) == 1:
-            self.viewSelect.check_permaneceMeta.setChecked(True)
+        self.viewSelect.inputCheck_permaneceMetaOrigem.setChecked(dados['permaneceMetaOrigem'])
+        self.viewSelect.inputCheck_permaneceMetaDestino.setChecked(dados['permaneceMetaDestino'])
+        self.viewSelect.inputCheck_geraEmailDestino.setChecked(dados['geraEmailDestino'])
+        self.viewSelect.inputCheck_geraEmailOrigem.setChecked(dados['geraEmailOrigem'])
 
     def limpar_select(self):
         self.viewSelect.lb_decreto_info.setText("")
@@ -208,6 +208,11 @@ class EspelhamentoController:
         self.viewSelect.inputDate_destino1.setDate(data)
         self.viewSelect.inputDate_destino2.setDate(data)
         self.viewSelect.inputDate_destino3.setDate(data)
+
+        self.viewSelect.inputCheck_permaneceMetaOrigem.setChecked(0)
+        self.viewSelect.inputCheck_permaneceMetaDestino.setChecked(0)
+        self.viewSelect.inputCheck_geraEmailDestino.setChecked(0)
+        self.viewSelect.inputCheck_geraEmailOrigem.setChecked(0)
 
     def busca(self, value=None):
         campo = self.view.input_busca.text()
@@ -351,8 +356,10 @@ class EspelhamentoController:
             "statusEnviado": self.viewSelect.radio_statusEnviado.isChecked(),
             "statusMetas": self.viewSelect.radio_statusMetas.isChecked(),
             "statusSistema": self.viewSelect.radio_statusSistema.isChecked(),
-            "permaneceMeta": self.viewSelect.radio_permaneceMeta.isChecked(),
-            "geraEmail": self.viewSelect.radio_naoGeraEmail.isChecked(),
+            "permaneceMetaOrigem": self.viewSelect.radio_permaneceMetaOrigem.isChecked(),
+            "permaneceMetaDestino": self.viewSelect.radio_permaneceMetaDestino.isChecked(),
+            "geraEmailOrigem": self.viewSelect.radio_geraEmailOrigem.isChecked(),
+            "geraEmailDestino": self.viewSelect.radio_geraEmailDestino.isChecked(),
         }
 
         for i in self.dados_escolhidos.values():
@@ -389,10 +396,14 @@ class EspelhamentoController:
                 dados['statusMetas'] = [self.dados_salvos['status'][1]]
             if self.dados_escolhidos['statusSistema'] is True:
                 dados['statusSistema'] = [self.dados_salvos['status'][2]]
-            if self.dados_escolhidos['permaneceMeta'] is True:
-                dados['permaneceMeta'] = [self.dados_salvos['permaneceMeta']]
-            if self.dados_escolhidos['geraEmail'] is True:
-                dados['geraEmail'] = [self.dados_salvos['geraEmail']]
+            if self.dados_escolhidos['permaneceMetaOrigem'] is True:
+                dados['permaneceMetaOrigem'] = [self.dados_salvos['permaneceMetaOrigem']]
+            if self.dados_escolhidos['permaneceMetaDestino'] is True:
+                dados['permaneceMetaDestino'] = [self.dados_salvos['permaneceMetaDestino']]
+            if self.dados_escolhidos['geraEmailOrigem'] is True:
+                dados['geraEmailOrigem'] = [self.dados_salvos['geraEmailOrigem']]
+            if self.dados_escolhidos['geraEmailDestino'] is True:
+                dados['geraEmailDestino'] = [self.dados_salvos['geraEmailDestino']]
             dados['id'] = self.dados_salvos['id']
             return dados
 
@@ -426,8 +437,10 @@ class EspelhamentoController:
         self.viewSelect.inputCheck_emailEnviado.setChecked(False)
         self.viewSelect.inputCheck_inseridoMetas.setChecked(False)
         self.viewSelect.inputCheck_atualizadoSistema.setChecked(False)
-        self.viewSelect.check_naoGeraEmail.setChecked(False)
-        self.viewSelect.check_permaneceMeta.setChecked(False)
+        self.viewSelect.inputCheck_geraEmailOrigem.setChecked(False)
+        self.viewSelect.inputCheck_geraEmailDestino.setChecked(False)
+        self.viewSelect.inputCheck_permaneceMetaOrigem.setChecked(False)
+        self.viewSelect.inputCheck_permaneceMetaDestino.setChecked(False)
 
     def montar_data(self, data):
         try:

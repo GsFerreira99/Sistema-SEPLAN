@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'EdicaoqHfGgf.ui'
+## Form generated from reading UI file 'EdicaosHMIWJ.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.5.1
 ##
@@ -695,183 +695,6 @@ class Ui_Form(object):
         self.gridLayout.setHorizontalSpacing(30)
         self.gridLayout.setVerticalSpacing(10)
         self.gridLayout.setContentsMargins(30, 30, 30, 30)
-        self.frame_17 = QFrame(self.frame_12)
-        self.frame_17.setObjectName(u"frame_17")
-        sizePolicy.setHeightForWidth(self.frame_17.sizePolicy().hasHeightForWidth())
-        self.frame_17.setSizePolicy(sizePolicy)
-        self.frame_17.setMaximumSize(QSize(16777215, 250))
-        font6 = QFont()
-        font6.setPointSize(8)
-        self.frame_17.setFont(font6)
-        self.frame_17.setFrameShape(QFrame.StyledPanel)
-        self.frame_17.setFrameShadow(QFrame.Raised)
-        self.gridLayout_2 = QGridLayout(self.frame_17)
-        self.gridLayout_2.setObjectName(u"gridLayout_2")
-        self.gridLayout_2.setHorizontalSpacing(30)
-        self.gridLayout_2.setContentsMargins(30, 0, 0, 0)
-        self.input_origem_status3 = QLineEdit(self.frame_17)
-        self.input_origem_status3.setObjectName(u"input_origem_status3")
-        self.input_origem_status3.setMinimumSize(QSize(0, 25))
-        font7 = QFont()
-        font7.setFamilies([u"Calibri"])
-        font7.setPointSize(10)
-        self.input_origem_status3.setFont(font7)
-        self.input_origem_status3.setStyleSheet(u"QLineEdit {\n"
-"	border: none;\n"
-"	border-bottom: 1px solid rgb(161, 150, 170)\n"
-"}\n"
-"\n"
-"QLineEdit:focus {\n"
-"	border-bottom: 2px solid rgb(161, 150, 170)\n"
-"}")
-
-        self.gridLayout_2.addWidget(self.input_origem_status3, 3, 2, 1, 1)
-
-        self.inputDate_origem1 = QDateEdit(self.frame_17)
-        self.inputDate_origem1.setObjectName(u"inputDate_origem1")
-        self.inputDate_origem1.setMinimumSize(QSize(0, 25))
-        self.inputDate_origem1.setMaximumSize(QSize(100, 16777215))
-        self.inputDate_origem1.setStyleSheet(u"QDateEdit {\n"
-"	border: none;\n"
-"	border-bottom: 1px solid rgb(161, 150, 170)\n"
-"}\n"
-"\n"
-"QDateEdit:focus {\n"
-"	border-bottom: 2px solid rgb(161, 150, 170)\n"
-"}")
-        self.inputDate_origem1.setDateTime(QDateTime(QDate(2022, 6, 7), QTime(6, 0, 0)))
-        self.inputDate_origem1.setCalendarPopup(True)
-
-        self.gridLayout_2.addWidget(self.inputDate_origem1, 1, 0, 1, 1)
-
-        self.label_23 = QLabel(self.frame_17)
-        self.label_23.setObjectName(u"label_23")
-        sizePolicy.setHeightForWidth(self.label_23.sizePolicy().hasHeightForWidth())
-        self.label_23.setSizePolicy(sizePolicy)
-        self.label_23.setMaximumSize(QSize(16777215, 20))
-        self.label_23.setFont(font3)
-
-        self.gridLayout_2.addWidget(self.label_23, 0, 0, 1, 1)
-
-        self.input_origem_contato3 = QLineEdit(self.frame_17)
-        self.input_origem_contato3.setObjectName(u"input_origem_contato3")
-        self.input_origem_contato3.setMinimumSize(QSize(0, 25))
-        self.input_origem_contato3.setFont(font7)
-        self.input_origem_contato3.setStyleSheet(u"QLineEdit {\n"
-"	border: none;\n"
-"	border-bottom: 1px solid rgb(161, 150, 170)\n"
-"}\n"
-"\n"
-"QLineEdit:focus {\n"
-"	border-bottom: 2px solid rgb(161, 150, 170)\n"
-"}")
-
-        self.gridLayout_2.addWidget(self.input_origem_contato3, 3, 1, 1, 1)
-
-        self.inputDate_origem3 = QDateEdit(self.frame_17)
-        self.inputDate_origem3.setObjectName(u"inputDate_origem3")
-        sizePolicy3 = QSizePolicy(QSizePolicy.Expanding, QSizePolicy.Fixed)
-        sizePolicy3.setHorizontalStretch(0)
-        sizePolicy3.setVerticalStretch(0)
-        sizePolicy3.setHeightForWidth(self.inputDate_origem3.sizePolicy().hasHeightForWidth())
-        self.inputDate_origem3.setSizePolicy(sizePolicy3)
-        self.inputDate_origem3.setMinimumSize(QSize(0, 25))
-        self.inputDate_origem3.setMaximumSize(QSize(100, 16777215))
-        self.inputDate_origem3.setStyleSheet(u"QDateEdit {\n"
-"	border: none;\n"
-"	border-bottom: 1px solid rgb(161, 150, 170)\n"
-"}\n"
-"\n"
-"QDateEdit:focus {\n"
-"	border-bottom: 2px solid rgb(161, 150, 170)\n"
-"}")
-        self.inputDate_origem3.setDateTime(QDateTime(QDate(2022, 6, 7), QTime(6, 0, 0)))
-        self.inputDate_origem3.setCalendarPopup(True)
-
-        self.gridLayout_2.addWidget(self.inputDate_origem3, 3, 0, 1, 1)
-
-        self.input_origem_status1 = QLineEdit(self.frame_17)
-        self.input_origem_status1.setObjectName(u"input_origem_status1")
-        self.input_origem_status1.setMinimumSize(QSize(0, 25))
-        self.input_origem_status1.setFont(font7)
-        self.input_origem_status1.setStyleSheet(u"QLineEdit {\n"
-"	border: none;\n"
-"	border-bottom: 1px solid rgb(161, 150, 170)\n"
-"}\n"
-"\n"
-"QLineEdit:focus {\n"
-"	border-bottom: 2px solid rgb(161, 150, 170)\n"
-"}")
-
-        self.gridLayout_2.addWidget(self.input_origem_status1, 1, 2, 1, 1)
-
-        self.input_origem_contato2 = QLineEdit(self.frame_17)
-        self.input_origem_contato2.setObjectName(u"input_origem_contato2")
-        self.input_origem_contato2.setMinimumSize(QSize(0, 25))
-        self.input_origem_contato2.setFont(font7)
-        self.input_origem_contato2.setStyleSheet(u"QLineEdit {\n"
-"	border: none;\n"
-"	border-bottom: 1px solid rgb(161, 150, 170)\n"
-"}\n"
-"\n"
-"QLineEdit:focus {\n"
-"	border-bottom: 2px solid rgb(161, 150, 170)\n"
-"}")
-
-        self.gridLayout_2.addWidget(self.input_origem_contato2, 2, 1, 1, 1)
-
-        self.input_origem_status2 = QLineEdit(self.frame_17)
-        self.input_origem_status2.setObjectName(u"input_origem_status2")
-        self.input_origem_status2.setMinimumSize(QSize(0, 25))
-        self.input_origem_status2.setFont(font7)
-        self.input_origem_status2.setStyleSheet(u"QLineEdit {\n"
-"	border: none;\n"
-"	border-bottom: 1px solid rgb(161, 150, 170)\n"
-"}\n"
-"\n"
-"QLineEdit:focus {\n"
-"	border-bottom: 2px solid rgb(161, 150, 170)\n"
-"}")
-
-        self.gridLayout_2.addWidget(self.input_origem_status2, 2, 2, 1, 1)
-
-        self.inputDate_origem2 = QDateEdit(self.frame_17)
-        self.inputDate_origem2.setObjectName(u"inputDate_origem2")
-        sizePolicy3.setHeightForWidth(self.inputDate_origem2.sizePolicy().hasHeightForWidth())
-        self.inputDate_origem2.setSizePolicy(sizePolicy3)
-        self.inputDate_origem2.setMinimumSize(QSize(0, 25))
-        self.inputDate_origem2.setMaximumSize(QSize(100, 16777215))
-        self.inputDate_origem2.setStyleSheet(u"QDateEdit {\n"
-"	border: none;\n"
-"	border-bottom: 1px solid rgb(161, 150, 170)\n"
-"}\n"
-"\n"
-"QDateEdit:focus {\n"
-"	border-bottom: 2px solid rgb(161, 150, 170)\n"
-"}")
-        self.inputDate_origem2.setDateTime(QDateTime(QDate(2022, 6, 7), QTime(6, 0, 0)))
-        self.inputDate_origem2.setCalendarPopup(True)
-
-        self.gridLayout_2.addWidget(self.inputDate_origem2, 2, 0, 1, 1)
-
-        self.input_origem_contato1 = QLineEdit(self.frame_17)
-        self.input_origem_contato1.setObjectName(u"input_origem_contato1")
-        self.input_origem_contato1.setMinimumSize(QSize(0, 25))
-        self.input_origem_contato1.setFont(font7)
-        self.input_origem_contato1.setStyleSheet(u"QLineEdit {\n"
-"	border: none;\n"
-"	border-bottom: 1px solid rgb(161, 150, 170)\n"
-"}\n"
-"\n"
-"QLineEdit:focus {\n"
-"	border-bottom: 2px solid rgb(161, 150, 170)\n"
-"}")
-
-        self.gridLayout_2.addWidget(self.input_origem_contato1, 1, 1, 1, 1)
-
-
-        self.gridLayout.addWidget(self.frame_17, 4, 0, 1, 2)
-
         self.frame_19 = QFrame(self.frame_12)
         self.frame_19.setObjectName(u"frame_19")
         sizePolicy.setHeightForWidth(self.frame_19.sizePolicy().hasHeightForWidth())
@@ -887,17 +710,20 @@ class Ui_Form(object):
         sizePolicy.setHeightForWidth(self.lb_metaAnulado_titulo.sizePolicy().hasHeightForWidth())
         self.lb_metaAnulado_titulo.setSizePolicy(sizePolicy)
         self.lb_metaAnulado_titulo.setMaximumSize(QSize(16777215, 20))
-        font8 = QFont()
-        font8.setFamilies([u"Calibri"])
-        font8.setPointSize(12)
-        font8.setBold(True)
-        self.lb_metaAnulado_titulo.setFont(font8)
+        font6 = QFont()
+        font6.setFamilies([u"Calibri"])
+        font6.setPointSize(12)
+        font6.setBold(True)
+        self.lb_metaAnulado_titulo.setFont(font6)
 
         self.verticalLayout_16.addWidget(self.lb_metaAnulado_titulo)
 
         self.input_metaAnulado = QLineEdit(self.frame_19)
         self.input_metaAnulado.setObjectName(u"input_metaAnulado")
         self.input_metaAnulado.setMinimumSize(QSize(0, 25))
+        font7 = QFont()
+        font7.setFamilies([u"Calibri"])
+        font7.setPointSize(10)
         self.input_metaAnulado.setFont(font7)
         self.input_metaAnulado.setStyleSheet(u"QLineEdit {\n"
 "	border: none;\n"
@@ -912,6 +738,61 @@ class Ui_Form(object):
 
 
         self.gridLayout.addWidget(self.frame_19, 6, 0, 1, 1)
+
+        self.frame_16 = QFrame(self.frame_12)
+        self.frame_16.setObjectName(u"frame_16")
+        sizePolicy.setHeightForWidth(self.frame_16.sizePolicy().hasHeightForWidth())
+        self.frame_16.setSizePolicy(sizePolicy)
+        self.frame_16.setMaximumSize(QSize(16777215, 60))
+        self.frame_16.setFrameShape(QFrame.StyledPanel)
+        self.frame_16.setFrameShadow(QFrame.Raised)
+        self.gridLayout_4 = QGridLayout(self.frame_16)
+        self.gridLayout_4.setObjectName(u"gridLayout_4")
+        self.gridLayout_4.setContentsMargins(15, 0, 0, 0)
+        self.lb_dataInicial_titulo = QLabel(self.frame_16)
+        self.lb_dataInicial_titulo.setObjectName(u"lb_dataInicial_titulo")
+        sizePolicy.setHeightForWidth(self.lb_dataInicial_titulo.sizePolicy().hasHeightForWidth())
+        self.lb_dataInicial_titulo.setSizePolicy(sizePolicy)
+        self.lb_dataInicial_titulo.setMaximumSize(QSize(16777215, 20))
+        self.lb_dataInicial_titulo.setFont(font6)
+
+        self.gridLayout_4.addWidget(self.lb_dataInicial_titulo, 0, 0, 1, 1)
+
+        self.inputDate_emailInicial = QDateEdit(self.frame_16)
+        self.inputDate_emailInicial.setObjectName(u"inputDate_emailInicial")
+        self.inputDate_emailInicial.setMinimumSize(QSize(0, 25))
+        self.inputDate_emailInicial.setMaximumSize(QSize(150, 16777215))
+        self.inputDate_emailInicial.setStyleSheet(u"QDateEdit {\n"
+"	border: none;\n"
+"	border-bottom: 1px solid rgb(161, 150, 170)\n"
+"}\n"
+"\n"
+"QDateEdit:focus {\n"
+"	border-bottom: 2px solid rgb(161, 150, 170)\n"
+"}\n"
+"")
+        self.inputDate_emailInicial.setDateTime(QDateTime(QDate(2022, 6, 7), QTime(15, 0, 0)))
+        self.inputDate_emailInicial.setCalendarPopup(True)
+
+        self.gridLayout_4.addWidget(self.inputDate_emailInicial, 2, 0, 1, 1)
+
+        self.input_origem_contato1_2 = QLineEdit(self.frame_16)
+        self.input_origem_contato1_2.setObjectName(u"input_origem_contato1_2")
+        self.input_origem_contato1_2.setMinimumSize(QSize(0, 25))
+        self.input_origem_contato1_2.setFont(font7)
+        self.input_origem_contato1_2.setStyleSheet(u"QLineEdit {\n"
+"	border: none;\n"
+"	border-bottom: 1px solid rgb(161, 150, 170)\n"
+"}\n"
+"\n"
+"QLineEdit:focus {\n"
+"	border-bottom: 2px solid rgb(161, 150, 170)\n"
+"}")
+
+        self.gridLayout_4.addWidget(self.input_origem_contato1_2, 2, 1, 1, 1)
+
+
+        self.gridLayout.addWidget(self.frame_16, 2, 0, 1, 1)
 
         self.frame_14 = QFrame(self.frame_12)
         self.frame_14.setObjectName(u"frame_14")
@@ -928,11 +809,11 @@ class Ui_Form(object):
         sizePolicy.setHeightForWidth(self.lb_metaOrigemAtual_titulo.sizePolicy().hasHeightForWidth())
         self.lb_metaOrigemAtual_titulo.setSizePolicy(sizePolicy)
         self.lb_metaOrigemAtual_titulo.setMaximumSize(QSize(16777215, 20))
-        font9 = QFont()
-        font9.setFamilies([u"Calibri"])
-        font9.setPointSize(12)
-        font9.setBold(False)
-        self.lb_metaOrigemAtual_titulo.setFont(font9)
+        font8 = QFont()
+        font8.setFamilies([u"Calibri"])
+        font8.setPointSize(12)
+        font8.setBold(False)
+        self.lb_metaOrigemAtual_titulo.setFont(font8)
 
         self.verticalLayout_13.addWidget(self.lb_metaOrigemAtual_titulo)
 
@@ -954,16 +835,120 @@ class Ui_Form(object):
 
         self.gridLayout.addWidget(self.frame_14, 1, 0, 1, 1)
 
-        self.verticalSpacer_2 = QSpacerItem(20, 40, QSizePolicy.Minimum, QSizePolicy.Expanding)
+        self.frame_15 = QFrame(self.frame_12)
+        self.frame_15.setObjectName(u"frame_15")
+        sizePolicy.setHeightForWidth(self.frame_15.sizePolicy().hasHeightForWidth())
+        self.frame_15.setSizePolicy(sizePolicy)
+        self.frame_15.setMaximumSize(QSize(16777215, 60))
+        self.frame_15.setFrameShape(QFrame.StyledPanel)
+        self.frame_15.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_14 = QVBoxLayout(self.frame_15)
+        self.verticalLayout_14.setObjectName(u"verticalLayout_14")
+        self.verticalLayout_14.setContentsMargins(0, 0, 0, 0)
+        self.lb_metaDestinoAtual_titulo = QLabel(self.frame_15)
+        self.lb_metaDestinoAtual_titulo.setObjectName(u"lb_metaDestinoAtual_titulo")
+        sizePolicy.setHeightForWidth(self.lb_metaDestinoAtual_titulo.sizePolicy().hasHeightForWidth())
+        self.lb_metaDestinoAtual_titulo.setSizePolicy(sizePolicy)
+        self.lb_metaDestinoAtual_titulo.setMaximumSize(QSize(16777215, 20))
+        self.lb_metaDestinoAtual_titulo.setFont(font8)
 
-        self.gridLayout.addItem(self.verticalSpacer_2, 9, 0, 1, 1)
+        self.verticalLayout_14.addWidget(self.lb_metaDestinoAtual_titulo)
+
+        self.input_metaOrigemAtual_2 = QLineEdit(self.frame_15)
+        self.input_metaOrigemAtual_2.setObjectName(u"input_metaOrigemAtual_2")
+        self.input_metaOrigemAtual_2.setMinimumSize(QSize(0, 25))
+        self.input_metaOrigemAtual_2.setFont(font7)
+        self.input_metaOrigemAtual_2.setStyleSheet(u"QLineEdit {\n"
+"	border: none;\n"
+"	border-bottom: 1px solid rgb(161, 150, 170)\n"
+"}\n"
+"\n"
+"QLineEdit:focus {\n"
+"	border-bottom: 2px solid rgb(161, 150, 170)\n"
+"}")
+
+        self.verticalLayout_14.addWidget(self.input_metaOrigemAtual_2)
+
+
+        self.gridLayout.addWidget(self.frame_15, 1, 1, 1, 1)
+
+        self.frame_13 = QFrame(self.frame_12)
+        self.frame_13.setObjectName(u"frame_13")
+        self.frame_13.setMinimumSize(QSize(0, 50))
+        self.frame_13.setFrameShape(QFrame.StyledPanel)
+        self.frame_13.setFrameShadow(QFrame.Raised)
+        self.horizontalLayout_3 = QHBoxLayout(self.frame_13)
+        self.horizontalLayout_3.setObjectName(u"horizontalLayout_3")
+        self.horizontalLayout_3.setContentsMargins(0, 0, 0, 0)
+        self.inputCheck_emailEnviado = QCheckBox(self.frame_13)
+        self.inputCheck_emailEnviado.setObjectName(u"inputCheck_emailEnviado")
+        font9 = QFont()
+        font9.setFamilies([u"Calibri"])
+        font9.setPointSize(13)
+        self.inputCheck_emailEnviado.setFont(font9)
+
+        self.horizontalLayout_3.addWidget(self.inputCheck_emailEnviado)
+
+        self.inputCheck_inseridoMetas = QCheckBox(self.frame_13)
+        self.inputCheck_inseridoMetas.setObjectName(u"inputCheck_inseridoMetas")
+        self.inputCheck_inseridoMetas.setFont(font9)
+
+        self.horizontalLayout_3.addWidget(self.inputCheck_inseridoMetas)
+
+        self.inputCheck_atualizadoSistema = QCheckBox(self.frame_13)
+        self.inputCheck_atualizadoSistema.setObjectName(u"inputCheck_atualizadoSistema")
+        self.inputCheck_atualizadoSistema.setFont(font9)
+
+        self.horizontalLayout_3.addWidget(self.inputCheck_atualizadoSistema)
+
+
+        self.gridLayout.addWidget(self.frame_13, 10, 0, 1, 2)
+
+        self.frame_20 = QFrame(self.frame_12)
+        self.frame_20.setObjectName(u"frame_20")
+        sizePolicy.setHeightForWidth(self.frame_20.sizePolicy().hasHeightForWidth())
+        self.frame_20.setSizePolicy(sizePolicy)
+        self.frame_20.setMaximumSize(QSize(16777215, 60))
+        self.frame_20.setFrameShape(QFrame.StyledPanel)
+        self.frame_20.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_17 = QVBoxLayout(self.frame_20)
+        self.verticalLayout_17.setObjectName(u"verticalLayout_17")
+        self.verticalLayout_17.setContentsMargins(0, 0, 0, 0)
+        self.lb_metaSuplementado_titulo = QLabel(self.frame_20)
+        self.lb_metaSuplementado_titulo.setObjectName(u"lb_metaSuplementado_titulo")
+        sizePolicy.setHeightForWidth(self.lb_metaSuplementado_titulo.sizePolicy().hasHeightForWidth())
+        self.lb_metaSuplementado_titulo.setSizePolicy(sizePolicy)
+        self.lb_metaSuplementado_titulo.setMaximumSize(QSize(16777215, 20))
+        self.lb_metaSuplementado_titulo.setFont(font6)
+
+        self.verticalLayout_17.addWidget(self.lb_metaSuplementado_titulo)
+
+        self.input_metaSuplementado = QLineEdit(self.frame_20)
+        self.input_metaSuplementado.setObjectName(u"input_metaSuplementado")
+        self.input_metaSuplementado.setMinimumSize(QSize(0, 25))
+        self.input_metaSuplementado.setFont(font7)
+        self.input_metaSuplementado.setStyleSheet(u"QLineEdit {\n"
+"	border: none;\n"
+"	border-bottom: 1px solid rgb(161, 150, 170)\n"
+"}\n"
+"\n"
+"QLineEdit:focus {\n"
+"	border-bottom: 2px solid rgb(161, 150, 170)\n"
+"}")
+
+        self.verticalLayout_17.addWidget(self.input_metaSuplementado)
+
+
+        self.gridLayout.addWidget(self.frame_20, 7, 0, 1, 1)
 
         self.frame_18 = QFrame(self.frame_12)
         self.frame_18.setObjectName(u"frame_18")
         sizePolicy.setHeightForWidth(self.frame_18.sizePolicy().hasHeightForWidth())
         self.frame_18.setSizePolicy(sizePolicy)
         self.frame_18.setMaximumSize(QSize(16777215, 250))
-        self.frame_18.setFont(font6)
+        font10 = QFont()
+        font10.setPointSize(8)
+        self.frame_18.setFont(font10)
         self.frame_18.setFrameShape(QFrame.StyledPanel)
         self.frame_18.setFrameShadow(QFrame.Raised)
         self.gridLayout_3 = QGridLayout(self.frame_18)
@@ -972,6 +957,9 @@ class Ui_Form(object):
         self.gridLayout_3.setContentsMargins(30, 0, 0, 0)
         self.inputDate_destino1 = QDateEdit(self.frame_18)
         self.inputDate_destino1.setObjectName(u"inputDate_destino1")
+        sizePolicy3 = QSizePolicy(QSizePolicy.Expanding, QSizePolicy.Fixed)
+        sizePolicy3.setHorizontalStretch(0)
+        sizePolicy3.setVerticalStretch(0)
         sizePolicy3.setHeightForWidth(self.inputDate_destino1.sizePolicy().hasHeightForWidth())
         self.inputDate_destino1.setSizePolicy(sizePolicy3)
         self.inputDate_destino1.setMinimumSize(QSize(0, 25))
@@ -984,7 +972,7 @@ class Ui_Form(object):
 "QDateEdit:focus {\n"
 "	border-bottom: 2px solid rgb(161, 150, 170)\n"
 "}")
-        self.inputDate_destino1.setDateTime(QDateTime(QDate(2022, 6, 7), QTime(6, 0, 0)))
+        self.inputDate_destino1.setDateTime(QDateTime(QDate(2022, 6, 7), QTime(15, 0, 0)))
         self.inputDate_destino1.setCalendarPopup(True)
 
         self.gridLayout_3.addWidget(self.inputDate_destino1, 1, 0, 1, 1)
@@ -1078,7 +1066,7 @@ class Ui_Form(object):
 "QDateEdit:focus {\n"
 "	border-bottom: 2px solid rgb(161, 150, 170)\n"
 "}")
-        self.inputDate_destino2.setDateTime(QDateTime(QDate(2022, 6, 7), QTime(6, 0, 0)))
+        self.inputDate_destino2.setDateTime(QDateTime(QDate(2022, 6, 7), QTime(15, 0, 0)))
         self.inputDate_destino2.setCalendarPopup(True)
 
         self.gridLayout_3.addWidget(self.inputDate_destino2, 3, 0, 1, 1)
@@ -1121,38 +1109,37 @@ class Ui_Form(object):
 "QDateEdit:focus {\n"
 "	border-bottom: 2px solid rgb(161, 150, 170)\n"
 "}")
-        self.inputDate_destino3.setDateTime(QDateTime(QDate(2022, 6, 7), QTime(6, 0, 0)))
+        self.inputDate_destino3.setDateTime(QDateTime(QDate(2022, 6, 7), QTime(15, 0, 0)))
         self.inputDate_destino3.setCalendarPopup(True)
 
         self.gridLayout_3.addWidget(self.inputDate_destino3, 4, 0, 1, 1)
 
+        self.inputCheck_geraEmailDestino = QCheckBox(self.frame_18)
+        self.inputCheck_geraEmailDestino.setObjectName(u"inputCheck_geraEmailDestino")
+        self.inputCheck_geraEmailDestino.setFont(font9)
+
+        self.gridLayout_3.addWidget(self.inputCheck_geraEmailDestino, 0, 1, 1, 1)
+
 
         self.gridLayout.addWidget(self.frame_18, 5, 0, 1, 2)
 
-        self.frame_20 = QFrame(self.frame_12)
-        self.frame_20.setObjectName(u"frame_20")
-        sizePolicy.setHeightForWidth(self.frame_20.sizePolicy().hasHeightForWidth())
-        self.frame_20.setSizePolicy(sizePolicy)
-        self.frame_20.setMaximumSize(QSize(16777215, 60))
-        self.frame_20.setFrameShape(QFrame.StyledPanel)
-        self.frame_20.setFrameShadow(QFrame.Raised)
-        self.verticalLayout_17 = QVBoxLayout(self.frame_20)
-        self.verticalLayout_17.setObjectName(u"verticalLayout_17")
-        self.verticalLayout_17.setContentsMargins(0, 0, 0, 0)
-        self.lb_metaSuplementado_titulo = QLabel(self.frame_20)
-        self.lb_metaSuplementado_titulo.setObjectName(u"lb_metaSuplementado_titulo")
-        sizePolicy.setHeightForWidth(self.lb_metaSuplementado_titulo.sizePolicy().hasHeightForWidth())
-        self.lb_metaSuplementado_titulo.setSizePolicy(sizePolicy)
-        self.lb_metaSuplementado_titulo.setMaximumSize(QSize(16777215, 20))
-        self.lb_metaSuplementado_titulo.setFont(font8)
-
-        self.verticalLayout_17.addWidget(self.lb_metaSuplementado_titulo)
-
-        self.input_metaSuplementado = QLineEdit(self.frame_20)
-        self.input_metaSuplementado.setObjectName(u"input_metaSuplementado")
-        self.input_metaSuplementado.setMinimumSize(QSize(0, 25))
-        self.input_metaSuplementado.setFont(font7)
-        self.input_metaSuplementado.setStyleSheet(u"QLineEdit {\n"
+        self.frame_17 = QFrame(self.frame_12)
+        self.frame_17.setObjectName(u"frame_17")
+        sizePolicy.setHeightForWidth(self.frame_17.sizePolicy().hasHeightForWidth())
+        self.frame_17.setSizePolicy(sizePolicy)
+        self.frame_17.setMaximumSize(QSize(16777215, 250))
+        self.frame_17.setFont(font10)
+        self.frame_17.setFrameShape(QFrame.StyledPanel)
+        self.frame_17.setFrameShadow(QFrame.Raised)
+        self.gridLayout_2 = QGridLayout(self.frame_17)
+        self.gridLayout_2.setObjectName(u"gridLayout_2")
+        self.gridLayout_2.setHorizontalSpacing(30)
+        self.gridLayout_2.setContentsMargins(30, 0, 0, 0)
+        self.input_origem_status3 = QLineEdit(self.frame_17)
+        self.input_origem_status3.setObjectName(u"input_origem_status3")
+        self.input_origem_status3.setMinimumSize(QSize(0, 25))
+        self.input_origem_status3.setFont(font7)
+        self.input_origem_status3.setStyleSheet(u"QLineEdit {\n"
 "	border: none;\n"
 "	border-bottom: 1px solid rgb(161, 150, 170)\n"
 "}\n"
@@ -1161,137 +1148,39 @@ class Ui_Form(object):
 "	border-bottom: 2px solid rgb(161, 150, 170)\n"
 "}")
 
-        self.verticalLayout_17.addWidget(self.input_metaSuplementado)
+        self.gridLayout_2.addWidget(self.input_origem_status3, 3, 2, 1, 1)
 
-
-        self.gridLayout.addWidget(self.frame_20, 7, 0, 1, 1)
-
-        self.frame_13 = QFrame(self.frame_12)
-        self.frame_13.setObjectName(u"frame_13")
-        self.frame_13.setMinimumSize(QSize(0, 50))
-        self.frame_13.setFrameShape(QFrame.StyledPanel)
-        self.frame_13.setFrameShadow(QFrame.Raised)
-        self.horizontalLayout_3 = QHBoxLayout(self.frame_13)
-        self.horizontalLayout_3.setObjectName(u"horizontalLayout_3")
-        self.horizontalLayout_3.setContentsMargins(0, 0, 0, 0)
-        self.inputCheck_emailEnviado = QCheckBox(self.frame_13)
-        self.inputCheck_emailEnviado.setObjectName(u"inputCheck_emailEnviado")
-        font10 = QFont()
-        font10.setFamilies([u"Calibri"])
-        font10.setPointSize(13)
-        self.inputCheck_emailEnviado.setFont(font10)
-
-        self.horizontalLayout_3.addWidget(self.inputCheck_emailEnviado)
-
-        self.inputCheck_inseridoMetas = QCheckBox(self.frame_13)
-        self.inputCheck_inseridoMetas.setObjectName(u"inputCheck_inseridoMetas")
-        self.inputCheck_inseridoMetas.setFont(font10)
-
-        self.horizontalLayout_3.addWidget(self.inputCheck_inseridoMetas)
-
-        self.inputCheck_atualizadoSistema = QCheckBox(self.frame_13)
-        self.inputCheck_atualizadoSistema.setObjectName(u"inputCheck_atualizadoSistema")
-        self.inputCheck_atualizadoSistema.setFont(font10)
-
-        self.horizontalLayout_3.addWidget(self.inputCheck_atualizadoSistema)
-
-
-        self.gridLayout.addWidget(self.frame_13, 8, 0, 1, 2)
-
-        self.frame_15 = QFrame(self.frame_12)
-        self.frame_15.setObjectName(u"frame_15")
-        sizePolicy.setHeightForWidth(self.frame_15.sizePolicy().hasHeightForWidth())
-        self.frame_15.setSizePolicy(sizePolicy)
-        self.frame_15.setMaximumSize(QSize(16777215, 60))
-        self.frame_15.setFrameShape(QFrame.StyledPanel)
-        self.frame_15.setFrameShadow(QFrame.Raised)
-        self.verticalLayout_14 = QVBoxLayout(self.frame_15)
-        self.verticalLayout_14.setObjectName(u"verticalLayout_14")
-        self.verticalLayout_14.setContentsMargins(0, 0, 0, 0)
-        self.lb_metaDestinoAtual_titulo = QLabel(self.frame_15)
-        self.lb_metaDestinoAtual_titulo.setObjectName(u"lb_metaDestinoAtual_titulo")
-        sizePolicy.setHeightForWidth(self.lb_metaDestinoAtual_titulo.sizePolicy().hasHeightForWidth())
-        self.lb_metaDestinoAtual_titulo.setSizePolicy(sizePolicy)
-        self.lb_metaDestinoAtual_titulo.setMaximumSize(QSize(16777215, 20))
-        self.lb_metaDestinoAtual_titulo.setFont(font9)
-
-        self.verticalLayout_14.addWidget(self.lb_metaDestinoAtual_titulo)
-
-        self.input_metaOrigemAtual_2 = QLineEdit(self.frame_15)
-        self.input_metaOrigemAtual_2.setObjectName(u"input_metaOrigemAtual_2")
-        self.input_metaOrigemAtual_2.setMinimumSize(QSize(0, 25))
-        self.input_metaOrigemAtual_2.setFont(font7)
-        self.input_metaOrigemAtual_2.setStyleSheet(u"QLineEdit {\n"
-"	border: none;\n"
-"	border-bottom: 1px solid rgb(161, 150, 170)\n"
-"}\n"
-"\n"
-"QLineEdit:focus {\n"
-"	border-bottom: 2px solid rgb(161, 150, 170)\n"
-"}")
-
-        self.verticalLayout_14.addWidget(self.input_metaOrigemAtual_2)
-
-
-        self.gridLayout.addWidget(self.frame_15, 1, 1, 1, 1)
-
-        self.frame_27 = QFrame(self.frame_12)
-        self.frame_27.setObjectName(u"frame_27")
-        self.frame_27.setFrameShape(QFrame.StyledPanel)
-        self.frame_27.setFrameShadow(QFrame.Raised)
-        self.verticalLayout_15 = QVBoxLayout(self.frame_27)
-        self.verticalLayout_15.setObjectName(u"verticalLayout_15")
-        self.inputCheck_emailEnviado_2 = QCheckBox(self.frame_27)
-        self.inputCheck_emailEnviado_2.setObjectName(u"inputCheck_emailEnviado_2")
-        self.inputCheck_emailEnviado_2.setFont(font10)
-
-        self.verticalLayout_15.addWidget(self.inputCheck_emailEnviado_2)
-
-
-        self.gridLayout.addWidget(self.frame_27, 6, 1, 2, 1)
-
-        self.frame_16 = QFrame(self.frame_12)
-        self.frame_16.setObjectName(u"frame_16")
-        sizePolicy.setHeightForWidth(self.frame_16.sizePolicy().hasHeightForWidth())
-        self.frame_16.setSizePolicy(sizePolicy)
-        self.frame_16.setMaximumSize(QSize(16777215, 60))
-        self.frame_16.setFrameShape(QFrame.StyledPanel)
-        self.frame_16.setFrameShadow(QFrame.Raised)
-        self.gridLayout_4 = QGridLayout(self.frame_16)
-        self.gridLayout_4.setObjectName(u"gridLayout_4")
-        self.gridLayout_4.setContentsMargins(15, 0, 0, 0)
-        self.lb_dataInicial_titulo = QLabel(self.frame_16)
-        self.lb_dataInicial_titulo.setObjectName(u"lb_dataInicial_titulo")
-        sizePolicy.setHeightForWidth(self.lb_dataInicial_titulo.sizePolicy().hasHeightForWidth())
-        self.lb_dataInicial_titulo.setSizePolicy(sizePolicy)
-        self.lb_dataInicial_titulo.setMaximumSize(QSize(16777215, 20))
-        self.lb_dataInicial_titulo.setFont(font8)
-
-        self.gridLayout_4.addWidget(self.lb_dataInicial_titulo, 0, 0, 1, 1)
-
-        self.inputDate_emailInicial = QDateEdit(self.frame_16)
-        self.inputDate_emailInicial.setObjectName(u"inputDate_emailInicial")
-        self.inputDate_emailInicial.setMinimumSize(QSize(0, 25))
-        self.inputDate_emailInicial.setMaximumSize(QSize(150, 16777215))
-        self.inputDate_emailInicial.setStyleSheet(u"QDateEdit {\n"
+        self.inputDate_origem1 = QDateEdit(self.frame_17)
+        self.inputDate_origem1.setObjectName(u"inputDate_origem1")
+        self.inputDate_origem1.setMinimumSize(QSize(0, 25))
+        self.inputDate_origem1.setMaximumSize(QSize(100, 16777215))
+        self.inputDate_origem1.setStyleSheet(u"QDateEdit {\n"
 "	border: none;\n"
 "	border-bottom: 1px solid rgb(161, 150, 170)\n"
 "}\n"
 "\n"
 "QDateEdit:focus {\n"
 "	border-bottom: 2px solid rgb(161, 150, 170)\n"
-"}\n"
-"")
-        self.inputDate_emailInicial.setDateTime(QDateTime(QDate(2022, 6, 7), QTime(6, 0, 0)))
-        self.inputDate_emailInicial.setCalendarPopup(True)
+"}")
+        self.inputDate_origem1.setDateTime(QDateTime(QDate(2022, 6, 7), QTime(15, 0, 0)))
+        self.inputDate_origem1.setCalendarPopup(True)
 
-        self.gridLayout_4.addWidget(self.inputDate_emailInicial, 2, 0, 1, 1)
+        self.gridLayout_2.addWidget(self.inputDate_origem1, 1, 0, 1, 1)
 
-        self.input_origem_contato1_2 = QLineEdit(self.frame_16)
-        self.input_origem_contato1_2.setObjectName(u"input_origem_contato1_2")
-        self.input_origem_contato1_2.setMinimumSize(QSize(0, 25))
-        self.input_origem_contato1_2.setFont(font7)
-        self.input_origem_contato1_2.setStyleSheet(u"QLineEdit {\n"
+        self.label_23 = QLabel(self.frame_17)
+        self.label_23.setObjectName(u"label_23")
+        sizePolicy.setHeightForWidth(self.label_23.sizePolicy().hasHeightForWidth())
+        self.label_23.setSizePolicy(sizePolicy)
+        self.label_23.setMaximumSize(QSize(16777215, 20))
+        self.label_23.setFont(font3)
+
+        self.gridLayout_2.addWidget(self.label_23, 0, 0, 1, 1)
+
+        self.input_origem_contato3 = QLineEdit(self.frame_17)
+        self.input_origem_contato3.setObjectName(u"input_origem_contato3")
+        self.input_origem_contato3.setMinimumSize(QSize(0, 25))
+        self.input_origem_contato3.setFont(font7)
+        self.input_origem_contato3.setStyleSheet(u"QLineEdit {\n"
 "	border: none;\n"
 "	border-bottom: 1px solid rgb(161, 150, 170)\n"
 "}\n"
@@ -1300,16 +1189,130 @@ class Ui_Form(object):
 "	border-bottom: 2px solid rgb(161, 150, 170)\n"
 "}")
 
-        self.gridLayout_4.addWidget(self.input_origem_contato1_2, 2, 1, 1, 1)
+        self.gridLayout_2.addWidget(self.input_origem_contato3, 3, 1, 1, 1)
+
+        self.inputDate_origem3 = QDateEdit(self.frame_17)
+        self.inputDate_origem3.setObjectName(u"inputDate_origem3")
+        sizePolicy3.setHeightForWidth(self.inputDate_origem3.sizePolicy().hasHeightForWidth())
+        self.inputDate_origem3.setSizePolicy(sizePolicy3)
+        self.inputDate_origem3.setMinimumSize(QSize(0, 25))
+        self.inputDate_origem3.setMaximumSize(QSize(100, 16777215))
+        self.inputDate_origem3.setStyleSheet(u"QDateEdit {\n"
+"	border: none;\n"
+"	border-bottom: 1px solid rgb(161, 150, 170)\n"
+"}\n"
+"\n"
+"QDateEdit:focus {\n"
+"	border-bottom: 2px solid rgb(161, 150, 170)\n"
+"}")
+        self.inputDate_origem3.setDateTime(QDateTime(QDate(2022, 6, 7), QTime(15, 0, 0)))
+        self.inputDate_origem3.setCalendarPopup(True)
+
+        self.gridLayout_2.addWidget(self.inputDate_origem3, 3, 0, 1, 1)
+
+        self.input_origem_status1 = QLineEdit(self.frame_17)
+        self.input_origem_status1.setObjectName(u"input_origem_status1")
+        self.input_origem_status1.setMinimumSize(QSize(0, 25))
+        self.input_origem_status1.setFont(font7)
+        self.input_origem_status1.setStyleSheet(u"QLineEdit {\n"
+"	border: none;\n"
+"	border-bottom: 1px solid rgb(161, 150, 170)\n"
+"}\n"
+"\n"
+"QLineEdit:focus {\n"
+"	border-bottom: 2px solid rgb(161, 150, 170)\n"
+"}")
+
+        self.gridLayout_2.addWidget(self.input_origem_status1, 1, 2, 1, 1)
+
+        self.input_origem_contato2 = QLineEdit(self.frame_17)
+        self.input_origem_contato2.setObjectName(u"input_origem_contato2")
+        self.input_origem_contato2.setMinimumSize(QSize(0, 25))
+        self.input_origem_contato2.setFont(font7)
+        self.input_origem_contato2.setStyleSheet(u"QLineEdit {\n"
+"	border: none;\n"
+"	border-bottom: 1px solid rgb(161, 150, 170)\n"
+"}\n"
+"\n"
+"QLineEdit:focus {\n"
+"	border-bottom: 2px solid rgb(161, 150, 170)\n"
+"}")
+
+        self.gridLayout_2.addWidget(self.input_origem_contato2, 2, 1, 1, 1)
+
+        self.input_origem_status2 = QLineEdit(self.frame_17)
+        self.input_origem_status2.setObjectName(u"input_origem_status2")
+        self.input_origem_status2.setMinimumSize(QSize(0, 25))
+        self.input_origem_status2.setFont(font7)
+        self.input_origem_status2.setStyleSheet(u"QLineEdit {\n"
+"	border: none;\n"
+"	border-bottom: 1px solid rgb(161, 150, 170)\n"
+"}\n"
+"\n"
+"QLineEdit:focus {\n"
+"	border-bottom: 2px solid rgb(161, 150, 170)\n"
+"}")
+
+        self.gridLayout_2.addWidget(self.input_origem_status2, 2, 2, 1, 1)
+
+        self.inputDate_origem2 = QDateEdit(self.frame_17)
+        self.inputDate_origem2.setObjectName(u"inputDate_origem2")
+        sizePolicy3.setHeightForWidth(self.inputDate_origem2.sizePolicy().hasHeightForWidth())
+        self.inputDate_origem2.setSizePolicy(sizePolicy3)
+        self.inputDate_origem2.setMinimumSize(QSize(0, 25))
+        self.inputDate_origem2.setMaximumSize(QSize(100, 16777215))
+        self.inputDate_origem2.setStyleSheet(u"QDateEdit {\n"
+"	border: none;\n"
+"	border-bottom: 1px solid rgb(161, 150, 170)\n"
+"}\n"
+"\n"
+"QDateEdit:focus {\n"
+"	border-bottom: 2px solid rgb(161, 150, 170)\n"
+"}")
+        self.inputDate_origem2.setDateTime(QDateTime(QDate(2022, 6, 7), QTime(15, 0, 0)))
+        self.inputDate_origem2.setCalendarPopup(True)
+
+        self.gridLayout_2.addWidget(self.inputDate_origem2, 2, 0, 1, 1)
+
+        self.input_origem_contato1 = QLineEdit(self.frame_17)
+        self.input_origem_contato1.setObjectName(u"input_origem_contato1")
+        self.input_origem_contato1.setMinimumSize(QSize(0, 25))
+        self.input_origem_contato1.setFont(font7)
+        self.input_origem_contato1.setStyleSheet(u"QLineEdit {\n"
+"	border: none;\n"
+"	border-bottom: 1px solid rgb(161, 150, 170)\n"
+"}\n"
+"\n"
+"QLineEdit:focus {\n"
+"	border-bottom: 2px solid rgb(161, 150, 170)\n"
+"}")
+
+        self.gridLayout_2.addWidget(self.input_origem_contato1, 1, 1, 1, 1)
+
+        self.inputCheck_geraEmailOrigem = QCheckBox(self.frame_17)
+        self.inputCheck_geraEmailOrigem.setObjectName(u"inputCheck_geraEmailOrigem")
+        self.inputCheck_geraEmailOrigem.setFont(font9)
+
+        self.gridLayout_2.addWidget(self.inputCheck_geraEmailOrigem, 0, 1, 1, 1)
 
 
-        self.gridLayout.addWidget(self.frame_16, 3, 1, 1, 1)
+        self.gridLayout.addWidget(self.frame_17, 4, 0, 1, 2)
 
-        self.inputCheck_emailEnviado_4 = QCheckBox(self.frame_12)
-        self.inputCheck_emailEnviado_4.setObjectName(u"inputCheck_emailEnviado_4")
-        self.inputCheck_emailEnviado_4.setFont(font10)
+        self.verticalSpacer_2 = QSpacerItem(20, 40, QSizePolicy.Minimum, QSizePolicy.Expanding)
 
-        self.gridLayout.addWidget(self.inputCheck_emailEnviado_4, 3, 0, 1, 1)
+        self.gridLayout.addItem(self.verticalSpacer_2, 11, 0, 1, 1)
+
+        self.inputCheck_permaneceMetaOrigem = QCheckBox(self.frame_12)
+        self.inputCheck_permaneceMetaOrigem.setObjectName(u"inputCheck_permaneceMetaOrigem")
+        self.inputCheck_permaneceMetaOrigem.setFont(font9)
+
+        self.gridLayout.addWidget(self.inputCheck_permaneceMetaOrigem, 6, 1, 1, 1)
+
+        self.inputCheck_permaneceMetaDestino = QCheckBox(self.frame_12)
+        self.inputCheck_permaneceMetaDestino.setObjectName(u"inputCheck_permaneceMetaDestino")
+        self.inputCheck_permaneceMetaDestino.setFont(font9)
+
+        self.gridLayout.addWidget(self.inputCheck_permaneceMetaDestino, 7, 1, 1, 1)
 
 
         self.verticalLayout_12.addWidget(self.frame_12)
@@ -1373,13 +1376,13 @@ class Ui_Form(object):
 
         #Form.setCentralWidget(self.centralwidget)
 #if QT_CONFIG(shortcut)
-        self.label_23.setBuddy(self.input_metaOrigemAtual)
         self.lb_metaAnulado_titulo.setBuddy(self.input_metaOrigemAtual)
-        self.lb_metaOrigemAtual_titulo.setBuddy(self.input_metaOrigemAtual)
-        self.label_24.setBuddy(self.input_metaOrigemAtual)
-        self.lb_metaSuplementado_titulo.setBuddy(self.input_metaOrigemAtual)
-        self.lb_metaDestinoAtual_titulo.setBuddy(self.input_metaOrigemAtual_2)
         self.lb_dataInicial_titulo.setBuddy(self.input_metaOrigemAtual)
+        self.lb_metaOrigemAtual_titulo.setBuddy(self.input_metaOrigemAtual)
+        self.lb_metaDestinoAtual_titulo.setBuddy(self.input_metaOrigemAtual_2)
+        self.lb_metaSuplementado_titulo.setBuddy(self.input_metaOrigemAtual)
+        self.label_24.setBuddy(self.input_metaOrigemAtual)
+        self.label_23.setBuddy(self.input_metaOrigemAtual)
 #endif // QT_CONFIG(shortcut)
 
         self.retranslateUi(Form)
@@ -1420,18 +1423,16 @@ class Ui_Form(object):
         self.lb_valor_titulo.setText(QCoreApplication.translate("Form", u"Valor Remanejado:", None))
         self.lb_valor_info.setText(QCoreApplication.translate("Form", u"R$ 200.000,00", None))
         self.btn_email.setText(QCoreApplication.translate("Form", u"Copiar Email", None))
-        self.input_origem_status3.setPlaceholderText(QCoreApplication.translate("Form", u"Status 3", None))
-        self.label_23.setText(QCoreApplication.translate("Form", u"Origem", None))
-        self.input_origem_contato3.setText("")
-        self.input_origem_contato3.setPlaceholderText(QCoreApplication.translate("Form", u"Contato 3", None))
-        self.input_origem_status1.setPlaceholderText(QCoreApplication.translate("Form", u"Status 1", None))
-        self.input_origem_contato2.setText("")
-        self.input_origem_contato2.setPlaceholderText(QCoreApplication.translate("Form", u"Contato 2", None))
-        self.input_origem_status2.setPlaceholderText(QCoreApplication.translate("Form", u"Status 2", None))
-        self.input_origem_contato1.setText("")
-        self.input_origem_contato1.setPlaceholderText(QCoreApplication.translate("Form", u"Contato 1", None))
         self.lb_metaAnulado_titulo.setText(QCoreApplication.translate("Form", u"Nova Meta F\u00edsica Anulado (Origem)", None))
+        self.lb_dataInicial_titulo.setText(QCoreApplication.translate("Form", u"Data Email Inicial", None))
+        self.input_origem_contato1_2.setText("")
+        self.input_origem_contato1_2.setPlaceholderText(QCoreApplication.translate("Form", u"Destinat\u00e1rios", None))
         self.lb_metaOrigemAtual_titulo.setText(QCoreApplication.translate("Form", u"Meta F\u00cdSICA de Origem ATUAL", None))
+        self.lb_metaDestinoAtual_titulo.setText(QCoreApplication.translate("Form", u"Meta F\u00cdSICA de Destino ATUAL", None))
+        self.inputCheck_emailEnviado.setText(QCoreApplication.translate("Form", u"E-mail Enviado", None))
+        self.inputCheck_inseridoMetas.setText(QCoreApplication.translate("Form", u"Inserido Metas", None))
+        self.inputCheck_atualizadoSistema.setText(QCoreApplication.translate("Form", u"Atualizado Sistema", None))
+        self.lb_metaSuplementado_titulo.setText(QCoreApplication.translate("Form", u"Nova Meta F\u00edsica Suplementado (Destino)", None))
         self.input_destino_contato1.setText("")
         self.input_destino_contato1.setPlaceholderText(QCoreApplication.translate("Form", u"Contato 1", None))
         self.input_destino_status3.setPlaceholderText(QCoreApplication.translate("Form", u"Status 3", None))
@@ -1442,16 +1443,20 @@ class Ui_Form(object):
         self.input_destino_contato3.setText("")
         self.input_destino_contato3.setPlaceholderText(QCoreApplication.translate("Form", u"Contato 3", None))
         self.label_24.setText(QCoreApplication.translate("Form", u"Destino", None))
-        self.lb_metaSuplementado_titulo.setText(QCoreApplication.translate("Form", u"Nova Meta F\u00edsica Suplementado (Destino)", None))
-        self.inputCheck_emailEnviado.setText(QCoreApplication.translate("Form", u"E-mail Enviado", None))
-        self.inputCheck_inseridoMetas.setText(QCoreApplication.translate("Form", u"Inserido Metas", None))
-        self.inputCheck_atualizadoSistema.setText(QCoreApplication.translate("Form", u"Atualizado Sistema", None))
-        self.lb_metaDestinoAtual_titulo.setText(QCoreApplication.translate("Form", u"Meta F\u00cdSICA de Destino ATUAL", None))
-        self.inputCheck_emailEnviado_2.setText(QCoreApplication.translate("Form", u"Permanece a mesma meta", None))
-        self.lb_dataInicial_titulo.setText(QCoreApplication.translate("Form", u"Data Email Inicial", None))
-        self.input_origem_contato1_2.setText("")
-        self.input_origem_contato1_2.setPlaceholderText(QCoreApplication.translate("Form", u"Destinat\u00e1rios", None))
-        self.inputCheck_emailEnviado_4.setText(QCoreApplication.translate("Form", u"N\u00e3o gera email", None))
+        self.inputCheck_geraEmailDestino.setText(QCoreApplication.translate("Form", u"N\u00e3o gera email", None))
+        self.input_origem_status3.setPlaceholderText(QCoreApplication.translate("Form", u"Status 3", None))
+        self.label_23.setText(QCoreApplication.translate("Form", u"Origem", None))
+        self.input_origem_contato3.setText("")
+        self.input_origem_contato3.setPlaceholderText(QCoreApplication.translate("Form", u"Contato 3", None))
+        self.input_origem_status1.setPlaceholderText(QCoreApplication.translate("Form", u"Status 1", None))
+        self.input_origem_contato2.setText("")
+        self.input_origem_contato2.setPlaceholderText(QCoreApplication.translate("Form", u"Contato 2", None))
+        self.input_origem_status2.setPlaceholderText(QCoreApplication.translate("Form", u"Status 2", None))
+        self.input_origem_contato1.setText("")
+        self.input_origem_contato1.setPlaceholderText(QCoreApplication.translate("Form", u"Contato 1", None))
+        self.inputCheck_geraEmailOrigem.setText(QCoreApplication.translate("Form", u"N\u00e3o gera email", None))
+        self.inputCheck_permaneceMetaOrigem.setText(QCoreApplication.translate("Form", u"Permanece a mesma meta", None))
+        self.inputCheck_permaneceMetaDestino.setText(QCoreApplication.translate("Form", u"Permanece a mesma meta", None))
         self.btn_salvar.setText(QCoreApplication.translate("Form", u"Salvar", None))
         self.btn_salvar_espelhado.setText(QCoreApplication.translate("Form", u"Salvar com Espelhamento", None))
     # retranslateUi

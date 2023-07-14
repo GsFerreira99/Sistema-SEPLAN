@@ -22,54 +22,109 @@ class DataBase:
                         )
             self._cursor = self._db.cursor(buffered=True)
             self._engine = create_engine(f'mysql://{self._user}:{self._password}@{self._host}:{self._porta}/interfaceplanilha')
-            print(self.create_column_decreto())
-            print(self.create_column_email())
+            self.drop_column()
+            self.create_column_decreto_origem()
+            self.create_column_decreto_destino()
+            self.create_column_email_origem()
+            self.create_column_email_destino()
             return "Conectado com sucesso."
-        except (mysql.connector.errors.DatabaseError) as e:
+        except mysql.connector.errors.DatabaseError as e:
             if e.errno == 1049:
                 return self.criar_db()
             else:
                 return e
 
-    def create_column_email(self):
+    def drop_column(self):
         try:
             info = self._cursor.execute("""
-            SELECT `COLUMN_NAME`
-            FROM `INFORMATION_SCHEMA`.`COLUMNS`
-            WHERE `TABLE_SCHEMA`='interfaceplanilha'
-            AND `TABLE_NAME`='decretos'
-            AND `COLUMN_NAME`='GERA_EMAIL';""")
-            if info is None:
-                self._cursor.execute("""
-                    ALTER TABLE decretos
-                    ADD COLUMN GERA_EMAIL BOOLEAN DEFAULT FALSE AFTER STATUS_3_DESTINO;""")
-        except Exception as e:
-            if e.msg == "Duplicate column name 'GERA_EMAIL'":
-                return 'GERA_EMAIL Já Existe'
-            self._cursor.execute("""
-                ALTER TABLE decretos
-                ADD COLUMN GERA_EMAIL BOOLEAN DEFAULT FALSE AFTER STATUS_3_DESTINO;""")
-        return "Tabela 'GERA_EMAIL' criada com sucesso."
+            ALTER TABLE decretos DROP GERA_EMAIL""")
+        except:
+            pass
+        try:
+            info = self._cursor.execute("""
+            ALTER TABLE decretos DROP PERMANECE_DECRETO""")
+        except:
+            pass
 
-    def create_column_decreto(self):
+    def create_column_email_origem(self):
         try:
             info = self._cursor.execute("""
             SELECT `COLUMN_NAME`
             FROM `INFORMATION_SCHEMA`.`COLUMNS`
             WHERE `TABLE_SCHEMA`='interfaceplanilha'
             AND `TABLE_NAME`='decretos'
-            AND `COLUMN_NAME`='PERMANECE_DECRETO';""")
+            AND `COLUMN_NAME`='NAO_GERA_EMAIL_ORIGEM';""")
             if info is None:
                 self._cursor.execute("""
                     ALTER TABLE decretos
-                    ADD COLUMN PERMANECE_DECRETO BOOLEAN DEFAULT FALSE AFTER STATUS_3_DESTINO;""")
+                    ADD COLUMN NAO_GERA_EMAIL_ORIGEM BOOLEAN DEFAULT FALSE AFTER STATUS_3_DESTINO;""")
         except Exception as e:
-            if e.msg == "Duplicate column name 'PERMANECE_DECRETO'":
-                return 'PERMANECE_DECRETO Já Existe'
+            if e.msg == "Duplicate column name 'NAO_GERA_EMAIL_ORIGEM'":
+                return 'NAO_GERA_EMAIL_ORIGEM Já Existe'
             self._cursor.execute("""
                 ALTER TABLE decretos
-                ADD COLUMN PERMANECE_DECRETO BOOLEAN DEFAULT FALSE AFTER STATUS_3_DESTINO;""")
-        return "Tabela 'PERMANECE_DECRETO' criada com sucesso."
+                ADD COLUMN NAO_GERA_EMAIL_ORIGEM BOOLEAN DEFAULT FALSE AFTER STATUS_3_DESTINO;""")
+        return "Tabela 'NAO_GERA_EMAIL_ORIGEM' criada com sucesso."
+
+    def create_column_email_destino(self):
+        try:
+            info = self._cursor.execute("""
+            SELECT `COLUMN_NAME`
+            FROM `INFORMATION_SCHEMA`.`COLUMNS`
+            WHERE `TABLE_SCHEMA`='interfaceplanilha'
+            AND `TABLE_NAME`='decretos'
+            AND `COLUMN_NAME`='NAO_GERA_EMAIL_DESTINO';""")
+            if info is None:
+                self._cursor.execute("""
+                    ALTER TABLE decretos
+                    ADD COLUMN NAO_GERA_EMAIL_DESTINO BOOLEAN DEFAULT FALSE AFTER STATUS_3_DESTINO;""")
+        except Exception as e:
+            if e.msg == "Duplicate column name 'NAO_GERA_EMAIL_DESTINO'":
+                return 'NAO_GERA_EMAIL_DESTINO Já Existe'
+            self._cursor.execute("""
+                ALTER TABLE decretos
+                ADD COLUMN NAO_GERA_EMAIL_DESTINO BOOLEAN DEFAULT FALSE AFTER STATUS_3_DESTINO;""")
+        return "Tabela 'NAO_GERA_EMAIL_DESTINO' criada com sucesso."
+
+    def create_column_decreto_origem(self):
+        try:
+            info = self._cursor.execute("""
+            SELECT `COLUMN_NAME`
+            FROM `INFORMATION_SCHEMA`.`COLUMNS`
+            WHERE `TABLE_SCHEMA`='interfaceplanilha'
+            AND `TABLE_NAME`='decretos'
+            AND `COLUMN_NAME`='PERMANECE_DECRETO_ORIGEM';""")
+            if info is None:
+                self._cursor.execute("""
+                    ALTER TABLE decretos
+                    ADD COLUMN PERMANECE_DECRETO_ORIGEM BOOLEAN DEFAULT FALSE AFTER STATUS_3_DESTINO;""")
+        except Exception as e:
+            if e.msg == "Duplicate column name 'PERMANECE_DECRETO_ORIGEM'":
+                return 'PERMANECE_DECRETO_ORIGEM Já Existe'
+            self._cursor.execute("""
+                ALTER TABLE decretos
+                ADD COLUMN PERMANECE_DECRETO_ORIGEM BOOLEAN DEFAULT FALSE AFTER STATUS_3_DESTINO;""")
+        return "Tabela 'PERMANECE_DECRETO_ORIGEM' criada com sucesso."
+
+    def create_column_decreto_destino(self):
+        try:
+            info = self._cursor.execute("""
+            SELECT `COLUMN_NAME`
+            FROM `INFORMATION_SCHEMA`.`COLUMNS`
+            WHERE `TABLE_SCHEMA`='interfaceplanilha'
+            AND `TABLE_NAME`='decretos'
+            AND `COLUMN_NAME`='PERMANECE_DECRETO_DESTINO';""")
+            if info is None:
+                self._cursor.execute("""
+                    ALTER TABLE decretos
+                    ADD COLUMN PERMANECE_DECRETO_DESTINO BOOLEAN DEFAULT FALSE AFTER STATUS_3_DESTINO;""")
+        except Exception as e:
+            if e.msg == "Duplicate column name 'PERMANECE_DECRETO_DESTINO'":
+                return 'PERMANECE_DECRETO_DESTINO Já Existe'
+            self._cursor.execute("""
+                ALTER TABLE decretos
+                ADD COLUMN PERMANECE_DECRETO_DESTINO BOOLEAN DEFAULT FALSE AFTER STATUS_3_DESTINO;""")
+        return "Tabela 'PERMANECE_DECRETO_DESTINO' criada com sucesso."
 
     def criar_db(self):
         db = mysql.connector.connect(
@@ -256,8 +311,10 @@ class DataBase:
             EMAIL_ENVIADO = %s,
             INSERIDO_METAS = %s,
             ATUALIZADO_NO_SISTEMA = %s,
-            GERA_EMAIL = %s,
-            PERMANECE_DECRETO = %s
+            NAO_GERA_EMAIL_ORIGEM = %s,
+            NAO_GERA_EMAIL_DESTINO = %s,
+            PERMANECE_DECRETO_ORIGEM = %s,
+            PERMANECE_DECRETO_DESTINO = %s
         WHERE 
             id = %s"""
 
@@ -279,13 +336,13 @@ class DataBase:
         except Exception as e:
             print(e)
         try:
-            if type(val['geraEmail']) is list:
-                v = val['geraEmail'] + val['id']
+            if type(val['geraEmailOrigem']) is list:
+                v = val['geraEmailOrigem'] + val['id']
                 sql = """
                 UPDATE 
                     decretos 
                 SET 
-                    GERA_EMAIL = %s
+                    NAO_GERA_EMAIL_ORIGEM = %s
                 WHERE 
                     id = %s
                     """
@@ -293,13 +350,43 @@ class DataBase:
         except Exception as e:
             print(e)
         try:
-            if type(val['permaneceMeta']) is list:
-                v = val['permaneceMeta'] + val['id']
+            if type(val['geraEmailDestino']) is list:
+                v = val['geraEmailDestino'] + val['id']
                 sql = """
                 UPDATE 
                     decretos 
                 SET 
-                    PERMANECE_DECRETO = %s
+                    NAO_GERA_EMAIL_DESTINO = %s
+                WHERE 
+                    id = %s
+                    """
+                self._cursor.execute(sql, v)
+        except Exception as e:
+            print(e)
+        try:
+            if type(val['permaneceMetaOrigem']) is list:
+                v = val['permaneceMetaOrigem'] + val['id']
+                sql = """
+                UPDATE 
+                    decretos 
+                SET 
+                    PERMANECE_DECRETO_ORIGEM = %s,
+                    NOVA_META_FISICA_ANULADO = 'permanece a mesma meta'
+                WHERE 
+                    id = %s
+                    """
+                self._cursor.execute(sql, v)
+        except Exception as e:
+            print(e)
+        try:
+            if type(val['permaneceMetaDestino']) is list:
+                v = val['permaneceMetaDestino'] + val['id']
+                sql = """
+                UPDATE 
+                    decretos 
+                SET 
+                    PERMANECE_DECRETO_DESTINO = %s,
+                    NOVA_META_FISICA_SUPLEMENTADO = 'permanece a mesma meta'
                 WHERE 
                     id = %s
                     """

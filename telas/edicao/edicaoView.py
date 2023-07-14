@@ -19,6 +19,9 @@ class EdicaoView(Ui_Form, QWidget):
 
         self.btn_salvar_espelhado.setEnabled(True)
 
+        self.inputCheck_permaneceMetaOrigem.clicked.connect(self.permanece_decreto)
+        self.inputCheck_permaneceMetaDestino.clicked.connect(self.permanece_decreto)
+
     def atualizar_data(self):
         dateNow = datetime.now()
         data = QDate(dateNow.year, dateNow.month, dateNow.day)
@@ -126,18 +129,36 @@ class EdicaoView(Ui_Form, QWidget):
         if str(dados['ATUALIZADO_NO_SISTEMA']) == 'ok':
             self.inputCheck_atualizadoSistema.setChecked(True)
 
-        if int(dados['GERA_EMAIL']) == 1:
-            self.inputCheck_emailEnviado_4.setChecked(True)
-        if int(dados['PERMANECE_DECRETO']) == 1:
-            self.inputCheck_emailEnviado_2.setChecked(True)
+        self.inputCheck_geraEmailOrigem.setChecked(dados['NAO_GERA_EMAIL_ORIGEM'])
+        self.inputCheck_geraEmailDestino.setChecked(dados['NAO_GERA_EMAIL_DESTINO'])
+
+        self.inputCheck_permaneceMetaOrigem.setChecked(dados['PERMANECE_DECRETO_ORIGEM'])
+        self.inputCheck_permaneceMetaDestino.setChecked(dados['PERMANECE_DECRETO_DESTINO'])
+
 
         self.ativar_campos(dados)
-        
+
+    def permanece_decreto(self):
+        text = 'permanece a mesma meta'
+
+        if self.inputCheck_permaneceMetaOrigem.isChecked() is True:
+            self.input_metaAnulado.setEnabled(False)
+            self.input_metaAnulado.setText(text)
+        else:
+            self.input_metaAnulado.setEnabled(True)
+
+        if self.inputCheck_permaneceMetaDestino.isChecked() is True:
+            self.input_metaSuplementado.setText(text)
+            self.input_metaSuplementado.setEnabled(False)
+        else:
+            self.input_metaSuplementado.setEnabled(True)
+
+
+
     def ativar_campos(self, dados):
           return  
 
     def limpar(self):
-
         self.lb_decreto_info.setText("")
         self.lb_dataDecreto_info.setText("")
         self.input_origem_contato1_2.setText("")
@@ -178,8 +199,10 @@ class EdicaoView(Ui_Form, QWidget):
         self.inputCheck_emailEnviado.setChecked(False)
         self.inputCheck_inseridoMetas.setChecked(False)
         self.inputCheck_atualizadoSistema.setChecked(False)
-        self.inputCheck_emailEnviado_4.setChecked(False)
-        self.inputCheck_emailEnviado_2.setChecked(False)
+        self.inputCheck_geraEmailOrigem.setChecked(False)
+        self.inputCheck_geraEmailDestino.setChecked(False)
+        self.inputCheck_permaneceMetaOrigem.setChecked(False)
+        self.inputCheck_permaneceMetaDestino.setChecked(False)
 
     def montar_data(self, data):
         try:

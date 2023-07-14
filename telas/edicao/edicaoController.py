@@ -48,8 +48,10 @@ class EdicaoController:
             "emailOrigem": [],
             "status": [],
             "id": [],
-            "permaneceMeta": [],
-            "geraEmail": [],
+            "permaneceMetaOrigem": [],
+            "permaneceMetaDestino": [],
+            "geraEmailOrigem": [],
+            "geraEmailDestino": [],
         }
 
         d['metaOrigemAtual'].append(self.view.input_metaOrigemAtual.text())
@@ -122,8 +124,10 @@ class EdicaoController:
         else:
             d['status'].append('')
 
-        d['permaneceMeta'] = self.view.inputCheck_emailEnviado_2.isChecked()
-        d['geraEmail'] = self.view.inputCheck_emailEnviado_4.isChecked()
+        d['permaneceMetaOrigem'] = self.view.inputCheck_permaneceMetaOrigem.isChecked()
+        d['permaneceMetaDestino'] = self.view.inputCheck_permaneceMetaDestino.isChecked()
+        d['geraEmailOrigem'] = self.view.inputCheck_geraEmailOrigem.isChecked()
+        d['geraEmailDestino'] = self.view.inputCheck_geraEmailDestino.isChecked()
 
         d['id'].append(int(self.ui.dados['id']))
 
@@ -249,8 +253,11 @@ NOVA Meta FÌSICA de Destino:
         else:
             dados.append('')
 
-        dados.append(self.view.inputCheck_emailEnviado_4.isChecked())
-        dados.append(self.view.inputCheck_emailEnviado_2.isChecked())
+        dados.append(self.view.inputCheck_geraEmailOrigem.isChecked())
+        dados.append(self.view.inputCheck_geraEmailDestino.isChecked())
+
+        dados.append(self.view.inputCheck_permaneceMetaOrigem.isChecked())
+        dados.append(self.view.inputCheck_permaneceMetaDestino.isChecked())
 
         dados.append(int(self.ui.dados['id']))
 
