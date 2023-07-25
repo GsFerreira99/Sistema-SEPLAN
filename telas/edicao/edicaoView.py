@@ -135,7 +135,7 @@ class EdicaoView(Ui_Form, QWidget):
         self.inputCheck_permaneceMetaOrigem.setChecked(dados['PERMANECE_DECRETO_ORIGEM'])
         self.inputCheck_permaneceMetaDestino.setChecked(dados['PERMANECE_DECRETO_DESTINO'])
 
-
+        self.permanece_decreto()
         self.ativar_campos(dados)
 
     def permanece_decreto(self):
@@ -156,7 +156,7 @@ class EdicaoView(Ui_Form, QWidget):
 
 
     def ativar_campos(self, dados):
-          return  
+        pass 
 
     def limpar(self):
         self.lb_decreto_info.setText("")
@@ -194,6 +194,8 @@ class EdicaoView(Ui_Form, QWidget):
 
         self.input_metaAnulado.setText('')
         self.input_metaSuplementado.setText('')
+        
+        self.limpar_checkBox()
 
     def limpar_checkBox(self):
         self.inputCheck_emailEnviado.setChecked(False)

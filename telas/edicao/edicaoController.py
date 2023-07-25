@@ -27,7 +27,7 @@ class EdicaoController:
         self.view.input_metaOrigemAtual.editingFinished.connect(lambda: self.ativar_email())
 
         self.view.btn_salvar_espelhado.clicked.connect(lambda: self.exibir_espelhamento())
-    
+     
     def inserir_dados(self):
         self.view.preencher_campos(self.ui.dados)
         self.ativar_email()
