@@ -768,17 +768,95 @@ class DataBase:
 
     @property
     def select_score_1(self):
-        email = pd.read_sql("SELECT COUNT(INSERIDO_METAS) FROM decretos WHERE INSERIDO_METAS='ok'", con=self._engine)
-        todos = pd.read_sql("SELECT COUNT(N_DECRETO) FROM decretos", con=self._engine)
+        metrica = pd.read_sql("""
+            SELECT
+            (SELECT COUNT(EMAIL_ENVIADO) FROM decretos WHERE EMAIL_ENVIADO='ok') AS TOTAL_EMAIL_ENVIADO,
+            (SELECT COUNT(N_DECRETO) FROM decretos) AS TOTAL_DECRETOS
+        """, con=self._engine)
+        return (int(metrica.iloc[0]['TOTAL_EMAIL_ENVIADO']) / int(metrica.iloc[0]['TOTAL_DECRETOS'])) * 100
 
-        return int(email.iloc[0]['COUNT(INSERIDO_METAS)']) / int(todos.iloc[0]['COUNT(N_DECRETO)'])
+    def select_score_2(self, secretaria:str=''):
+        try:
+            if secretaria == '':
+                email_enviado = pd.read_sql(
+                    """
+                    SELECT 
+                    (SELECT(
+                        (SELECT COUNT(CONTATO_1_ORIGEM) FROM decretos WHERE CONTATO_1_ORIGEM != '' AND EMAIL_ENVIADO LIKE 'OK')
+                         + 
+                        (SELECT COUNT(CONTATO_1_DESTINO) FROM decretos WHERE CONTATO_1_DESTINO != '' AND EMAIL_ENVIADO LIKE 'OK')
+                        )) AS EMAIL_ENVIADO_TOTAL
+                    ,
+                    (SELECT(
+                        (SELECT COUNT(NOVA_META_FISICA_ANULADO) FROM decretos WHERE CONTATO_1_ORIGEM != '' AND NOVA_META_FISICA_ANULADO LIKE '')
+                         + 
+                        (SELECT COUNT(NOVA_META_FISICA_SUPLEMENTADO) FROM decretos WHERE CONTATO_1_DESTINO != '' AND NOVA_META_FISICA_SUPLEMENTADO LIKE '')))
+                    AS EMAIL_NAO_RESPONDIDO_TOTAL
+                    """, con=self._engine)
+            else:
+                email_enviado = pd.read_sql(
+                    f"""
+                    SELECT 
+                    (SELECT(
+                        (SELECT COUNT(CONTATO_1_ORIGEM) FROM decretos WHERE CONTATO_1_ORIGEM != '' AND EMAIL_ENVIADO LIKE 'OK' AND NOME_ORGAO_ANULADO LIKE '{secretaria}')
+                         + 
+                        (SELECT COUNT(CONTATO_1_DESTINO) FROM decretos WHERE CONTATO_1_DESTINO != '' AND EMAIL_ENVIADO LIKE 'OK' AND NOME_ORGAO_SUPLEMENTADO2 LIKE '{secretaria}')
+                        )) AS EMAIL_ENVIADO_TOTAL
+                    ,
+                    (SELECT(
+                        (SELECT COUNT(NOVA_META_FISICA_ANULADO) FROM decretos WHERE CONTATO_1_ORIGEM != '' AND NOVA_META_FISICA_ANULADO LIKE '' AND NOME_ORGAO_ANULADO LIKE '{secretaria}')
+                         + 
+                        (SELECT COUNT(NOVA_META_FISICA_SUPLEMENTADO) FROM decretos WHERE CONTATO_1_DESTINO != '' AND NOVA_META_FISICA_SUPLEMENTADO LIKE '' AND NOME_ORGAO_SUPLEMENTADO2 LIKE '{secretaria}')))
+                    AS EMAIL_NAO_RESPONDIDO_TOTAL
+                    """, con=self._engine)
+            resultado = (int(email_enviado.iloc[0]['EMAIL_ENVIADO_TOTAL']) - int(
+                email_enviado.iloc[0]['EMAIL_NAO_RESPONDIDO_TOTAL'])) / int(email_enviado.iloc[0]['EMAIL_ENVIADO_TOTAL'])
+        except Exception as e:
+            resultado = 0
 
-    @property
-    def select_score_2(self):
-        email = pd.read_sql("SELECT COUNT(EMAIL_ENVIADO) FROM decretos WHERE EMAIL_ENVIADO='ok'", con=self._engine)
-        todos = pd.read_sql("SELECT COUNT(N_DECRETO) FROM decretos", con=self._engine)
+        return resultado*100
 
-        return int(email.iloc[0]['COUNT(EMAIL_ENVIADO)'])/int(todos.iloc[0]['COUNT(N_DECRETO)'])
+    def select_score_3(self, secretaria:str=''):
+        try:
+            if secretaria == '':
+                PERMANECE_METAS = pd.read_sql(
+                    """
+                    SELECT 
+                    (SELECT(
+                        (SELECT COUNT(CONTATO_1_ORIGEM) FROM decretos WHERE CONTATO_1_ORIGEM != '' AND NOVA_META_FISICA_ANULADO != '')
+                         + 
+                        (SELECT COUNT(CONTATO_1_DESTINO) FROM decretos WHERE CONTATO_1_DESTINO != '' AND NOVA_META_FISICA_SUPLEMENTADO != '')
+                        )) AS EMAIL_RESPONDIDO
+                    ,
+                    (SELECT(
+                        (SELECT COUNT(NOVA_META_FISICA_ANULADO) FROM decretos WHERE CONTATO_1_ORIGEM != '' AND PERMANECE_DECRETO_ORIGEM = 0 )
+                         + 
+                        (SELECT COUNT(NOVA_META_FISICA_SUPLEMENTADO) FROM decretos WHERE CONTATO_1_DESTINO != '' AND PERMANECE_DECRETO_DESTINO = 0)))
+                    AS PERMANECE_META
+                    """, con=self._engine)
+            else:
+                PERMANECE_METAS = pd.read_sql(
+                    f"""
+                    SELECT 
+                    (SELECT(
+                        (SELECT COUNT(CONTATO_1_ORIGEM) FROM decretos WHERE CONTATO_1_ORIGEM != '' AND EMAIL_ENVIADO LIKE 'OK' AND NOME_ORGAO_ANULADO LIKE '{secretaria}')
+                         + 
+                        (SELECT COUNT(CONTATO_1_DESTINO) FROM decretos WHERE CONTATO_1_DESTINO != '' AND EMAIL_ENVIADO LIKE 'OK' AND NOME_ORGAO_SUPLEMENTADO2 LIKE '{secretaria}')
+                        )) AS EMAIL_RESPONDIDO
+                    ,
+                    (SELECT(
+                        (SELECT COUNT(NOVA_META_FISICA_ANULADO) FROM decretos WHERE CONTATO_1_ORIGEM != '' AND PERMANECE_DECRETO_ORIGEM = 0  AND NOME_ORGAO_ANULADO LIKE '{secretaria}')
+                         + 
+                        (SELECT COUNT(NOVA_META_FISICA_SUPLEMENTADO) FROM decretos WHERE CONTATO_1_DESTINO != '' AND PERMANECE_DECRETO_DESTINO = 0 AND NOME_ORGAO_SUPLEMENTADO2 LIKE '{secretaria}')))
+                    AS PERMANECE_META
+                    """, con=self._engine)
+            resultado = (int(PERMANECE_METAS.iloc[0]['EMAIL_RESPONDIDO']) - int(
+                PERMANECE_METAS.iloc[0]['PERMANECE_META'])) / int(
+                PERMANECE_METAS.iloc[0]['EMAIL_RESPONDIDO'])
+        except Exception as e:
+            resultado = 0
+
+        return resultado * 100
 
     def select_filtro_score_2(self, filtro: str):
         email = pd.read_sql(

@@ -151,7 +151,6 @@ class EdicaoController:
         if str(self.ui.dados['EMAIL_INICIAL']) != 'nan':
             self.emailView.lineEdit.setText(str(self.ui.dados['EMAIL_INICIAL']))
         
-
         self.emailView.textEdit_2.setText(
             f"""
 Prezado(a) Senhor(a),

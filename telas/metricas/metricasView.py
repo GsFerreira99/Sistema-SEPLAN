@@ -10,5 +10,6 @@ class MetricasView(Ui_Form, QMainWindow):
 
         self.ui = ui
 
-        self.lb_score1.setText("PRODUTIVIDADE DO SETOR")
+        self.lb_score3.setText("PRODUTIVIDADE DO SETOR")
         self.lb_score2.setText("ATUALIZAÇÃO DE PPA")
+        self.lb_score1.setText("PERMANENCIA DE METAS")

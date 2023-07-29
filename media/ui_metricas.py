@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'MetricasTDQYfx.ui'
+## Form generated from reading UI file 'MetricasXPuqip.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.5.1
 ##
@@ -19,13 +19,13 @@ from PyQt5.QtWidgets import (QApplication, QComboBox, QFrame, QGridLayout,
     QHBoxLayout, QLabel, QMainWindow, QPushButton,
     QSizePolicy, QSpacerItem, QVBoxLayout, QWidget)
 import media.resource_rc
-import media.resource
+import media.resource_rc
 
 class Ui_Form(object):
     def setupUi(self, Form):
         if not Form.objectName():
             Form.setObjectName(u"Form")
-        Form.resize(942, 690)
+        Form.resize(1041, 690)
         Form.setStyleSheet(u"background-color: rgb(255, 255, 255);\n"
 "border:none")
         self.centralwidget = QWidget(Form)
@@ -103,63 +103,18 @@ class Ui_Form(object):
         self.horizontalLayout_2.setContentsMargins(50, 50, 50, 50)
         self.frame = QFrame(self.Content)
         self.frame.setObjectName(u"frame")
+        self.frame.setStyleSheet(u"\n"
+"\n"
+"#frame {\n"
+"border: 2px solid rgb(109, 49, 162);\n"
+"border-radius: 20px;\n"
+"}")
         self.frame.setFrameShape(QFrame.StyledPanel)
         self.frame.setFrameShadow(QFrame.Raised)
         self.gridLayout = QGridLayout(self.frame)
         self.gridLayout.setObjectName(u"gridLayout")
         self.gridLayout.setHorizontalSpacing(6)
-        self.gridLayout.setContentsMargins(0, 0, 0, 0)
-        self.frame_2 = QFrame(self.frame)
-        self.frame_2.setObjectName(u"frame_2")
-        self.frame_2.setFrameShape(QFrame.StyledPanel)
-        self.frame_2.setFrameShadow(QFrame.Raised)
-        self.verticalLayout_2 = QVBoxLayout(self.frame_2)
-        self.verticalLayout_2.setObjectName(u"verticalLayout_2")
-        self.verticalLayout_2.setContentsMargins(75, 60, 75, 60)
-        self.lb_score1 = QLabel(self.frame_2)
-        self.lb_score1.setObjectName(u"lb_score1")
-        self.lb_score1.setMinimumSize(QSize(0, 65))
-        self.lb_score1.setMaximumSize(QSize(16777215, 65))
-        font1 = QFont()
-        font1.setPointSize(16)
-        font1.setBold(True)
-        self.lb_score1.setFont(font1)
-        self.lb_score1.setAlignment(Qt.AlignCenter)
-
-        self.verticalLayout_2.addWidget(self.lb_score1)
-
-        self.frame_5 = QFrame(self.frame_2)
-        self.frame_5.setObjectName(u"frame_5")
-        self.frame_5.setFrameShape(QFrame.StyledPanel)
-        self.frame_5.setFrameShadow(QFrame.Raised)
-        self.horizontalLayout_4 = QHBoxLayout(self.frame_5)
-        self.horizontalLayout_4.setObjectName(u"horizontalLayout_4")
-        self.score_1 = QLabel(self.frame_5)
-        self.score_1.setObjectName(u"score_1")
-        self.score_1.setMinimumSize(QSize(250, 250))
-        self.score_1.setMaximumSize(QSize(250, 250))
-        font2 = QFont()
-        font2.setPointSize(76)
-        self.score_1.setFont(font2)
-        self.score_1.setStyleSheet(u"QLabel {\n"
-"border: 8px solid rgb(109, 49, 162);\n"
-"border-radius: 120px;\n"
-"\n"
-"}\n"
-"\n"
-"QLabel:hover {\n"
-"	color: rgb(135, 111, 162);\n"
-"}")
-        self.score_1.setAlignment(Qt.AlignCenter)
-
-        self.horizontalLayout_4.addWidget(self.score_1)
-
-
-        self.verticalLayout_2.addWidget(self.frame_5)
-
-
-        self.gridLayout.addWidget(self.frame_2, 1, 0, 1, 1)
-
+        self.gridLayout.setContentsMargins(10, 10, 10, 10)
         self.frame_4 = QFrame(self.frame)
         self.frame_4.setObjectName(u"frame_4")
         self.frame_4.setMaximumSize(QSize(16777215, 60))
@@ -169,17 +124,17 @@ class Ui_Form(object):
         self.horizontalLayout_3.setObjectName(u"horizontalLayout_3")
         self.lb_busca = QLabel(self.frame_4)
         self.lb_busca.setObjectName(u"lb_busca")
-        font3 = QFont()
-        font3.setFamilies([u"Arial"])
-        font3.setPointSize(12)
-        font3.setBold(True)
-        self.lb_busca.setFont(font3)
+        font1 = QFont()
+        font1.setFamilies([u"Arial"])
+        font1.setPointSize(12)
+        font1.setBold(True)
+        self.lb_busca.setFont(font1)
 
         self.horizontalLayout_3.addWidget(self.lb_busca)
 
         self.comboBox = QComboBox(self.frame_4)
         self.comboBox.setObjectName(u"comboBox")
-        self.comboBox.setMinimumSize(QSize(250, 35))
+        self.comboBox.setMinimumSize(QSize(150, 35))
         self.comboBox.setStyleSheet(u"\n"
 "QComboBox:focus {\n"
 "	border: 1px solid rgb(10, 38, 71);\n"
@@ -216,11 +171,11 @@ class Ui_Form(object):
 
         self.lb_filtro = QLabel(self.frame_4)
         self.lb_filtro.setObjectName(u"lb_filtro")
-        self.lb_filtro.setMinimumSize(QSize(300, 0))
-        font4 = QFont()
-        font4.setPointSize(11)
-        font4.setBold(True)
-        self.lb_filtro.setFont(font4)
+        self.lb_filtro.setMinimumSize(QSize(200, 0))
+        font2 = QFont()
+        font2.setPointSize(11)
+        font2.setBold(True)
+        self.lb_filtro.setFont(font2)
         self.lb_filtro.setAlignment(Qt.AlignRight|Qt.AlignTrailing|Qt.AlignVCenter)
 
         self.horizontalLayout_3.addWidget(self.lb_filtro)
@@ -228,19 +183,72 @@ class Ui_Form(object):
 
         self.gridLayout.addWidget(self.frame_4, 0, 0, 1, 2)
 
+        self.frame_2 = QFrame(self.frame)
+        self.frame_2.setObjectName(u"frame_2")
+        self.frame_2.setFrameShape(QFrame.StyledPanel)
+        self.frame_2.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_2 = QVBoxLayout(self.frame_2)
+        self.verticalLayout_2.setObjectName(u"verticalLayout_2")
+        self.verticalLayout_2.setContentsMargins(0, 60, 0, 60)
+        self.lb_score1 = QLabel(self.frame_2)
+        self.lb_score1.setObjectName(u"lb_score1")
+        self.lb_score1.setMinimumSize(QSize(0, 65))
+        self.lb_score1.setMaximumSize(QSize(16777215, 65))
+        font3 = QFont()
+        font3.setPointSize(14)
+        font3.setBold(True)
+        self.lb_score1.setFont(font3)
+        self.lb_score1.setAlignment(Qt.AlignCenter)
+        self.lb_score1.setWordWrap(True)
+
+        self.verticalLayout_2.addWidget(self.lb_score1)
+
+        self.frame_5 = QFrame(self.frame_2)
+        self.frame_5.setObjectName(u"frame_5")
+        self.frame_5.setFrameShape(QFrame.StyledPanel)
+        self.frame_5.setFrameShadow(QFrame.Raised)
+        self.horizontalLayout_4 = QHBoxLayout(self.frame_5)
+        self.horizontalLayout_4.setObjectName(u"horizontalLayout_4")
+        self.score_1 = QLabel(self.frame_5)
+        self.score_1.setObjectName(u"score_1")
+        self.score_1.setMinimumSize(QSize(50, 50))
+        self.score_1.setMaximumSize(QSize(180, 180))
+        font4 = QFont()
+        font4.setPointSize(30)
+        self.score_1.setFont(font4)
+        self.score_1.setStyleSheet(u"QLabel {\n"
+"border: 8px solid rgb(109, 49, 162);\n"
+"border-radius: 88px;\n"
+"\n"
+"}\n"
+"\n"
+"QLabel:hover {\n"
+"	color: rgb(135, 111, 162);\n"
+"}")
+        self.score_1.setAlignment(Qt.AlignCenter)
+
+        self.horizontalLayout_4.addWidget(self.score_1)
+
+
+        self.verticalLayout_2.addWidget(self.frame_5)
+
+
+        self.gridLayout.addWidget(self.frame_2, 1, 0, 1, 1)
+
         self.frame_3 = QFrame(self.frame)
         self.frame_3.setObjectName(u"frame_3")
         self.frame_3.setFrameShape(QFrame.StyledPanel)
         self.frame_3.setFrameShadow(QFrame.Raised)
         self.verticalLayout_3 = QVBoxLayout(self.frame_3)
         self.verticalLayout_3.setObjectName(u"verticalLayout_3")
-        self.verticalLayout_3.setContentsMargins(75, 60, 75, 60)
+        self.verticalLayout_3.setContentsMargins(0, 60, 0, 60)
         self.lb_score2 = QLabel(self.frame_3)
         self.lb_score2.setObjectName(u"lb_score2")
         self.lb_score2.setMinimumSize(QSize(0, 65))
         self.lb_score2.setMaximumSize(QSize(16777215, 65))
-        self.lb_score2.setFont(font1)
+        self.lb_score2.setFont(font3)
         self.lb_score2.setAlignment(Qt.AlignCenter)
+        self.lb_score2.setWordWrap(True)
 
         self.verticalLayout_3.addWidget(self.lb_score2)
 
@@ -252,12 +260,12 @@ class Ui_Form(object):
         self.horizontalLayout_5.setObjectName(u"horizontalLayout_5")
         self.score_2 = QLabel(self.frame_6)
         self.score_2.setObjectName(u"score_2")
-        self.score_2.setMinimumSize(QSize(250, 250))
-        self.score_2.setMaximumSize(QSize(250, 250))
-        self.score_2.setFont(font2)
+        self.score_2.setMinimumSize(QSize(150, 150))
+        self.score_2.setMaximumSize(QSize(180, 180))
+        self.score_2.setFont(font4)
         self.score_2.setStyleSheet(u"QLabel {\n"
 "border: 8px solid rgb(109, 49, 162);\n"
-"border-radius: 120px;\n"
+"border-radius: 88px\n"
 "\n"
 "}\n"
 "\n"
@@ -277,6 +285,87 @@ class Ui_Form(object):
 
         self.horizontalLayout_2.addWidget(self.frame)
 
+        self.frame_7 = QFrame(self.Content)
+        self.frame_7.setObjectName(u"frame_7")
+        self.frame_7.setMinimumSize(QSize(300, 0))
+        self.frame_7.setMaximumSize(QSize(350, 16777215))
+        self.frame_7.setStyleSheet(u"#frame_7 {\n"
+"\n"
+"border: 2px solid rgb(109, 49, 162);\n"
+"border-radius: 10px;\n"
+"margin-left: 20px\n"
+"}\n"
+"\n"
+"")
+        self.frame_7.setFrameShape(QFrame.StyledPanel)
+        self.frame_7.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_4 = QVBoxLayout(self.frame_7)
+        self.verticalLayout_4.setSpacing(0)
+        self.verticalLayout_4.setObjectName(u"verticalLayout_4")
+        self.verticalLayout_4.setContentsMargins(-1, 9, -1, -1)
+        self.lb_score2_2 = QLabel(self.frame_7)
+        self.lb_score2_2.setObjectName(u"lb_score2_2")
+        self.lb_score2_2.setMinimumSize(QSize(0, 65))
+        self.lb_score2_2.setMaximumSize(QSize(16777215, 65))
+        font5 = QFont()
+        font5.setPointSize(16)
+        font5.setBold(True)
+        self.lb_score2_2.setFont(font5)
+        self.lb_score2_2.setAlignment(Qt.AlignCenter)
+
+        self.verticalLayout_4.addWidget(self.lb_score2_2)
+
+        self.frame_8 = QFrame(self.frame_7)
+        self.frame_8.setObjectName(u"frame_8")
+        self.frame_8.setFrameShape(QFrame.StyledPanel)
+        self.frame_8.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_5 = QVBoxLayout(self.frame_8)
+        self.verticalLayout_5.setObjectName(u"verticalLayout_5")
+        self.verticalLayout_5.setContentsMargins(0, 60, 0, 60)
+        self.lb_score3 = QLabel(self.frame_8)
+        self.lb_score3.setObjectName(u"lb_score3")
+        self.lb_score3.setMinimumSize(QSize(0, 65))
+        self.lb_score3.setMaximumSize(QSize(16777215, 65))
+        self.lb_score3.setFont(font3)
+        self.lb_score3.setAlignment(Qt.AlignCenter)
+        self.lb_score3.setWordWrap(True)
+
+        self.verticalLayout_5.addWidget(self.lb_score3)
+
+        self.frame_9 = QFrame(self.frame_8)
+        self.frame_9.setObjectName(u"frame_9")
+        self.frame_9.setFrameShape(QFrame.StyledPanel)
+        self.frame_9.setFrameShadow(QFrame.Raised)
+        self.horizontalLayout_6 = QHBoxLayout(self.frame_9)
+        self.horizontalLayout_6.setObjectName(u"horizontalLayout_6")
+        self.horizontalLayout_6.setContentsMargins(-1, 9, -1, -1)
+        self.score_3 = QLabel(self.frame_9)
+        self.score_3.setObjectName(u"score_3")
+        self.score_3.setMinimumSize(QSize(150, 150))
+        self.score_3.setMaximumSize(QSize(180, 180))
+        self.score_3.setFont(font4)
+        self.score_3.setStyleSheet(u"QLabel {\n"
+"border: 8px solid rgb(109, 49, 162);\n"
+"border-radius: 88px\n"
+"\n"
+"}\n"
+"\n"
+"QLabel:hover {\n"
+"	color: rgb(135, 111, 162);\n"
+"}")
+        self.score_3.setAlignment(Qt.AlignCenter)
+
+        self.horizontalLayout_6.addWidget(self.score_3)
+
+
+        self.verticalLayout_5.addWidget(self.frame_9)
+
+
+        self.verticalLayout_4.addWidget(self.frame_8)
+
+
+        self.horizontalLayout_2.addWidget(self.frame_7)
+
 
         self.verticalLayout.addWidget(self.Content)
 
@@ -291,11 +380,14 @@ class Ui_Form(object):
         Form.setWindowTitle(QCoreApplication.translate("Form", u"MainWindow", None))
         self.btn_voltar.setText("")
         self.lb_tituloPrincipal.setText(QCoreApplication.translate("Form", u"M\u00e9tricas", None))
-        self.lb_score1.setText(QCoreApplication.translate("Form", u"Score 1", None))
-        self.score_1.setText(QCoreApplication.translate("Form", u"5.2", None))
         self.lb_busca.setText(QCoreApplication.translate("Form", u"Filtro: ", None))
         self.lb_filtro.setText(QCoreApplication.translate("Form", u"Filtro Atual: Todos", None))
+        self.lb_score1.setText(QCoreApplication.translate("Form", u"Score 1", None))
+        self.score_1.setText(QCoreApplication.translate("Form", u"5.2", None))
         self.lb_score2.setText(QCoreApplication.translate("Form", u"Score 2", None))
         self.score_2.setText(QCoreApplication.translate("Form", u"5.2", None))
+        self.lb_score2_2.setText("")
+        self.lb_score3.setText(QCoreApplication.translate("Form", u"Score 2", None))
+        self.score_3.setText(QCoreApplication.translate("Form", u"5.2", None))
     # retranslateUi
 
